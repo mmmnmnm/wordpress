@@ -1,0 +1,39 @@
+.admintbl tr th {text-align: left; min-width: 200px;}
+a {text-decoration: none !important;}
+h3.title {font-size:18px; color:#1E6CBE;font-weight:bold;text-transform: uppercase;width: 680px;
+margin:15px 0px;padding:10px; background:#ffffff;border-left: 4px solid #1E6CBE;}
+h3.setup {font-size: 18px;}
+.top {padding:0 1em;background:#ffffff;border-left: 4px solid #1E6CBE;line-height: 46px;}
+.top a {color:#1E6CBE;}
+.inner_wrap {margin:15px 0;}
+.inner_wrap .left{max-width:65%;width: 65%; float: left;}
+.right {max-width:33%;width:33%;float:right;;}
+.submitform {margin: 20px 0;}
+.admintbl {margin-top: 0px;}
+.bottom {width: 100%;}
+.bottom h3.title {width:92%;text-align: left;background:#fff url('assets/arrow_icon.png') right center no-repeat; cursor: pointer; }
+.button1 {background: #1E6CBE;color: #fff;border: 0 none;}
+.button1:hover {background:#555555;}
+.togglediv {margin-bottom: 20px;}
+#aboutauthortbl {text-align:justify;}
+.company {font-size: 14px;font-weight: normal;margin-top: 0px; text-align: left;}
+#aboutauthortbl p {margin-top: 0px;}
+#donateheretbl p {text-align: left;margin-top: 0px;}
+#downloadtbl {text-align: left;}
+#downloadtbl a {font-size: 13px;}
+.errormsg {font-size: 13px;line-height: 30px;}
+.viva_like_btntype {margin-left: 10px;}
+
+@media (max-width: 968px) {
+	.right {
+    clear: both;
+    float: none;
+    max-width: 100%;
+    width: 100%;
+} 
+.bottom h3.title { width: 95%; }
+h3.title { width: 95%; }
+.inner_wrap .left {max-width: 100%;
+    width: 100%;}
+	
+	}
