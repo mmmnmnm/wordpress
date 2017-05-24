@@ -27,10 +27,22 @@ function rebalance_entry_footer_card() {
     $entry_meta_output = '';
     // Author
     $author = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
-    // Categories
+    // Categories: mmn added
     $categories_list = get_the_term_list( get_the_ID(), 'category', '<span class="entry-categories">', esc_html_x( ', ', 'Categories separator', 'rebalance' ), '</span>' );
     // Tags
     $tags_list = get_the_tag_list( '<span class="entry-tags">', esc_html_x( ', ', 'Tags separator', 'rebalance' ), '</span>' );
+    //Data: mmn added
+    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+      $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+    }
+    $time_string = sprintf( $time_string,
+  		esc_attr( get_the_date( 'c' ) ),
+  		esc_html( get_the_date() ),
+  		esc_attr( get_the_modified_date( 'c' ) ),
+  		esc_html( get_the_modified_date() )
+  	);
+    $post_date = '<span class="entry-tags-date"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>';
 
     $entry_meta_output .= $categories_list;
     $entry_meta_output .= $tags_list;
@@ -39,6 +51,7 @@ function rebalance_entry_footer_card() {
     } else {
       $entry_meta_output .= $author;
     }
+    $entry_meta_output .= $post_date;
     echo $entry_meta_output; // WPCS: XSS OK.
 	}
 
