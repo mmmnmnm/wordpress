@@ -13,7 +13,7 @@
 			<footer id="colophon" class="site-footer" role="contentinfo">
 				<div class="site-info">
 					<!-- See parent template for original footer code, which was mentioning WordPress and the Rebalance theme -->
-					<a href="http://www2.mmmnmnm.com/wp/?page_id=273&preview=true">Impresszum &amp; Kontakt</a>
+					<a href="http://www.mmmnmnm.com/impressum">Impresszum &amp; Kontakt</a>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 
