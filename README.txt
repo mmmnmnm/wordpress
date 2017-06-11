@@ -1,4 +1,4 @@
-Theme inherits from rebalance theme. All changes in anywhere are commented by "mmmnmnm" and "mmn". 
+Theme inherits from rebalance theme. All changes in anywhere are commented by "mmmnmnm" and "mmn".
 
 1. Changes that should not be affected by updates
  - Can be found under /wp-content/themes/rebalance-child-mmn
@@ -11,3 +11,5 @@ Theme inherits from rebalance theme. All changes in anywhere are commented by "m
 
 4. Changes that need to be re-added after Wordpress update:
 	•	/wp-includes/functions.php (line 106) and corresponding definition of myucfirst() function -> effect: first letter of months uppercased
+
+*fake
