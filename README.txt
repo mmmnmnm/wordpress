@@ -12,4 +12,3 @@
 4. Changes that need to be re-added after Wordpress update:
 	•	/wp-includes/functions.php (line 106) and corresponding definition of myucfirst() function -> effect: first letter of months uppercased
 
-fake IQL
