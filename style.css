@@ -62,17 +62,3 @@
 .english-content a:hover{
   color:red !important;
 }
-
-/*mmn added*/
-@font-face {
-  font-family: 'Socicon';
-  src: url('/fonts/Socicon.eot');
-  src: url('/fonts/Socicon.eot#iefix') format('embedded-opentype'), url('/fonts/Socicon.woff2') format('woff2'), url('/fonts/Socicon.ttf') format('truetype'), url('/fonts/Socicon.woff') format('woff'), url('/fonts/Socicon.svg#Socicon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-.social-menu a[href*="mixcloud.com"]:before {
-	content: '\e053';
-  font-family: 'Socicon';
-}
