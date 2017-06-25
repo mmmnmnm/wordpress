@@ -1,5 +1,5 @@
-# Translation of WordPress - 4.7.x - Administration - Network Admin in Hungarian
-# This file is distributed under the same license as the WordPress - 4.7.x - Administration - Network Admin package.
+# Translation of WordPress - 4.8.x - Administration - Network Admin in Hungarian
+# This file is distributed under the same license as the WordPress - 4.8.x - Administration - Network Admin package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-10-31 09:51:19+0000\n"
@@ -9,10 +9,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: hu\n"
-"Project-Id-Version: WordPress - 4.7.x - Administration - Network Admin\n"
+"Project-Id-Version: WordPress - 4.8.x - Administration - Network Admin\n"
 
 #: wp-admin/network/index.php:51 wp-admin/network/site-info.php:31
-#: wp-admin/network/site-new.php:30 wp-admin/network/site-settings.php:30
+#: wp-admin/network/site-new.php:31 wp-admin/network/site-settings.php:30
 #: wp-admin/network/site-themes.php:30 wp-admin/network/site-users.php:33
 #: wp-admin/network/sites.php:43 wp-admin/network/user-new.php:27
 #: wp-admin/network/users.php:180
@@ -97,11 +97,11 @@ msgstr "%1$s szerzője %2$s"
 msgid "User added. <a href=\"%s\">Edit user</a>"
 msgstr "Felhasználó létrehozva. <a href=\"%s\">Felhasználó szerkesztése</a>"
 
-#: wp-admin/network/site-new.php:205
+#: wp-admin/network/site-new.php:206
 msgid "Only lowercase letters (a-z), numbers, and hyphens are allowed."
 msgstr "Kizárólag az angol abc kisbetűi (a-z), számok és kötőjel használata az engedélyezett."
 
-#: wp-admin/network/site-new.php:155
+#: wp-admin/network/site-new.php:156
 msgctxt "email \"From\" field"
 msgid "Site Admin"
 msgstr "Honlap-adminisztrátor"
@@ -171,7 +171,7 @@ msgstr "Meg kell bizonyosodni róla, hogy az Apache %s modul telepítve van-e, m
 msgid "You cannot use port numbers such as %s."
 msgstr "Nem használható portszámok: %s."
 
-#: wp-admin/includes/class-wp-ms-users-list-table.php:171
+#: wp-admin/includes/class-wp-ms-users-list-table.php:172
 msgctxt "user"
 msgid "Registered"
 msgstr "Regisztrálva"
@@ -282,21 +282,21 @@ msgstr "Úgy tűnik, egyetlen elérhető sablon sincs."
 msgid "No themes found."
 msgstr "Nem találhatóak sablonok"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:531
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:538
 msgctxt "verb; site"
 msgid "Archive"
 msgstr "Összes bejegyzés"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:529
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:536
 msgid "Unarchive"
 msgstr "Visszaállít"
 
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:360
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:365
 msgid "Never"
 msgstr "Soha"
 
 #. translators: 1: site name, 2: site tagline.
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:334
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:337
 msgid "%1$s &#8211; %2$s"
 msgstr "%1$s &#8211; %2$s"
 
@@ -312,7 +312,7 @@ msgid "Last Updated"
 msgstr "Utoljára frissítve"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:204
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:535
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:542
 msgctxt "site"
 msgid "Not Spam"
 msgstr "Nem spam"
@@ -337,7 +337,7 @@ msgid "Deleted"
 msgstr "Törölt"
 
 #: wp-admin/includes/class-wp-ms-sites-list-table.php:42
-#: wp-admin/includes/class-wp-ms-sites-list-table.php:537
+#: wp-admin/includes/class-wp-ms-sites-list-table.php:544
 #: wp-admin/network/site-info.php:188
 msgctxt "site"
 msgid "Spam"
@@ -348,7 +348,7 @@ msgstr "spam"
 msgid "Archived"
 msgstr "Archivált"
 
-#: wp-admin/network/site-users.php:332 wp-admin/network/user-new.php:117
+#: wp-admin/network/site-users.php:339 wp-admin/network/user-new.php:117
 msgid "A password reset link will be sent to the user via email."
 msgstr "A jelszóváltoztatás hivatkozását email-ben fogjuk megküldeni."
 
@@ -398,7 +398,7 @@ msgstr "Honlap sablonlista navigáció"
 msgid "Filter site themes list"
 msgstr "Honlap sablonlistájának szűrése"
 
-#: wp-admin/network/site-new.php:110
+#: wp-admin/network/site-new.php:111
 msgid "The domain or path entered conflicts with an existing username."
 msgstr "A megadott domain név, vagy elérési útvonal egy létező felhasználói névvel ütközik."
 
@@ -463,7 +463,7 @@ msgstr "<a href=\"https://codex.wordpress.org/Tools_Network_Screen\" target=\"_b
 msgid "<a href=\"https://codex.wordpress.org/Network_Admin\">Documentation on the Network Admin</a>"
 msgstr "<a href=\"https://codex.wordpress.org/Network_Admin\" target=\"_blank\">A Hálózati admin dokumentációja</a> (angol)"
 
-#: wp-admin/network/site-info.php:30 wp-admin/network/site-new.php:29
+#: wp-admin/network/site-info.php:30 wp-admin/network/site-new.php:30
 #: wp-admin/network/site-settings.php:29 wp-admin/network/site-themes.php:29
 #: wp-admin/network/site-users.php:32 wp-admin/network/sites.php:42
 msgid "<a href=\"https://codex.wordpress.org/Network_Admin_Sites_Screen\">Documentation on Site Management</a>"
@@ -482,7 +482,7 @@ msgid "<a href=\"https://codex.wordpress.org/Network_Admin_Settings_Screen\">Doc
 msgstr "<a href=\"https://codex.wordpress.org/Network_Admin_Settings_Screen\" target=\"_blank\">Hálózat beállításai dokumentáció</a>"
 
 #. translators: 1: site url, 2: server error message
-#: wp-admin/network/upgrade.php:87
+#: wp-admin/network/upgrade.php:88
 msgid "Warning! Problem updating %1$s. Your server may not be able to connect to sites running on it. Error message: %2$s"
 msgstr "Figyelem! A(z) %1$s frissítése során problémába ütköztünk. A szerver nem képes kapcsolódni a futtató weboldal(ak)hoz. Hibaüzenet: %2$s."
 
@@ -498,19 +498,19 @@ msgstr "Lehetséges, hogy ezek a sablonok a hálózat más honlapjain aktívak."
 msgid "Are you sure you wish to delete this theme?"
 msgstr "Biztosan szeretnék törölni ezeket a sablonokat?"
 
-#: wp-admin/network/site-themes.php:193 wp-admin/network/themes.php:272
+#: wp-admin/network/site-themes.php:197 wp-admin/network/themes.php:279
 msgid "%s theme disabled."
 msgid_plural "%s themes disabled."
 msgstr[0] "%s sablon kikapcsolva"
 msgstr[1] "%s sablon kikapcsolva"
 
-#: wp-admin/network/site-themes.php:185 wp-admin/network/themes.php:264
+#: wp-admin/network/site-themes.php:189 wp-admin/network/themes.php:271
 msgid "%s theme enabled."
 msgid_plural "%s themes enabled."
 msgstr[0] "%s sablon bekapcsolva"
 msgstr[1] "%s sablon bekapcsolva"
 
-#: wp-admin/network/themes.php:280
+#: wp-admin/network/themes.php:287
 msgid "%s theme deleted."
 msgid_plural "%s themes deleted."
 msgstr[0] "%s sablon törölve"
@@ -613,7 +613,7 @@ msgstr "Itt tudunk:"
 msgid "Welcome to your Network Admin. This area of the Administration Screens is used for managing all aspects of your Multisite Network."
 msgstr "Üdvözlet a Hálózat Adminisztrátorától! Ez a kezelő központ területe, amely minden vonatkozásban saját, több honlapos hálózatunk kezelésére szolgál."
 
-#: wp-admin/network/upgrade.php:126
+#: wp-admin/network/upgrade.php:127
 msgid "WordPress has been updated! Before we send you on your way, we need to individually upgrade the sites in your network."
 msgstr "A WordPress frissítése megtörtént. Mielőtt nekilátnánk a munkának, frissíteni kell az egyes honlapokat is a hálózaton."
 
@@ -624,12 +624,12 @@ msgstr ""
 "Kattintsunk a Hálózat frissítése gombra, amelynek hatására a hálózat minden egyes oldala frissülni fog, egyidejűleg öt oldal, és ellenőrzi, hogy minden adatbázis frissítésre került."
 
 #: wp-admin/network/menu.php:22 wp-admin/network/upgrade.php:15
-#: wp-admin/network/upgrade.php:39 wp-admin/network/upgrade.php:130
+#: wp-admin/network/upgrade.php:40 wp-admin/network/upgrade.php:131
 msgid "Upgrade Network"
 msgstr "Hálózat frissítése"
 
 #. translators: 1: user login, 2: site url, 3: site name/title
-#: wp-admin/network/site-new.php:145
+#: wp-admin/network/site-new.php:146
 msgid ""
 "New site created by %1$s\n"
 "\n"
@@ -658,7 +658,7 @@ msgstr "Fő adminokat a Beállítások képernyőn a továbbiakban nem lehet hoz
 msgid "Updates"
 msgstr "Frissítések"
 
-#: wp-admin/network/site-new.php:23
+#: wp-admin/network/site-new.php:24
 msgid "This screen is for Super Admins to add new sites to the network. This is not affected by the registration settings."
 msgstr "Ez a képernyő fő adminoknak teszi lehetővé új honlapok hozzáadását a hálózathoz. Ezt nem befolyásolják a regisztrációs beállítások."
 
@@ -678,7 +678,7 @@ msgstr "Törlés, ami egy visszavonhatatlan művelet, a jóváhagyási lépések
 msgid "Clicking on bold headings can re-sort this table."
 msgstr "A félkövér fejléc feliratokra kattintással a tábla tartalma újra rendezhető."
 
-#: wp-admin/network/menu.php:41 wp-admin/network/themes.php:250
+#: wp-admin/network/menu.php:41 wp-admin/network/themes.php:253
 msgctxt "theme"
 msgid "Add New"
 msgstr "Új hozzáadása"
@@ -688,7 +688,7 @@ msgid "Add New takes you to the Add New Site screen. You can search for a site b
 msgstr "Az &#8220;Új hozzáadása&#8221; az új honlap hozzáadása oldalra visz. Ahol a webhelyek között kereshetünk név, azonosító szám vagy IP cím alapján. A képernyő beállítások fülön lehetőség van kiválasztani, hogy hány holnap jelenjen meg egy oldalon."
 
 #. translators: 1: dashboard url, 2: network admin edit url
-#: wp-admin/network/site-new.php:172
+#: wp-admin/network/site-new.php:173
 msgid "Site added. <a href=\"%1$s\">Visit Dashboard</a> or <a href=\"%2$s\">Edit Site</a>"
 msgstr "Honlap hozzáadva. <a href=\"%1$s\">Vezérlőpult</a> | <a href=\"%2$s\">Szerkesztés</a>"
 
@@ -746,7 +746,7 @@ msgstr "Nem, a sablon listához akarok visszamenni"
 
 #. translators: %s: site name
 #: wp-admin/network/site-info.php:131 wp-admin/network/site-settings.php:84
-#: wp-admin/network/site-themes.php:163 wp-admin/network/site-users.php:193
+#: wp-admin/network/site-themes.php:167 wp-admin/network/site-users.php:200
 msgid "Edit Site: %s"
 msgstr "%s honlap szerkesztése"
 
@@ -755,11 +755,11 @@ msgstr "%s honlap szerkesztése"
 msgid "<strong>Themes</strong> &mdash; This area shows themes that are not already enabled across the network. Enabling a theme in this menu makes it accessible to this site. It does not activate the theme, but allows it to show in the site&#8217;s Appearance menu. To enable a theme for the entire network, see the <a href=\"%s\">Network Themes</a> screen."
 msgstr "<strong>Sablonok</strong> - Ezen a területen azokat a sablonokat láthatjuk amelyek nincsenek a hálózatban engedélyezve. Ha ebben a menüben engedélyezünk egy sablont az elérhetővé válik ezen a honlapon. Ez nem kapcsolja be a sablont, viszont elérhetővé válik a honlap \"Megjelenés\" menüjében. A sablon engedélyezéséhez a teljes hálózaton használjuk a <a href=\"%s\">Hálózati sablonok</a> képernyőt."
 
-#: wp-admin/network/site-themes.php:197 wp-admin/network/themes.php:284
+#: wp-admin/network/site-themes.php:201 wp-admin/network/themes.php:291
 msgid "No theme selected."
 msgstr "Nincs sablon kiválasztva."
 
-#: wp-admin/network/site-themes.php:183 wp-admin/network/themes.php:262
+#: wp-admin/network/site-themes.php:187 wp-admin/network/themes.php:269
 msgid "Theme enabled."
 msgstr "Sablon bekapcsolva."
 
@@ -768,7 +768,7 @@ msgstr "Sablon bekapcsolva."
 msgid "Invalid site ID."
 msgstr "Érvénytelen honlap ID."
 
-#: wp-admin/network/site-themes.php:191 wp-admin/network/themes.php:270
+#: wp-admin/network/site-themes.php:195 wp-admin/network/themes.php:277
 msgid "Theme disabled."
 msgstr "Sablon kikapcsolva."
 
@@ -776,7 +776,7 @@ msgstr "Sablon kikapcsolva."
 msgid "Add User will set up a new user account on the network and send that person an email with username and password."
 msgstr "A felhasználó hozzáadása új felhasználói fiókot hoz létre a hálózaton, és emailben elküldi nekik a felhasználói nevüket és jelszavukat."
 
-#: wp-admin/network/site-themes.php:200
+#: wp-admin/network/site-themes.php:204
 msgid "Network enabled themes are not shown on this screen."
 msgstr "A bekapcsolt hálózati sablonok nem láthatóak ezen a képernyőn."
 
@@ -804,15 +804,15 @@ msgstr "Igen, töröljük ezt a sablont"
 msgid "Are you sure you wish to delete these themes?"
 msgstr "Biztosan törölni akarjuk ezeket a sablonokat?"
 
-#: wp-admin/network/site-new.php:178 wp-admin/network/site-new.php:188
+#: wp-admin/network/site-new.php:179 wp-admin/network/site-new.php:189
 msgid "Add New Site"
 msgstr "Új honlap hozzáadása"
 
-#: wp-admin/network/themes.php:286
+#: wp-admin/network/themes.php:293
 msgid "You cannot delete a theme while it is active on the main site."
 msgstr "Ameddig egy sablon aktív a főoldalon, addig nem lehetséges a törlése."
 
-#: wp-admin/network/site-users.php:234
+#: wp-admin/network/site-users.php:241
 msgid "Enter the username of an existing user."
 msgstr "A létező felhasználók közül egy felhasználói nevet kell megadni"
 
@@ -820,7 +820,7 @@ msgstr "A létező felhasználók közül egy felhasználói nevet kell megadni"
 msgid "Site info updated."
 msgstr "Honlap információ frissítve."
 
-#: wp-admin/network/site-users.php:231
+#: wp-admin/network/site-users.php:238
 msgid "User is already a member of this site."
 msgstr "A felhasználó már tagja ennek a hálózatnak."
 
@@ -832,23 +832,23 @@ msgstr "Elnézést, nincs megfelelő jogosultság a honlap törléséhez."
 msgid "Cannot add user."
 msgstr "Nem sikerült a felhasználót hozzáadni."
 
-#: wp-admin/network/site-users.php:300 wp-admin/network/user-new.php:129
+#: wp-admin/network/site-users.php:307 wp-admin/network/user-new.php:129
 msgid "Add User"
 msgstr "Új felhasználó létrehozása"
 
-#: wp-admin/network/site-users.php:249
+#: wp-admin/network/site-users.php:256
 msgid "User created."
 msgstr "Új felhasználó létrehozva."
 
-#: wp-admin/network/site-users.php:246
+#: wp-admin/network/site-users.php:253
 msgid "Select a user to remove."
 msgstr "Felhasználó kiválasztása az eltávolításához"
 
-#: wp-admin/network/site-users.php:240
+#: wp-admin/network/site-users.php:247
 msgid "Select a user to change role."
 msgstr "Szerepkör váltáshoz válasszunk ki egy felhasználót"
 
-#: wp-admin/network/site-users.php:252
+#: wp-admin/network/site-users.php:259
 msgid "Enter the username and email."
 msgstr "Adjuk meg a felhasználói nevet és az email címet"
 
@@ -1040,7 +1040,7 @@ msgstr "A honlap ID belső használatra szolgál, és nem látható a honlap fel
 msgid "Deactivate, Archive, and Spam which lead to confirmation screens. These actions can be reversed later."
 msgstr "Kikapcsolás, Archiválás, és Spamnek nyilvánítás melyek után megerősítés kell. Ezeket a műveleteket később is el lehet végezni."
 
-#: wp-admin/network/site-new.php:24
+#: wp-admin/network/site-new.php:25
 msgid "If the admin email for the new site does not exist in the database, a new user will also be created."
 msgstr "Amennyiben az új oldal számára nem létezik az admin email az adatbázisban,  egy új felhasználó is létre fog jönni."
 
@@ -1117,15 +1117,15 @@ msgid "New site settings are defaults applied when a new site is created in the 
 msgstr "Az új honlap beállítások alapértelmezett értékeket tartalmaznak a hálózaton regisztrálandó új honlapok számára. Ez tartalmazza az üdvözlő levél szövegeket, új felhasználói fiók vagy honlap létrehozásakor, az első bejegyzés tartalmát, az első oldalt, az első hozzászólást, a hozzászólás szerzőjét, és a szerző hivatkozását."
 
 #. translators: %s: reserved names list
-#: wp-admin/network/site-new.php:51
+#: wp-admin/network/site-new.php:52
 msgid "The following words are reserved for use by WordPress functions and cannot be used as blog names: %s"
 msgstr "A következő szavak WordPress funkciók számára van fenntartva, ezért nem lehetnek blog nevek: %s"
 
-#: wp-admin/network/upgrade.php:111
+#: wp-admin/network/upgrade.php:112
 msgid "If your browser doesn&#8217;t start loading the next page automatically, click this link:"
 msgstr "Amennyiben a böngésző nem kezdi el tölteni a következő oldalt automatikusan, akkor kattintás erre a hivatkozásra:"
 
-#: wp-admin/network/site-new.php:37
+#: wp-admin/network/site-new.php:38
 msgid "Can&#8217;t create an empty site."
 msgstr "Üres honlap nem hozható létre."
 
@@ -1193,7 +1193,7 @@ msgstr "Honlapok törölve."
 msgid "Sorry, you are not allowed to change the current site."
 msgstr "Elnézést, nincs megfelelő jogosultság az aktuális honlap módosításához."
 
-#: wp-admin/network/site-new.php:115
+#: wp-admin/network/site-new.php:116
 msgid "There was an error creating the user."
 msgstr "Hiba történt a felhasználó létrehozása közben"
 
@@ -1225,7 +1225,7 @@ msgstr "Első bejegyzés az új honlapon."
 msgid "The author of the first comment on a new site."
 msgstr "Első hozzászólás szerzője egy új honlapon."
 
-#: wp-admin/network/upgrade.php:67
+#: wp-admin/network/upgrade.php:68
 msgid "All done!"
 msgstr "Minden elkészült!"
 
@@ -1265,15 +1265,15 @@ msgstr "Műveletek beállításai"
 msgid "Enable administration menus"
 msgstr "Adminisztrációs menü bekapcsolása"
 
-#: wp-admin/network/site-new.php:80
+#: wp-admin/network/site-new.php:81
 msgid "Missing email address."
 msgstr "Hibás email cím"
 
-#: wp-admin/network/site-new.php:77
+#: wp-admin/network/site-new.php:78
 msgid "Missing or invalid site address."
 msgstr "Hibás, vagy nem szabványos honlap cím"
 
-#: wp-admin/network/upgrade.php:111
+#: wp-admin/network/upgrade.php:112
 msgid "Next Sites"
 msgstr "Következő honlap"
 
@@ -1294,7 +1294,7 @@ msgid "The welcome email sent to new site owners."
 msgstr "Az üdvözlő email elküldve az új honlap tulajdonosának."
 
 #. translators: %s: network name
-#: wp-admin/network/site-new.php:140
+#: wp-admin/network/site-new.php:141
 msgid "[%s] New Site Created"
 msgstr "[%s] Új honlap került létrehozásra"
 
@@ -1302,19 +1302,19 @@ msgstr "[%s] Új honlap került létrehozásra"
 msgid "Network Admin Email"
 msgstr "Hálózat admin e-mail címe"
 
-#: wp-admin/network/site-new.php:247
+#: wp-admin/network/site-new.php:248
 msgid "The username and password will be mailed to this email address."
 msgstr "A felhasználó nevet és a jelszót a megadott email címre küldjük."
 
-#: wp-admin/network/site-new.php:247
+#: wp-admin/network/site-new.php:248
 msgid "A new user will be created if the above email address is not in the database."
 msgstr "Új felhasználó jön létre, ha a fenti email cím nincs az adatbázisban."
 
-#: wp-admin/network/site-new.php:243
+#: wp-admin/network/site-new.php:244
 msgid "Admin Email"
 msgstr "Adminisztrátor email"
 
-#: wp-admin/network/site-new.php:259
+#: wp-admin/network/site-new.php:260
 msgid "Add Site"
 msgstr "Honlap hozzáadása"
 
@@ -1378,7 +1378,7 @@ msgstr "Regisztrációs értesítő"
 msgid "Allow new registrations"
 msgstr "Új regisztrációk engedélyezése"
 
-#: wp-admin/network/site-users.php:255
+#: wp-admin/network/site-users.php:262
 msgid "Duplicated username or email address."
 msgstr "A felhasználó vagy az email cím már szerepel az adatbázisban."
 

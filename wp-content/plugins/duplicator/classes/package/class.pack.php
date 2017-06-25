@@ -104,7 +104,7 @@ class DUP_Package
         $report['SRV'] = $srv['SRV'];
 
         //FILES
-        $this->Archive->getScanData();
+        $this->Archive->buildScanStats();
         $dirCount  = count($this->Archive->Dirs);
         $fileCount = count($this->Archive->Files);
         $fullCount = $dirCount + $fileCount;
@@ -325,6 +325,7 @@ class DUP_Package
             $this->Archive->PackDir         = rtrim(DUPLICATOR_WPROOTPATH, '/');
             $this->Archive->Format          = 'ZIP';
             $this->Archive->FilterOn        = isset($post['filter-on']) ? 1 : 0;
+			$this->Archive->ExportOnlyDB    = isset($post['export-onlydb']) ? 1 : 0;
             $this->Archive->FilterDirs      = esc_html($filter_dirs);
             $this->Archive->FilterExts      = str_replace(array('.', ' '), "", esc_html($filter_exts));
             //INSTALLER
@@ -449,6 +450,7 @@ class DUP_Package
         }
         //Incase unserilaize fails
         $obj = (is_object($obj)) ? $obj : new DUP_Package();
+	
         return $obj;
     }
 
@@ -503,7 +505,7 @@ class DUP_Package
         if ($all) {
             $dir = DUPLICATOR_SSDIR_PATH_TMP."/*";
             foreach (glob($dir) as $file) {
-                unlink($file);
+                @unlink($file);
             }
         }
         //Remove scan files that are 24 hours old
@@ -511,7 +513,7 @@ class DUP_Package
             $dir = DUPLICATOR_SSDIR_PATH_TMP."/*_scan.json";
             foreach (glob($dir) as $file) {
                 if (filemtime($file) <= time() - 86400) {
-                    unlink($file);
+                    @unlink($file);
                 }
             }
         }
@@ -582,7 +584,7 @@ class DUP_Package
                 $name = basename($file);
                 if (strstr($name, $this->NameHash)) {
                     copy($file, "{$newPath}/{$name}");
-                    unlink($file);
+                    @unlink($file);
                 }
             }
         }
