@@ -87,3 +87,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.custom-logo-link {
+	display: inline-block;
+	vertical-align: middle;
+  /* mmmn: width added to scale down good quality logo pic*/
+	width: 200px;
+  /* mmmn: right margin removed not to confuse middle align */
+
+}

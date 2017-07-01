@@ -12,6 +12,18 @@ function rebalance_child_mmn_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'rebalance_child_mmn_styles' );
 
+//mmn: added for better quality logo pic (as opposed to 80x80px logo in parent theme)
+function theme_prefix_setup() {
+	add_theme_support( 'custom-logo', array(
+		'height'      => 200,
+		'width'       => 200,
+		'flex-width' => true,
+	) );
+
+}
+add_action( 'after_setup_theme', 'theme_prefix_setup',20); // define prio 20 so that parent's custom logo setting is overridden
+
+
 /* mmmnmnm, mmn */
 function rebalance_entry_footer_card() {
 
