@@ -96,3 +96,19 @@
   /* mmmn: right margin removed not to confuse middle align */
 
 }
+
+.donate{
+  font-style: normal;
+  margin:10px;
+}
+
+.donate a{
+  text-decoration:none
+}
+
+/*mmn: scale down featured image*/
+.entry-image img{
+   height: auto;
+    width: auto;
+    max-height: 500px;
+}

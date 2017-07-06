@@ -241,4 +241,8 @@ function mobile_breakpoint() {
   return 100000;
 }*/
 
+/*mmn: try to get WP not to kill pic quality */
+add_filter('jpeg_quality', function($arg){return 100;},20);
+
+
 ?>
