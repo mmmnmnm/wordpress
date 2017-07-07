@@ -60,7 +60,7 @@
 				if ( $description || is_customize_preview() ) : ?>
 				<!--<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?><br>-->
 <div class="site-description">
-					<p class="donate">[DONÁLJ / DONATE: 12425245-123123d <a href="donalj.hu">&#9432;</a>]</p>
+					<p class="donate">[DONÁLJ / DONATE: 16200223-10061219 <a href="http://www.mmmnmnm.com/donate/">&#9432;</a>]</p>
 </div>
 				<!--</p>-->
 			<?php endif; ?>
