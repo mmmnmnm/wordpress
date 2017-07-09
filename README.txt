@@ -10,8 +10,11 @@
 - /wp-content/plugins/the-events-calendar/src/Tribe/Main.php (line 67): has_archive attribute to false -> effect: events in calendar's month view are aligned horizontally
 
 4. Changes that need to be re-added after Wordpress update:
-	•	/wp-includes/functions.php (line 106) and corresponding definition of myucfirst() function -> effect: first letter of months uppercased
+-	/wp-includes/functions.php (line 106) and corresponding definition of myucfirst() function -> effect: first letter of months uppercased
 
-TODO:
-- Display multiple category page title when multiple categories selected, e.g., mmmnmnm.com/category/review,interview
-  - Hint: /themes/rebalance/archive.php
+Other notes:
+- Site description is currently disabled and is replaced by constant donate info (site descr. is still visible on the browser tab)
+
+TODOs:
+- Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/rewview,interview
+  - Hint: /themes/archive.php -> page title

@@ -62,6 +62,10 @@
 .english-content a:hover{
   color:red !important;
 }
+/*mmn: any English content text on a mixed language page should be this color*/
+.english-content{
+  color:#d1b8c0 !important;
+}
 
 /*mmn added*/
 @font-face {
@@ -100,6 +104,7 @@
 .donate{
   font-style: normal;
   margin:10px;
+  color:#d1b8c0 !important;
 }
 
 .donate a{
