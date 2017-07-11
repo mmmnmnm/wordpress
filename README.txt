@@ -16,5 +16,5 @@ Other notes:
 - Site description is currently disabled and is replaced by constant donate info (site descr. is still visible on the browser tab)
 
 TODOs:
-- Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/rewview,interview
+- Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/review,interview
   - Hint: /themes/archive.php -> page title
