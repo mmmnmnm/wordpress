@@ -14,6 +14,7 @@
 
 Other notes:
 - Site description is currently disabled and is replaced by constant donate info (site descr. is still visible on the browser tab)
+- Font does not render on some machines: SOLVED https://stackoverflow.com/questions/45715928/solved-rubik-font-not-rendering-anymore
 
 TODOs:
 - Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/review,interview
