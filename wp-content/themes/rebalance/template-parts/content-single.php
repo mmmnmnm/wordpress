@@ -23,7 +23,7 @@
 			)); ?>
 	</header><!-- .entry-header -->
 
-	<?php if ( has_post_thumbnail() ) { ?>
+	<?php if ( rebalance_has_post_thumbnail() ) { ?>
 	<div class="post-hero-image clear-fix">
 		<figure class="entry-image">
 			<?php the_post_thumbnail( 'full' ); ?>

@@ -54,8 +54,6 @@ function rebalance_entry_meta() {
 	$categories_list = get_the_term_list( get_the_ID(), 'category', '<span class="entry-categories">', esc_html_x( ', ', 'Categories separator', 'rebalance' ), '</span>' );
 	// Project type
 	$project_type_list = get_the_term_list( get_the_ID(), 'jetpack-portfolio-type', '<span class="entry-categories">', esc_html_x( ', ', 'Categories separator', 'rebalance' ), '</span>' );
-	// Tags
-	$tags_list = get_the_tag_list( '<span class="entry-tags">', esc_html_x( ', ', 'Tags separator', 'rebalance' ), '</span>' );
 
 	// Portfolio output
 	if ( 'jetpack-portfolio' === get_post_type() ) {
@@ -92,7 +90,7 @@ function rebalance_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'rebalance' ) );
-		if ( $tags_list ) {
+		if ( $tags_list && ! is_wp_error( $tags_list ) ) {
 			echo '<span class="entry-tags">' . $tags_list . '</span>';
 		}
 	}
@@ -170,40 +168,42 @@ function rebalance_the_attached_image() {
 	$attachment_size = 'full';
 	$next_attachment_url = wp_get_attachment_url();
 
-	/*
-	 * Grab the IDs of all the image attachments in a gallery so we can get the URL
-	 * of the next adjacent image in a gallery, or the first image (if we're
-	 * looking at the last image in a gallery), or, in a gallery of one, just the
-	 * link to that image file.
-	 */
-	$attachment_ids = get_posts(array(
-		'post_parent'    => $post->post_parent,
-		'fields'         => 'ids',
-		'numberposts'    => 50,
-		'post_status'    => 'inherit',
-		'post_type'      => 'attachment',
-		'post_mime_type' => 'image',
-		'order'          => 'ASC',
-		'orderby'        => 'menu_order ID',
-	));
+	if ( $post->post_parent ) {
+		/*
+		 * Grab the IDs of all the image attachments in a gallery so we can get the URL
+		 * of the next adjacent image in a gallery, or the first image (if we're
+		 * looking at the last image in a gallery), or, in a gallery of one, just the
+		 * link to that image file.
+		 */
+		$attachment_ids = get_posts(array(
+			'post_parent'    => $post->post_parent,
+			'fields'         => 'ids',
+			'numberposts'    => 999,
+			'post_status'    => 'inherit',
+			'post_type'      => 'attachment',
+			'post_mime_type' => 'image',
+			'order'          => 'ASC',
+			'orderby'        => 'menu_order ID',
+		));
 
-	// If there is more than 1 attachment in a gallery...
-	if (count($attachment_ids) > 1) {
-		foreach ($attachment_ids as $idx => $attachment_id) {
-			if ($attachment_id == $post->ID) {
-				$next_id = $attachment_ids[ ( $idx + 1 ) % count( $attachment_ids ) ];
-				break;
+		// If there is more than 1 attachment in a gallery...
+		if (count($attachment_ids) > 1) {
+			foreach ($attachment_ids as $idx => $attachment_id) {
+				if ($attachment_id == $post->ID) {
+					$next_id = $attachment_ids[ ( $idx + 1 ) % count( $attachment_ids ) ];
+					break;
+				}
 			}
-		}
 
-		// get the URL of the next image attachment...
-		if ($next_id) {
-			$next_attachment_url = get_attachment_link($next_id);
-		}
+			// get the URL of the next image attachment...
+			if ($next_id) {
+				$next_attachment_url = get_attachment_link($next_id);
+			}
 
-		// or get the URL of the first image attachment.
-		else {
-			$next_attachment_url = get_attachment_link(reset($attachment_ids));
+			// or get the URL of the first image attachment.
+			else {
+				$next_attachment_url = get_attachment_link(reset($attachment_ids));
+			}
 		}
 	}
 

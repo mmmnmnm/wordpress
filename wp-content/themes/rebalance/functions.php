@@ -7,7 +7,6 @@
  * @package Rebalance
  */
 
-
 if ( ! function_exists( 'rebalance_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -57,7 +56,7 @@ function rebalance_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 720, 1200 );
-	add_image_size( 'rebalance-archive', 560, 999 );
+	add_image_size( 'rebalance-archive', 560, 9999 );
 
 	/*
 	 * This theme uses wp_nav_menu() in one location.

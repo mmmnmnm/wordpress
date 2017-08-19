@@ -16,7 +16,7 @@ class DUPX_U
      *
      * @param string $path		A path
      *
-     * @return string The orginal $path with a with '/' added to the end.
+     * @return string The original $path with a with '/' added to the end.
      */
     public static function addSlash($path)
     {
@@ -64,7 +64,7 @@ class DUPX_U
      *  Returns 256 spaces
      *
      *  PHP_SAPI for fcgi requires a data flush of at least 256
-     *  bytes every 40 seconds or else it forces a script hault
+     *  bytes every 40 seconds or else it forces a script halt
      *
      * @return string A series of 256 spaces ' '
      */
@@ -107,7 +107,7 @@ class DUPX_U
     }
 
     /**
-     *  Check to see if the internet is accessable
+     *  Check to see if the internet is accessible
      *
      *  Note: fsocketopen on windows doesn't seem to honor $timeout setting.
      *
@@ -146,11 +146,11 @@ class DUPX_U
 
 
 	/**
-     * Is the string json
+     * Is the string JSON
      *
      * @param string $string Any string blob
      *
-     * @return bool Returns true if the string is json encoded
+     * @return bool Returns true if the string is JSON encoded
      */
     public static function isJSON($string)
     {
@@ -192,7 +192,7 @@ class DUPX_U
      *
      * @param $val Memory size shorthand notation string such as 10M, 1G
      *
-     * @returns int The byte representation of the shortand $val
+     * @returns int The byte representation of the shorthand $val
      */
     public static function getBytes($val)
     {
@@ -217,12 +217,12 @@ class DUPX_U
      *  Makes path safe for any OS for PHP
      *
      *  Paths should ALWAYS READ be "/"
-     * 		uni:  /home/path/file.xt
+     * 		uni:  /home/path/file.txt
      * 		win:  D:/home/path/file.txt
      *
      *  @param string $path		The path to make safe
      *
-     *  @return string The orginal $path with a with all slashes facing '/'.
+     *  @return string The original $path with a with all slashes facing '/'.
      */
     public static function setSafePath($path)
     {
@@ -235,7 +235,7 @@ class DUPX_U
      *  @param array  $list		An array of strings to search for
      *  @param string $haystack	The string blob to search through
      *
-     *  @return array An array of strings from the $list array fround in the $haystack
+     *  @return array An array of strings from the $list array found in the $haystack
      */
     public static function getListValues($list, $haystack)
     {
@@ -249,12 +249,12 @@ class DUPX_U
     }
 
     /**
-     *  Makes path unsafe for any OS for PHP used primarly to show default
-     *  Winodws OS path standard
+     *  Makes path unsafe for any OS for PHP used primarily to show default
+     *  Windows OS path standard
      *
      *  @param string $path		The path to make unsafe
      *
-     *  @return string The orginal $path with a with all slashes facing '\'.
+     *  @return string The original $path with a with all slashes facing '\'.
      */
     public static function unsetSafePath($path)
     {

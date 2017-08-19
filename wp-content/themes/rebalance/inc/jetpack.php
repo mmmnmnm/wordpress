@@ -71,6 +71,8 @@ function rebalance_jetpack_setup() {
 		'featured-images' => array(
 			'archive'    => true,
 			'post'       => true,
+			'portfolio'  => true,
+			'fallback'   => true,
 		),
 	) );
 } // end function rebalance_jetpack_setup
@@ -106,7 +108,7 @@ add_filter( 'infinite_scroll_query_args', 'rebalance_jetpack_infinite_scroll_que
 /**
  * Getter function for Featured Content
  *
- * @return (string) The value of the filter defined in add_theme_support( 'featured-content' ).
+ * @return (string) The value of the filter defined in add_theme_support( 'featured-content' )
  */
 function rebalance_get_featured_projects() {
 	return apply_filters( 'rebalance_get_featured_projects', array() );
@@ -119,23 +121,25 @@ function rebalance_get_featured_projects() {
  * @return (boolean) true/false
  */
 function rebalance_has_featured_projects( $minimum = 1 ) {
-	if ( is_paged() )
+	if ( is_paged() ) {
 		return false;
+	}
 
 	$minimum = absint( $minimum );
 	$featured_posts = apply_filters( 'rebalance_get_featured_projects', array() );
 
-	if ( ! is_array( $featured_posts ) )
+	if ( ! is_array( $featured_posts ) ) {
 		return false;
+	}
 
-	if ( $minimum > count( $featured_posts ) )
+	if ( $minimum > count( $featured_posts ) ) {
 		return false;
+	}
 
 	return true;
 }
 
 function rebalance_get_featured_project_ids() {
-
 	// Get array of cached results if they exist.
 	$featured_ids = get_transient( 'featured_content_ids' );
 
@@ -169,7 +173,7 @@ function rebalance_get_featured_project_ids() {
 }
 
 /**
- * Portfolio Title.
+ * Portfolio Title
  */
 function rebalance_portfolio_title( $before = '', $after = '' ) {
 	$jetpack_portfolio_title = get_option( 'jetpack_portfolio_title' );
@@ -189,7 +193,7 @@ function rebalance_portfolio_title( $before = '', $after = '' ) {
 }
 
 /**
- * Portfolio Content.
+ * Portfolio Content
  */
 function rebalance_portfolio_content( $before = '', $after = '' ) {
 	$jetpack_portfolio_content = get_option( 'jetpack_portfolio_content' );
@@ -203,7 +207,7 @@ function rebalance_portfolio_content( $before = '', $after = '' ) {
 }
 
 /**
- * Portfolio Featured Image.
+ * Portfolio Featured Image
  */
 function rebalance_portfolio_thumbnail( $before = '', $after = '' ) {
 	$jetpack_portfolio_featured_image = get_option( 'jetpack_portfolio_featured_image' );
@@ -215,7 +219,7 @@ function rebalance_portfolio_thumbnail( $before = '', $after = '' ) {
 }
 
 /**
- * Filter Infinite Scroll text handle.
+ * Filter Infinite Scroll text handle
  */
 function rebalance_portfolio_infinite_scroll_navigation( $js_settings ) {
 	if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) {
@@ -227,7 +231,8 @@ function rebalance_portfolio_infinite_scroll_navigation( $js_settings ) {
 add_filter( 'infinite_scroll_js_settings', 'rebalance_portfolio_infinite_scroll_navigation' );
 
 /**
- * Return early if Author Bio is not available.
+ * Return Author Bio
+ * If Jetpack is not available, fall back to rebalance_author_meta()
  */
 function rebalance_author_bio() {
 	if ( ! function_exists( 'jetpack_author_bio' ) ) {
@@ -238,9 +243,21 @@ function rebalance_author_bio() {
 }
 
 /**
- * Author Bio Avatar Size.
+ * Author Author Bio Avatar Size
  */
 function rebalance_author_bio_avatar_size() {
 	return 111;
 }
 add_filter( 'jetpack_author_bio_avatar_size', 'rebalance_author_bio_avatar_size' );
+
+/**
+ * Custom function to check for a post thumbnail
+ * If Jetpack is not available, fall back to has_post_thumbnail()
+ */
+function rebalance_has_post_thumbnail( $post = null ) {
+	if ( function_exists( 'jetpack_has_featured_image' ) ) {
+		return jetpack_has_featured_image( $post );
+	} else {
+		return has_post_thumbnail( $post );
+	}
+}

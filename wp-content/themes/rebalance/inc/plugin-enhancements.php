@@ -163,6 +163,15 @@ class Rebalance_Theme_Plugin_Enhancements {
 				'module' => 'custom-content-types',
 			);
 		endif;
+		
+		if ( current_theme_supports( 'jetpack-content-options' ) ) :
+			$dependencies['content-options'] = array(
+				'name' => esc_html__( 'Content Options', 'rebalance' ),
+				'slug' => 'jetpack-content-options',
+				'url'  => '',
+				'module' => 'none',
+			);
+		endif;
 
 		return $dependencies;
 	}
@@ -364,7 +373,7 @@ class Rebalance_Theme_Plugin_Enhancements {
 }
 add_action( 'admin_head', array( 'Rebalance_Theme_Plugin_Enhancements', 'init' ) );
 
-function rebalance_enqueue_scripts() {
+function enqueue_scripts() {
 	// Add the admin JS if the notice has not been dismissed
 	if ( is_admin() && get_user_meta( get_current_user_id(), 'rebalance_jetpack_admin_notice', true ) !== 'dismissed' ) {
 
@@ -377,13 +386,13 @@ function rebalance_enqueue_scripts() {
 		));
 	}
 }
-add_action( 'admin_enqueue_scripts', 'rebalance_enqueue_scripts' );
+add_action( 'admin_enqueue_scripts', 'enqueue_scripts' );
 
 /**
  *	Process the AJAX request on the server and send a response back to the JS.
  *	If nonce is valid, update the current user's meta to prevent notice from displaying.
  */
-function rebalance_dismiss_admin_notice() {
+function dismiss_admin_notice() {
 	// Verify the security nonce and die if it fails
 	if ( ! isset( $_POST['rebalance_jetpack_admin_nonce'] ) || ! wp_verify_nonce( $_POST['rebalance_jetpack_admin_nonce'], 'rebalance_jetpack_admin_nonce' ) ) {
 		wp_die( __( 'Your request failed permission check.', 'rebalance' ) );
@@ -396,5 +405,5 @@ function rebalance_dismiss_admin_notice() {
 		'message' => __( 'Your request was processed. See ya!', 'rebalance' )
 	) );
 }
-add_action( 'wp_ajax_rebalance_jetpack_admin_notice', 'rebalance_dismiss_admin_notice' );
+add_action( 'wp_ajax_rebalance_jetpack_admin_notice', 'dismiss_admin_notice' );
 

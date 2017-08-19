@@ -234,6 +234,18 @@ function suppress_author(){
   }
 }
 
+function suppress_feature_image(){
+  //mmmnmnm, mmn: introduced new custom field to suppress feature image
+  $custom_fields = get_post_custom(get_the_ID());
+  $suppress_author = $custom_fields['suppress-feature-image'];
+  if ($suppress_author[0] == 'yes'){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
+
 
 /*add_action( 'tribe_events_mobile_breakpoint', 'mobile_breakpoint' );
 

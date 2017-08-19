@@ -50,27 +50,29 @@ get_header(); ?>
 						?>
 					</div> <!-- /post-meta -->
 
-					<nav class="navigation image-navigation post-navigation" role="navigation">
-						<h2 class="screen-reader-text">Image navigation</h2>
-						<div class="nav-links">
-							<?php // If Previous image exists, show a link
-								ob_start();
-								previous_image_link();
-								$previous_link = ob_get_contents();
-								ob_end_clean();
-								if ( $previous_link != '' ) { ?>
-							<div class="nav-previous"><?php previous_image_link( false, '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous Image', 'rebalance' ) . '</span>' ); ?></div>
-							<?php } ?>
-							<?php // If Next image exists, show a link
-								ob_start();
-								next_image_link();
-								$next_link = ob_get_contents();
-								ob_end_clean();
-								if ( $next_link != '' ) { ?>
-							<div class="nav-next"><?php next_image_link( false, '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next Image', 'rebalance' ) . '</span>' ); ?></div>
-							<?php } ?>
-						</div><!-- .nav-links -->
-					</nav><!-- .image-navigation -->
+					<?php if ( $post->post_parent ) { ?>
+						<nav class="navigation image-navigation post-navigation" role="navigation">
+							<h2 class="screen-reader-text">Image navigation</h2>
+							<div class="nav-links">
+								<?php // If Previous image exists, show a link
+									ob_start();
+									previous_image_link();
+									$previous_link = ob_get_contents();
+									ob_end_clean();
+									if ( $previous_link != '' ) { ?>
+								<div class="nav-previous"><?php previous_image_link( false, '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Previous Image', 'rebalance' ) . '</span>' ); ?></div>
+								<?php } ?>
+								<?php // If Next image exists, show a link
+									ob_start();
+									next_image_link();
+									$next_link = ob_get_contents();
+									ob_end_clean();
+									if ( $next_link != '' ) { ?>
+								<div class="nav-next"><?php next_image_link( false, '<span class="meta-nav" aria-hidden="true">' . esc_html__( 'Next Image', 'rebalance' ) . '</span>' ); ?></div>
+								<?php } ?>
+							</div><!-- .nav-links -->
+						</nav><!-- .image-navigation -->
+					<?php } ?>
 
 				</header> <!-- /entry-header -->
 

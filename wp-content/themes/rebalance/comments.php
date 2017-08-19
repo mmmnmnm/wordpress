@@ -82,7 +82,7 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php comment_form( array(
-		'label_submit' => __( 'Submit', 'rebalance' ) )
+		'label_submit' => __( 'Submit', 'rebalance' ) ) // Escaped on core
 	); ?>
 
 </div><!-- #comments -->

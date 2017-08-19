@@ -3,8 +3,8 @@ Contributors: corylamleorg, bobriley
 Donate link: www.lifeinthegrid.com/partner
 Tags: migration, backup, restore, move, migrate, duplicate, transfer, clone, automate, copy site
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 1.2.8
+Tested up to: 4.8
+Stable tag: 1.2.18
 License: GPLv2
 
 WordPress migration and backups are much easier with Duplicator! Clone, backup, move and transfer an entire site from one location to another. 
@@ -16,7 +16,7 @@ WordPress migration and backups are much easier with Duplicator! Clone, backup, 
 For complete details visit [snapcreek.com](https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wp_org&utm_content=desc_details&utm_campaign=duplicator_free).  
 
 = Quick Video Demo =
-http://www.youtube.com/watch?v=yZ7pHmR9JC8
+http://www.youtube.com/watch?v=oc73jtvHWYQ
 
 = Overview =
 Duplicator enables you to:

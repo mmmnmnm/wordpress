@@ -2,13 +2,13 @@
 Theme Name: Rebalance
 Theme URI: https://wordpress.com/themes/rebalance/
 Description: Rebalance is a new spin on the classic Imbalance 2 portfolio theme. It is a simple, modern theme for photographers, artists, and graphic designers looking to showcase their work.
-Version: 1.1.3
+Version: 1.1.4
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rebalance
-Tags: one-column, two-columns, three-columns, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready
+Tags: custom-background, custom-colors, custom-menu, featured-images, grid-layout, one-column, portfolio, theme-options, threaded-comments, three-columns, translation-ready, two-columns
 */
 
 /*--------------------------------------------------------------*/
@@ -986,7 +986,8 @@ a:active {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.social-menu a[href*="behance.com"]:before {
+.social-menu a[href*="behance.com"]:before,
+.social-menu a[href*="behance.net"]:before {
 	content: '\f1b4';
 }
 
@@ -2083,12 +2084,10 @@ a:active {
 }
 
 .single-jetpack-portfolio .hentry {
-	border-top: 3px solid #000;
 	padding-top: 30px;
 }
 
 .single-jetpack-portfolio .has-post-thumbnail {
-	border-top: none;
 	padding-top: 0;
 }
 

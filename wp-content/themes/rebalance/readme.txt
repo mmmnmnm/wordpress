@@ -1,8 +1,8 @@
 === Rebalance ===
 
 Contributors: automattic
-Requires at least: 4.1
-Tested up to: 4.6.1
+Requires at least: 4.5
+Tested up to: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,10 +26,10 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Credits ==
 
-* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* columnist.js https://github.com/weblinc/jquery-columnlist, (C) 2012 WebLinc LLC, [MIT](http://opensource.org/licenses/MIT)
-* Font Awesome http://fontawesome.io, (C) 2012-2016 Dave Gandy, [SIL OFL 1.1](http://scripts.sil.org/OFL), [MIT](http://opensource.org/licenses/MIT)
+* Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2017 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* columnist.js https://github.com/weblinc/jquery-columnlist, (C) 2012-2017 WebLinc LLC, [MIT](http://opensource.org/licenses/MIT)
+* Font Awesome http://fontawesome.io, (C) 2012-2017 Dave Gandy, [SIL OFL 1.1](http://scripts.sil.org/OFL), [MIT](http://opensource.org/licenses/MIT)
 * Images: licensed under [CC0](http://creativecommons.org/choose/zero/)
 ** https://www.flickr.com/photos/usgeologicalsurvey/16656107187/
 ** https://pixabay.com/en/rocket-spaceship-space-shuttle-79394/
@@ -39,6 +39,48 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 ** https://unsplash.com/photos/8Hjx3GNZYeA
 
 == Changelog ==
+
+= 29 June 2017 =
+* Multiple changes:
+
+= 14 June 2017 =
+* Add behance.net support for social menu. Closes #4567
+
+= 26 May 2017 =
+* Add support for Content Options - Featured Images - Portfolio CPT
+
+= 5 May 2017 =
+* Check for post parent object before outputting post parent information to prevent fatals.
+
+= 20 April 2017 =
+* Add support for Smarter Featured Images.
+
+= 14 April 2017 =
+* Update post thumbnail size to better reflect the desired cropping behavior.
+
+= 13 April 2017 =
+* Check for post parent before outputting next, previous, and image attachment information to prevent fatals.
+
+= 22 March 2017 =
+* add Custom Colors annotations directly to the theme
+* move fonts annotations directly into the theme
+
+= 9 February 2017 =
+* Check for is_wp_error() in cases when using get_the_tag_list() to avoid potential fatal errors.
+
+= 24 January 2017 =
+* Making sure site description also hides when 'Display Site Title and Tagline' is unchecked.
+
+= 18 January 2017 =
+* Add translation of Headstart annotation
+
+= 17 January 2017 =
+* Add new grid-layout tag to stylesheet.
+* Add portfolio tag to style.css since theme is supporting Portfolio CPT.
+* Update FontAwesome version to 4.7.0.
+
+= 5 January 2017 =
+* Refactor suggested changes from .org submission review.
 
 = 28 November 2016 =
 * Added Image credits

@@ -104,7 +104,7 @@ class DUP_Package
         $report['SRV'] = $srv['SRV'];
 
         //FILES
-        $this->Archive->buildScanStats();
+        $this->Archive->getScannerData();
         $dirCount  = count($this->Archive->Dirs);
         $fileCount = count($this->Archive->Files);
         $fullCount = $dirCount + $fileCount;
@@ -113,31 +113,28 @@ class DUP_Package
         $report['ARC']['DirCount']  = number_format($dirCount);
         $report['ARC']['FileCount'] = number_format($fileCount);
         $report['ARC']['FullCount'] = number_format($fullCount);
-
-        $report['ARC']['FilterInfo']['Dirs']  = $this->Archive->FilterInfo->Dirs;
-        $report['ARC']['FilterInfo']['Files'] = $this->Archive->FilterInfo->Files;
-        $report['ARC']['FilterInfo']['Exts']  = $this->Archive->FilterInfo->Exts;
-
-        $report['ARC']['Status']['Size']  = ($this->Archive->Size > DUPLICATOR_SCAN_SITE) ? 'Warn' : 'Good';
+		$report['ARC']['FilterDirsAll'] = $this->Archive->FilterDirsAll;
+		$report['ARC']['FilterFilesAll'] = $this->Archive->FilterFilesAll;
+		$report['ARC']['FilterExtsAll'] = $this->Archive->FilterExtsAll;
+        $report['ARC']['FilterInfo'] = $this->Archive->FilterInfo;
+        $report['ARC']['Status']['Size']  = ($this->Archive->Size > DUPLICATOR_SCAN_SIZE_DEFAULT) ? 'Warn' : 'Good';
         $report['ARC']['Status']['Names'] = (count($this->Archive->FilterInfo->Files->Warning) + count($this->Archive->FilterInfo->Dirs->Warning)) ? 'Warn' : 'Good';
-        $report['ARC']['Status']['Big']   = count($this->Archive->FilterInfo->Files->Size) ? 'Warn' : 'Good';
-
+        //$report['ARC']['Status']['Big']   = count($this->Archive->FilterInfo->Files->Size) ? 'Warn' : 'Good';
         $report['ARC']['Dirs']  = $this->Archive->Dirs;
         $report['ARC']['Files'] = $this->Archive->Files;
 
+
         //DATABASE
-        $db           = $this->Database->getScanData();
+        $db  = $this->Database->getScannerData();
         $report['DB'] = $db;
 
-        $warnings = array($report['SRV']['WEB']['ALL'],
+        $warnings = array(
             $report['SRV']['PHP']['ALL'],
             $report['SRV']['WP']['ALL'],
             $report['ARC']['Status']['Size'],
             $report['ARC']['Status']['Names'],
-            $report['ARC']['Status']['Big'],
-            $db['Status']['Size'],
-            $db['Status']['Rows'],
-            $db['Status']['Case']);
+            $db['Status']['DB_Size'],
+            $db['Status']['DB_Rows']);
 
         //array_count_values will throw a warning message if it has null values,
         //so lets replace all nulls with empty string
@@ -146,11 +143,14 @@ class DUP_Package
                 $warnings[$i] = '';
             }
         }
+		
         $warn_counts               = is_array($warnings) ? array_count_values($warnings) : 0;
-        $report['RPT']['Warnings'] = $warn_counts['Warn'];
-        $report['RPT']['Success']  = $warn_counts['Good'];
+        $report['RPT']['Warnings'] = is_null($warn_counts['Warn']) ? 0 : $warn_counts['Warn'];
+        $report['RPT']['Success']  = is_null($warn_counts['Good']) ? 0 : $warn_counts['Good'];
         $report['RPT']['ScanTime'] = DUP_Util::elapsedTime(DUP_Util::getMicrotime(), $timerStart);
         $fp                        = fopen(DUPLICATOR_SSDIR_PATH_TMP."/{$this->ScanFile}", 'w');
+
+
         fwrite($fp, json_encode($report));
         fclose($fp);
 
@@ -160,11 +160,10 @@ class DUP_Package
     /**
      * Starts the package build process
      *
-     * @return obj Retuns a DUP_Package object
+     * @return obj Returns a DUP_Package object
      */
     public function runBuild()
     {
-
         global $wp_version;
         global $wpdb;
         global $current_user;
@@ -231,7 +230,6 @@ class DUP_Package
         $this->Database->build($this);
         $this->Archive->build($this);
         $this->Installer->build($this);
-
 
         //INTEGRITY CHECKS
         DUP_Log::Info("\n********************************************************************************");
@@ -300,14 +298,15 @@ class DUP_Package
             $name       = substr(sanitize_file_name($name), 0, 40);
             $name       = str_replace($name_chars, '', $name);
 
-            $filter_dirs = isset($post['filter-dirs']) ? $this->parseDirectoryFilter($post['filter-dirs']) : '';
-            $filter_exts = isset($post['filter-exts']) ? $this->parseExtensionFilter($post['filter-exts']) : '';
-            $tablelist   = isset($post['dbtables']) ? implode(',', $post['dbtables']) : '';
-            $compatlist  = isset($post['dbcompat']) ? implode(',', $post['dbcompat']) : '';
-            $dbversion   = DUP_DB::getVersion();
-            $dbversion   = is_null($dbversion) ? '- unknown -' : $dbversion;
-            $dbcomments  = DUP_DB::getVariable('version_comment');
-            $dbcomments  = is_null($dbcomments) ? '- unknown -' : $dbcomments;
+            $filter_dirs  = isset($post['filter-dirs']) ? $this->Archive->parseDirectoryFilter($post['filter-dirs']) : '';
+			$filter_files = isset($post['filter-files']) ? $this->Archive->parseFileFilter($post['filter-files']) : '';
+            $filter_exts  = isset($post['filter-exts']) ? $this->Archive->parseExtensionFilter($post['filter-exts']) : '';
+            $tablelist    = isset($post['dbtables']) ? implode(',', $post['dbtables']) : '';
+            $compatlist   = isset($post['dbcompat']) ? implode(',', $post['dbcompat']) : '';
+            $dbversion    = DUP_DB::getVersion();
+            $dbversion    = is_null($dbversion) ? '- unknown -' : $dbversion;
+            $dbcomments   = DUP_DB::getVariable('version_comment');
+            $dbcomments   = is_null($dbcomments) ? '- unknown -' : $dbcomments;
 
             //PACKAGE
             $this->Created    = date("Y-m-d H:i:s");
@@ -327,17 +326,13 @@ class DUP_Package
             $this->Archive->FilterOn        = isset($post['filter-on']) ? 1 : 0;
 			$this->Archive->ExportOnlyDB    = isset($post['export-onlydb']) ? 1 : 0;
             $this->Archive->FilterDirs      = esc_html($filter_dirs);
+			 $this->Archive->FilterFiles    = esc_html($filter_files);
             $this->Archive->FilterExts      = str_replace(array('.', ' '), "", esc_html($filter_exts));
             //INSTALLER
             $this->Installer->OptsDBHost    = esc_html($post['dbhost']);
             $this->Installer->OptsDBPort    = esc_html($post['dbport']);
             $this->Installer->OptsDBName    = esc_html($post['dbname']);
             $this->Installer->OptsDBUser    = esc_html($post['dbuser']);
-            $this->Installer->OptsSSLAdmin  = isset($post['ssl-admin']) ? 1 : 0;
-            $this->Installer->OptsSSLLogin  = isset($post['ssl-login']) ? 1 : 0;
-            $this->Installer->OptsCacheWP   = isset($post['cache-wp']) ? 1 : 0;
-            $this->Installer->OptsCachePath = isset($post['cache-path']) ? 1 : 0;
-            $this->Installer->OptsURLNew    = esc_html($post['url-new']);
             //DATABASE
             $this->Database->FilterOn       = isset($post['dbfilter-on']) ? 1 : 0;
             $this->Database->FilterTables   = esc_html($tablelist);
@@ -364,6 +359,8 @@ class DUP_Package
         $reflectionClass->getProperty($property)->setValue($package, $value);
         update_option(self::OPT_ACTIVE, $package);
     }
+
+
 
     /**
      * Sets the status to log the state of the build
@@ -482,11 +479,13 @@ class DUP_Package
      *
      *  @return string   A default packagename such as 20170218_blogname
      */
-    public static function getDefaultName()
+    public static function getDefaultName($preDate = true)
     {
         //Remove specail_chars from final result
         $special_chars = array(".", "-");
-        $name          = date('Ymd').'_'.sanitize_title(get_bloginfo('name', 'display'));
+        $name          = ($preDate) 
+							? date('Ymd') . '_' . sanitize_title(get_bloginfo('name', 'display'))
+							: sanitize_title(get_bloginfo('name', 'display')) . '_' . date('Ymd');
         $name          = substr(sanitize_file_name($name), 0, 40);
         $name          = str_replace($special_chars, '', $name);
         return $name;
@@ -590,44 +589,8 @@ class DUP_Package
         }
     }
 
-    /**
-     *  Properly creates the directory filter list that is used for filtering directories
-     *
-     *  @param string $dirs A semi-colon list of dir paths
-     *  /path1_/path/;/path1_/path2/;
-     *
-     *  @returns string A cleaned up list of directory filters
-     */
-    private function parseDirectoryFilter($dirs = "")
-    {
-        $dirs        = str_replace(array("\n", "\t", "\r"), '', $dirs);
-        $filter_dirs = "";
-        $dir_array   = array_unique(explode(";", $dirs));
-        foreach ($dir_array as $val) {
-            if (strlen($val) >= 2) {
-                $filter_dirs .= DUP_Util::safePath(trim(rtrim($val, "/\\"))).";";
-            }
-        }
-        return $filter_dirs;
-    }
 
-    /**
-     *  Properly creates the extension filter list that is used for filtering extensions
-     *
-     *  @param string $dirs A semi-colon list of dir paths
-     *  .jpg;.zip;.gif;
-     *
-     *  @returns string A cleaned up list of extension filters
-     */
-    private function parseExtensionFilter($extensions = "")
-    {
-        $filter_exts = "";
-        if (strlen($extensions) >= 1 && $extensions != ";") {
-            $filter_exts = str_replace(array(' ', '.'), '', $extensions);
-            $filter_exts = str_replace(",", ";", $filter_exts);
-            $filter_exts = DUP_Util::appendOnce($extensions, ";");
-        }
-        return $filter_exts;
-    }
+
+
 }
 ?>

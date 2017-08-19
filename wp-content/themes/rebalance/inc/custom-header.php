@@ -50,7 +50,8 @@ function rebalance_header_style() {
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 	?>
-		.site-title {
+		.site-title,
+		.site-description {
 			position: absolute;
 			clip: rect(1px, 1px, 1px, 1px);
 		}

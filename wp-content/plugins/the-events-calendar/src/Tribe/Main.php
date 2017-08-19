@@ -32,9 +32,9 @@ if ( ! class_exists( 'Tribe__Events__Main' ) ) {
 		const VENUE_POST_TYPE     = 'tribe_venue';
 		const ORGANIZER_POST_TYPE = 'tribe_organizer';
 
-		const VERSION             = '4.5.6';
+		const VERSION             = '4.5.10.1';
 		const MIN_ADDON_VERSION   = '4.4';
-		const MIN_COMMON_VERSION  = '4.5.6';
+		const MIN_COMMON_VERSION  = '4.5.10.1';
 
 		const WP_PLUGIN_URL       = 'https://wordpress.org/extend/plugins/the-events-calendar/';
 
@@ -95,6 +95,12 @@ if ( ! class_exists( 'Tribe__Events__Main' ) ) {
 		public $tag_slug = 'tag';
 		public $monthSlug = 'month';
 		public $featured_slug = 'featured';
+
+		/**
+		 * @deprecated 4.5.8 use `Tribe__Events__Pro__Main::instance()->all_slug` instead
+		 *
+		 * @var string
+		 */
 		public $all_slug = 'all';
 
 		/** @deprecated 4.0 */
@@ -186,6 +192,8 @@ if ( ! class_exists( 'Tribe__Events__Main' ) ) {
 			'_VenueZip',
 			'_VenuePhone',
 			'_VenueURL',
+			'_VenueShowMap',
+			'_VenueShowMapLink',
 		);
 
 		public $organizerTags = array(
@@ -422,6 +430,9 @@ if ( ! class_exists( 'Tribe__Events__Main' ) ) {
 			// REST API v1
 			tribe_singleton( 'tec.rest-v1.main', 'Tribe__Events__REST__V1__Main', array( 'bind_implementations', 'hook' ) );
 			tribe( 'tec.rest-v1.main' );
+
+			// Integrations
+			tribe_singleton( 'tec.integrations.twenty-seventeen', 'Tribe__Events__Integrations__Twenty_Seventeen', array( 'hook' ) );
 
 			/**
 			 * Allows other plugins and services to override/change the bound implementations.
@@ -3833,7 +3844,9 @@ if ( ! class_exists( 'Tribe__Events__Main' ) ) {
 		public function isOrganizer( $postId = null ) {
 			if ( $postId === null || ! is_numeric( $postId ) ) {
 				global $post;
-				$postId = $post->ID;
+				if ( isset( $post->ID ) ) {
+					$postId = $post->ID;
+				}
 			}
 			if ( isset( $postId ) && get_post_field( 'post_type', $postId ) == self::ORGANIZER_POST_TYPE ) {
 				return true;

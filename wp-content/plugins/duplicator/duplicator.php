@@ -2,8 +2,8 @@
 /** ===============================================================================
   Plugin Name: Duplicator
   Plugin URI: http://www.lifeinthegrid.com/duplicator/
-  Description: Create and transfer a copy of your WordPress files and database. Duplicate and move a site from one location to another quickly.
-  Version: 1.2.8
+  Description: Migrate and backup a copy of your WordPress files and database. Duplicate and move a site from one location to another quickly.
+  Version: 1.2.18
   Author: Snap Creek
   Author URI: http://www.snapcreek.com/duplicator/
   Text Domain: duplicator
@@ -132,8 +132,9 @@ if (is_admin() == true)
     add_action('wp_ajax_duplicator_package_scan',        'duplicator_package_scan');
     add_action('wp_ajax_duplicator_package_build',		 'duplicator_package_build');
     add_action('wp_ajax_duplicator_package_delete',		 'duplicator_package_delete');
-	$GLOBALS['CTRLS_DUP_CTRL_UI']    = new DUP_CTRL_UI();
-	$GLOBALS['CTRLS_DUP_CTRL_Tools'] = new DUP_CTRL_Tools();
+	$GLOBALS['CTRLS_DUP_CTRL_UI']		= new DUP_CTRL_UI();
+	$GLOBALS['CTRLS_DUP_CTRL_Tools']	= new DUP_CTRL_Tools();
+	$GLOBALS['CTRLS_DUP_CTRL_Package']	= new DUP_CTRL_Package();
 	
 	/**
 	 * User role editor integration 
@@ -162,7 +163,7 @@ if (is_admin() == true)
         wp_register_style('dup-plugin-style', DUPLICATOR_PLUGIN_URL . 'assets/css/style.css', null, DUPLICATOR_VERSION);
 		wp_register_style('dup-jquery-qtip',DUPLICATOR_PLUGIN_URL . 'assets/js/jquery.qtip/jquery.qtip.min.css', null, '2.2.1');
         /* JS */
-		wp_register_script('dup-handlebars', DUPLICATOR_PLUGIN_URL . 'assets/js/handlebars.min.js', array('jquery'), '4.0.6');
+		wp_register_script('dup-handlebars', DUPLICATOR_PLUGIN_URL . 'assets/js/handlebars.min.js', array('jquery'), '4.0.10');
         wp_register_script('dup-parsley', DUPLICATOR_PLUGIN_URL . 'assets/js/parsley-standalone.min.js', array('jquery'), '1.1.18');
 		wp_register_script('dup-jquery-qtip', DUPLICATOR_PLUGIN_URL . 'assets/js/jquery.qtip/jquery.qtip.min.js', array('jquery'), '2.2.1');
     }
@@ -182,8 +183,6 @@ if (is_admin() == true)
             case 'duplicator-settings': include('views/settings/controller.php');	break;
             case 'duplicator-tools':	include('views/tools/controller.php');      break;
 			case 'duplicator-debug':	include('debug/main.php');					break;
-            case 'duplicator-help':		include('views/help/help.php');				break;
-            case 'duplicator-about':	include('views/help/about.php');			break;
 			case 'duplicator-gopro':	include('views/help/gopro.php');			break;
         }
     }
@@ -220,16 +219,6 @@ if (is_admin() == true)
 		$lang_txt = __('Settings', 'duplicator');
         $page_settings = add_submenu_page('duplicator', $lang_txt, $lang_txt, $perms, 'duplicator-settings', 'duplicator_get_menu');
 
-        $perms = 'manage_options';
-        $perms = apply_filters($wpfront_caps_translator, $perms);
-		$lang_txt = __('Help', 'duplicator');
-        $page_help = add_submenu_page('duplicator', $lang_txt, $lang_txt, $perms, 'duplicator-help', 'duplicator_get_menu');
-
-        $perms = 'manage_options';
-        $perms = apply_filters($wpfront_caps_translator, $perms);
-		$lang_txt = __('About', 'duplicator');
-        $page_about = add_submenu_page('duplicator', $lang_txt, $lang_txt, $perms, 'duplicator-about', 'duplicator_get_menu');
-
 		$perms = 'manage_options';
 		$lang_txt = __('Go Pro!', 'duplicator');
 		$go_pro_link = '<span style="color:#f18500">' . $lang_txt . '</span>';
@@ -250,17 +239,13 @@ if (is_admin() == true)
         //Apply Scripts
         add_action('admin_print_scripts-' . $page_packages, 'duplicator_scripts');
         add_action('admin_print_scripts-' . $page_settings, 'duplicator_scripts');
-        add_action('admin_print_scripts-' . $page_help, 'duplicator_scripts');
         add_action('admin_print_scripts-' . $page_tools, 'duplicator_scripts');
-        add_action('admin_print_scripts-' . $page_about, 'duplicator_scripts');
 		add_action('admin_print_scripts-' . $page_gopro, 'duplicator_scripts');
 		
         //Apply Styles
         add_action('admin_print_styles-' . $page_packages, 'duplicator_styles');
         add_action('admin_print_styles-' . $page_settings, 'duplicator_styles');
-        add_action('admin_print_styles-' . $page_help, 'duplicator_styles');
         add_action('admin_print_styles-' . $page_tools, 'duplicator_styles');
-        add_action('admin_print_styles-' . $page_about, 'duplicator_styles');
 		add_action('admin_print_styles-' . $page_gopro, 'duplicator_styles');
 		
     }
@@ -332,8 +317,7 @@ if (is_admin() == true)
         $plugin = plugin_basename(__FILE__);
         // create link
         if ($file == $plugin) {
-            $links[] = '<a href="admin.php?page=duplicator-help" title="' . __('Get Help', 'duplicator') . '" >' . __('Help', 'duplicator') . '</a>';
-            $links[] = '<a href="admin.php?page=duplicator-about" title="' . __('Support the Plugin', 'duplicator') . '">' . __('About', 'duplicator') . '</a>';
+            $links[] = '<a href="admin.php?page=duplicator-gopro" title="' . __('Get Help', 'duplicator') . '" style="">' . __('Go Pro', 'duplicator') . '</a>';
             return $links;
         }
         return $links;

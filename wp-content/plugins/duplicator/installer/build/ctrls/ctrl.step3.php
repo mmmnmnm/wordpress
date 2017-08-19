@@ -25,13 +25,13 @@ DUPX_DB::setCharset($dbh, $_POST['dbcharset'], $_POST['dbcollate']);
 $_POST['blogname']		= mysqli_real_escape_string($dbh, $_POST['blogname']);
 $_POST['postguid']		= isset($_POST['postguid']) && $_POST['postguid'] == 1 ? 1 : 0;
 $_POST['fullsearch']	= isset($_POST['fullsearch']) && $_POST['fullsearch'] == 1 ? 1 : 0;
-$_POST['urlextended']	= isset($_POST['urlextended']) && $_POST['urlextended'] == 1 ? 1 : 0;
 $_POST['path_old']		= isset($_POST['path_old']) ? trim($_POST['path_old']) : null;
 $_POST['path_new']		= isset($_POST['path_new']) ? trim($_POST['path_new']) : null;
 $_POST['siteurl']		= isset($_POST['siteurl']) ? rtrim(trim($_POST['siteurl']), '/') : null;
 $_POST['tables']		= isset($_POST['tables']) && is_array($_POST['tables']) ? array_map('stripcslashes', $_POST['tables']) : array();
 $_POST['url_old']		= isset($_POST['url_old']) ? trim($_POST['url_old']) : null;
 $_POST['url_new']		= isset($_POST['url_new']) ? rtrim(trim($_POST['url_new']), '/') : null;
+$_POST['retain_config'] = (isset($_POST['retain_config']) && $_POST['retain_config'] == '1') ? true : false;
 
 //LOGGING
 $POST_LOG = $_POST;
@@ -98,53 +98,59 @@ $url_new_json = str_replace('"', "", json_encode($_POST['url_new']));
 $path_old_json = str_replace('"', "", json_encode($_POST['path_old']));
 $path_new_json = str_replace('"', "", json_encode($_POST['path_new']));
 
-array_push($GLOBALS['REPLACE_LIST'], 
-		array('search' => $_POST['url_old'],			 'replace' => $_POST['url_new']), 
-		array('search' => $_POST['path_old'],			 'replace' => $_POST['path_new']), 
-		array('search' => $url_old_json,				 'replace' => $url_new_json), 
-		array('search' => $path_old_json,				 'replace' => $path_new_json), 	
-		array('search' => urlencode($_POST['path_old']), 'replace' => urlencode($_POST['path_new'])), 
-		array('search' => urlencode($_POST['url_old']),  'replace' => urlencode($_POST['url_new'])),
-		array('search' => rtrim(DUPX_U::unsetSafePath($_POST['path_old']), '\\'), 'replace' => rtrim($_POST['path_new'], '/'))
+//DIRS PATHS
+array_push($GLOBALS['REPLACE_LIST'],
+	array('search' => $_POST['path_old'],			 'replace' => $_POST['path_new']),
+	array('search' => $path_old_json,				 'replace' => $path_new_json),
+	array('search' => urlencode($_POST['path_old']), 'replace' => urlencode($_POST['path_new'])),
+	array('search' => rtrim(DUPX_U::unsetSafePath($_POST['path_old']), '\\'), 'replace' => rtrim($_POST['path_new'], '/'))
 );
 
-//URL EXTENDED
-if ($_POST['urlextended']) {
-	
-	//RAW '//' 
-	$url_old_raw = str_ireplace(array('http://', 'https://'), '//', $_POST['url_old']);
-	$url_new_raw = str_ireplace(array('http://', 'https://'), '//', $_POST['url_new']);
-	$url_old_raw_json = str_replace('"',  "", json_encode($url_old_raw));
-	$url_new_raw_json = str_replace('"',  "", json_encode($url_new_raw));
 
-	//INVERSE: Apply a search for the inverse of the orginal
-	if (stristr($_POST['url_old'], 'http:')) {
-		//Search for https urls
-		$url_old_diff = str_ireplace('http:', 'https:', $_POST['url_old']);
-		$url_new_diff = str_ireplace('http:', 'https:', $_POST['url_new']);
-		$url_old_diff_json = str_replace('"',  "", json_encode($url_old_diff));
-		$url_new_diff_json = str_replace('"',  "", json_encode($url_new_diff));
-		
-	} else {
-		//Search for http urls
-		$url_old_diff = str_ireplace('https:', 'http:', $_POST['url_old']);
-		$url_new_diff = str_ireplace('https:', 'http:', $_POST['url_new']);
-		$url_old_diff_json = str_replace('"',  "", json_encode($url_old_diff));
-		$url_new_diff_json = str_replace('"',  "", json_encode($url_new_diff));
-	}
+//URL PATHS
+//SEARCH ONLY HTTP(S)
+array_push($GLOBALS['REPLACE_LIST'],
+	array('search' => $_POST['url_old'],			 'replace' => $_POST['url_new']),
+	array('search' => $url_old_json,				 'replace' => $url_new_json),
+	array('search' => urlencode($_POST['url_old']),  'replace' => urlencode($_POST['url_new']))
+);
 
-	array_push($GLOBALS['REPLACE_LIST'],
-			//RAW
-			array('search' => $url_old_raw,			 	 	 'replace' => $url_new_raw),
-			array('search' => $url_old_raw_json,			 'replace' => $url_new_raw_json),
-			array('search' => urlencode($url_old_raw), 		 'replace' => urlencode($url_new_raw)),
+//INVERSE: Apply a search for the inverse of the orginal http vs https
+if (stristr($_POST['url_old'], 'http:')) {
+	//Search for https urls
+	$url_old_diff = str_ireplace('http:', 'https:', $_POST['url_old']);
+	$url_new_diff = str_ireplace('http:', 'https:', $_POST['url_new']);
+	$url_old_diff_json = str_replace('"',  "", json_encode($url_old_diff));
+	$url_new_diff_json = str_replace('"',  "", json_encode($url_new_diff));
 
-			//INVERSE
-			array('search' => $url_old_diff,			 	 'replace' => $url_new_diff),
-			array('search' => $url_old_diff_json,			 'replace' => $url_new_diff_json),
-			array('search' => urlencode($url_old_diff),  	 'replace' => urlencode($url_new_diff))
-	);
+} else {
+	//Search for http urls
+	$url_old_diff = str_ireplace('https:', 'http:', $_POST['url_old']);
+	$url_new_diff = str_ireplace('https:', 'http:', $_POST['url_new']);
+	$url_old_diff_json = str_replace('"',  "", json_encode($url_old_diff));
+	$url_new_diff_json = str_replace('"',  "", json_encode($url_new_diff));
 }
+
+array_push($GLOBALS['REPLACE_LIST'],
+	//INVERSE
+	array('search' => $url_old_diff,			 	 'replace' => $url_new_diff),
+	array('search' => $url_old_diff_json,			 'replace' => $url_new_diff_json),
+	array('search' => urlencode($url_old_diff),  	 'replace' => urlencode($url_new_diff))
+);
+
+
+//SEARCH WITH NO PROTOCAL: RAW "//"
+$url_old_raw = str_ireplace(array('http://', 'https://'), '//', $_POST['url_old']);
+$url_new_raw = str_ireplace(array('http://', 'https://'), '//', $_POST['url_new']);
+$url_old_raw_json = str_replace('"',  "", json_encode($url_old_raw));
+$url_new_raw_json = str_replace('"',  "", json_encode($url_new_raw));
+
+array_push($GLOBALS['REPLACE_LIST'],
+	//RAW
+	array('search' => $url_old_raw,			 	'replace' => $url_new_raw),
+	array('search' => $url_old_raw_json,		'replace' => $url_new_raw_json),
+	array('search' => urlencode($url_old_raw), 	'replace' => urlencode($url_new_raw))
+ );
 
 
 //Remove trailing slashes
@@ -190,8 +196,17 @@ DUPX_Log::info("====================================\n");
 DUPX_WPConfig::updateStandard();
 $config_file = DUPX_WPConfig::updateExtended();
 DUPX_Log::info("UPDATED WP-CONFIG: {$root_path}/wp-config.php' (if present)");
-DUPX_ServerConfig::setup($dbh);
 
+//Web Server Config Updates
+if (!isset($_POST['url_new']) || $_POST['retain_config']) {
+	DUPX_Log::info("\nNOTICE: Manual update of permalinks required see:  Admin > Settings > Permalinks > Click Save Changes");
+	DUPX_Log::info("Retaining the original htaccess, user.ini or web.config files may cause issues with the setup of this site.");
+	DUPX_Log::info("If you run into issues during or after the install process please uncheck the 'Config Files' checkbox labeled:");
+	DUPX_Log::info("'Retain original .htaccess, .user.ini and web.config' from Step 1 and re-run the installer. Backups of the");
+	DUPX_Log::info("orginal config files will be made and can be merged per required directive.");
+} else {
+	DUPX_ServerConfig::setup($dbh);
+}
 
 
 //===============================================
@@ -283,7 +298,7 @@ DUPX_Log::info("- Created file ". DUPLICATOR_SSDIR_NAME . '/index.php');
 DUPX_Log::info("\n====================================");
 DUPX_Log::info("NOTICES");
 DUPX_Log::info("====================================\n");
-$config_vars = array('WP_CONTENT_DIR', 'WP_CONTENT_URL', 'WPCACHEHOME', 'COOKIE_DOMAIN', 'WP_SITEURL', 'WP_HOME', 'WP_TEMP_DIR');
+$config_vars = array('WPCACHEHOME', 'COOKIE_DOMAIN', 'WP_SITEURL', 'WP_HOME', 'WP_TEMP_DIR');
 $config_found = DUPX_U::getListValues($config_vars, $config_file);
 
 //Config File:

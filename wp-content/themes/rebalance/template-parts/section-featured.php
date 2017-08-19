@@ -18,10 +18,10 @@ if ( empty( $featured ) )
 	<?php foreach ( $featured as $post ) : setup_postdata( $post ); ?>
 		<section id="feature" class="site-feature clear-fix">
 
-			<?php $thumbclass = ( has_post_thumbnail() ? 'has-thumbnail' : '' ); ?>
+			<?php $thumbclass = ( rebalance_has_post_thumbnail() ? 'has-thumbnail' : '' ); ?>
 			<article id="post-<?php the_ID(); ?>" class="hentry featured-project <?php echo $thumbclass; ?>">
 
-				<?php if ( has_post_thumbnail() ) { ?>
+				<?php if ( rebalance_has_post_thumbnail() ) { ?>
 				<div class="post-hero-image">
 					<figure class="entry-image">
 						<a href="<?php the_permalink() ?>" class="entry-image-link">

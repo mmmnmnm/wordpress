@@ -5,6 +5,7 @@ Redirect /tracks http://www.mmmnmnm.com/new-tracks/
 
 #Podcasts redirect
 Redirect  /2017/06/11/mmn-2-alley-catss/ http://www.mmmnmnm.com/podcasts/mmn-2-alley-catss/
+Redirect /2017/07/02/mmn-3-fogselyemfiu/ http://www.mmmnmnm.com/podcasts/mmn-3-fogselyemfiu/
 
 #New tracks redirect
 Redirect  /2017/06/12/track-premier-norwell-celestial-bodies-imre-kiss-remix http://www.mmmnmnm.com/new-tracks/june
