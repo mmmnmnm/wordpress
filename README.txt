@@ -14,7 +14,8 @@
 
 Other notes:
 - Site description is currently disabled and is replaced by constant donate info (site descr. is still visible on the browser tab)
+- "Bug: text invisible on some machines, see readme for bug fix url": http://www.wastedpotential.com/solved-google-web-fonts-not-displaying-on-some-macs/
 
 TODOs:
-- Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/rewview,interview
+- Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/review,interview
   - Hint: /themes/archive.php -> page title
