@@ -15,6 +15,7 @@
 Other notes:
 - Site description is currently disabled and is replaced by constant donate info (site descr. is still visible on the browser tab)
 - Font does not render on some machines: SOLVED https://stackoverflow.com/questions/45715928/solved-rubik-font-not-rendering-anymore
+- Default event times are altered to start11pm and to end 5am: custom tribe_events_meta_box_timepicker_default filter
 
 TODOs:
 - Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/review,interview

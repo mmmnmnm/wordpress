@@ -256,5 +256,19 @@ function mobile_breakpoint() {
 /*mmn: try to get WP not to kill pic quality */
 add_filter('jpeg_quality', function($arg){return 100;},20);
 
+/*MMN: change default times of event: https://theeventscalendar.com/support/forums/topic/start-and-end-times/*/ 
+add_action( 'tribe_events_meta_box_timepicker_default', 'new_default_time', 10, 2 );
+function new_default_time( $default, $type) {
+	$default = false;
+	if ( 'start' === $type ) {
+		$default = '23:00';
+	} elseif ( 'end' === $type ) {
+		$default = '5:00';
+	}
+	$time = $default;
+	return $time;
+}
+
+
 
 ?>
