@@ -11,39 +11,91 @@ msgstr ""
 "Language: hu\n"
 "Project-Id-Version: Plugins - Akismet - Development (trunk)\n"
 
-#: views/start.php:88
+#: class.akismet-rest-api.php:132
+msgid "This site's API key is hardcoded and cannot be deleted."
+msgstr ""
+
+#: class.akismet-rest-api.php:116
+msgid "The value provided is not a valid and registered API key."
+msgstr ""
+
+#: class.akismet-rest-api.php:110
+msgid "This site's API key is hardcoded and cannot be changed via the API."
+msgstr ""
+
+#: class.akismet-rest-api.php:71 class.akismet-rest-api.php:80
+msgid "The time period for which to retrieve stats. Options: 60-days, 6-months, all"
+msgstr ""
+
+#: class.akismet-rest-api.php:56
+msgid "If true, show the number of approved comments beside each comment author in the comments list page."
+msgstr ""
+
+#: class.akismet-rest-api.php:51
+msgid "If true, Akismet will automatically discard the worst spam automatically rather than putting it in the spam folder."
+msgstr ""
+
+#: class.akismet-rest-api.php:27
+msgid "A 12-character Akismet API key. Available at akismet.com/get/"
+msgstr ""
+
+#: class.akismet-admin.php:373
+msgid "(%1$s%)"
+msgstr ""
+
+#: class.akismet.php:209
+msgid "Comment discarded."
+msgstr ""
+
+#: views/notice.php:49
+msgid "Your site can&#8217;t connect to the Akismet servers."
+msgstr ""
+
+#: class.akismet-admin.php:213
+msgid "On this page, you are able to update your Akismet settings and view spam stats."
+msgstr ""
+
+#: views/start.php:97
+msgid "An Akismet API key has been defined in the %s file for this site."
+msgstr ""
+
+#: views/start.php:96
+msgid "Manual Configuration"
+msgstr ""
+
+#: views/start.php:90
 msgid "Connect with API key"
 msgstr ""
 
-#: views/start.php:82
+#: views/start.php:84
 msgid "(What is an API key?)"
 msgstr ""
 
-#: views/start.php:81
+#: views/start.php:83
 msgid "Or enter an API key"
 msgstr ""
 
-#: views/start.php:65
+#: views/start.php:67
 msgid "Or sign up with a different email address"
 msgstr ""
 
-#: views/start.php:29 views/start.php:61
+#: views/start.php:31 views/start.php:63
 msgid "You are connected as %s."
 msgstr ""
 
-#: views/start.php:26 views/start.php:58
+#: views/start.php:28 views/start.php:60
 msgid "Connect with Jetpack"
 msgstr ""
 
-#: views/start.php:20 views/start.php:53
+#: views/start.php:22 views/start.php:55
 msgid "Use your Jetpack connection to activate Akismet."
 msgstr ""
 
-#: views/start.php:13
+#: views/start.php:14
 msgid "Select one of the options below to get started."
 msgstr ""
 
-#: views/start.php:12
+#: views/start.php:13
 msgid "Eliminate spam from your site"
 msgstr ""
 
@@ -59,11 +111,11 @@ msgstr ""
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started: activate the Akismet plugin and then go to your Akismet Settings page to set up your API key."
 msgstr ""
 
-#: class.akismet-admin.php:1091
+#: class.akismet-admin.php:1094
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. Your site is fully configured and being protected, even while you sleep."
 msgstr ""
 
-#: class.akismet-admin.php:1094
+#: class.akismet-admin.php:1097
 msgid "Used by millions, Akismet is quite possibly the best way in the world to <strong>protect your blog from spam</strong>. It keeps your site protected even while you sleep. To get started, just go to <a href=\"admin.php?page=akismet-key-config\">your Akismet Settings page</a> to set up your API key."
 msgstr ""
 
@@ -75,7 +127,7 @@ msgstr ""
 msgid "Akismet Settings"
 msgstr ""
 
-#: views/start.php:19 views/start.php:33 views/start.php:52
+#: views/start.php:21 views/start.php:35 views/start.php:54
 msgid "Connect via Jetpack"
 msgstr ""
 
@@ -87,31 +139,27 @@ msgstr ""
 msgid "Statistics"
 msgstr ""
 
-#: class.akismet-admin.php:1004
+#: class.akismet-admin.php:1007
 msgid "%s comment was caught as spam."
 msgid_plural "%s comments were caught as spam."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.akismet-admin.php:1001
+#: class.akismet-admin.php:1004
 msgid "No comments were caught as spam."
 msgstr ""
 
-#: class.akismet-admin.php:997
+#: class.akismet-admin.php:1000
 msgid "Akismet checked %s comment."
 msgid_plural "Akismet checked %s comments."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class.akismet-admin.php:994
+#: class.akismet-admin.php:997
 msgid "There were no comments to check. Akismet will only check comments in the Pending queue."
 msgstr ""
 
-#: class.akismet-admin.php:367
-msgid "(%1$s...)"
-msgstr ""
-
-#: class.akismet-admin.php:366
+#: class.akismet-admin.php:372
 msgid "Checking for Spam"
 msgstr ""
 
@@ -169,19 +217,19 @@ msgid_plural "%s missed spam"
 msgstr[0] "%s elhibázott spam"
 msgstr[1] "%s elhibázott spam"
 
-#: views/start.php:77
+#: views/start.php:79
 msgid "Log in or sign up now."
 msgstr "Bejelentkezés vagy regisztráció."
 
-#: views/start.php:69
+#: views/start.php:71
 msgid "Choose this option to use Akismet independently of your Jetpack connection."
 msgstr ""
 
-#: views/start.php:67
+#: views/start.php:69
 msgid "Sign up with a different email address"
 msgstr "Feliratkozás egy másik e-mail címmel"
 
-#: views/start.php:82
+#: views/start.php:84
 msgid "Already have your key? Enter it here."
 msgstr "Van már Akismet API kulcs? Itt kell megadni."
 
@@ -205,24 +253,24 @@ msgstr "Az Akismet felhasználói fiók felfüggesztett állapotú."
 msgid "You don&#8217;t have an Akismet plan."
 msgstr "Nincs Akismet csomag választva."
 
-#: class.akismet-admin.php:159 class.akismet-admin.php:197
-#: class.akismet-admin.php:210
+#: class.akismet-admin.php:161 class.akismet-admin.php:199
+#: class.akismet-admin.php:212
 msgid "Akismet filters out spam, so you can focus on more important things."
 msgstr "Az Akismet kiszűri a spam-eket, így mi az igazán fontos dolgainkra koncentrálhatunk."
 
-#: class.akismet-admin.php:925
+#: class.akismet-admin.php:928
 msgid "Akismet has saved you %s day!"
 msgid_plural "Akismet has saved you %s days!"
 msgstr[0] "Az Akismet %s napot spórolt meg nekünk."
 msgstr[1] "Az Akismet %s napot spórolt meg nekünk."
 
-#: class.akismet-admin.php:927
+#: class.akismet-admin.php:930
 msgid "Akismet has saved you %d hour!"
 msgid_plural "Akismet has saved you %d hours!"
 msgstr[0] "Az Akismet %d órát spórolt meg nekünk."
 msgstr[1] "Az Akismet %d órát spórolt meg nekünk."
 
-#: class.akismet-admin.php:929
+#: class.akismet-admin.php:932
 msgid "Akismet has saved you %d minute!"
 msgid_plural "Akismet has saved you %d minutes!"
 msgstr[0] "Az Akismet %d percet spórolt meg nekünk."
@@ -252,51 +300,51 @@ msgstr ""
 msgid "In 2012, Akismet began using subscription plans for all accounts (even free ones). A plan has not been assigned to your account, and we&#8217;d appreciate it if you&#8217;d <a href=\"%s\" target=\"_blank\">sign into your account</a> and choose one."
 msgstr ""
 
-#: class.akismet-admin.php:560
+#: class.akismet-admin.php:562
 msgid "Akismet re-checked and cleared this comment."
 msgstr "Az Akismet megismételte az ellenőrzést, és ezt a hozzászólást kitakarította."
 
-#: class.akismet-admin.php:557
+#: class.akismet-admin.php:559
 msgid "Akismet caught this comment as spam."
 msgstr "Az Akismet ezt a hozzászólást spam-nek tartja."
 
-#: class.akismet-admin.php:554
+#: class.akismet-admin.php:556
 msgid "Akismet re-checked and caught this comment as spam."
 msgstr "Az Akismet megismételte az ellenőrzést, és ezt a hozzászólást spam-nek tartja."
 
-#: class.akismet-admin.php:566
+#: class.akismet-admin.php:568
 msgid "Comment was caught by wp_blacklist_check."
 msgstr "A hozzászólás fennakadt a wp_blacklist_check listán."
 
-#: class.akismet-admin.php:563
+#: class.akismet-admin.php:565
 msgid "Akismet cleared this comment."
 msgstr "Az Akismet megtisztította ezt a hozzászólást."
 
-#: class.akismet-admin.php:570
+#: class.akismet-admin.php:572
 msgid "%s reported this comment as spam."
 msgstr ""
 
-#: class.akismet-admin.php:573
+#: class.akismet-admin.php:575
 msgid "This comment was reported as spam."
 msgstr ""
 
-#: class.akismet-admin.php:581
+#: class.akismet-admin.php:583
 msgid "This comment was reported as not spam."
 msgstr ""
 
-#: class.akismet-admin.php:578
+#: class.akismet-admin.php:580
 msgid "%s reported this comment as not spam."
 msgstr ""
 
-#: class.akismet-admin.php:592
+#: class.akismet-admin.php:594
 msgid "Akismet was unable to check this comment (response: %s) but will automatically retry later."
 msgstr ""
 
-#: class.akismet-admin.php:611
+#: class.akismet-admin.php:613
 msgid "%1$s changed the comment status to %2$s."
 msgstr ""
 
-#: class.akismet-admin.php:597
+#: class.akismet-admin.php:599
 msgid "Akismet was unable to recheck this comment (response: %s)."
 msgstr ""
 
@@ -308,27 +356,27 @@ msgstr "Nem sikerült kapcsolódni az akismet.com-hoz. Tekintsük meg a <a href=
 msgid "The API key you entered could not be verified."
 msgstr "A megadott kulcsot nem lehet ellenőrizni."
 
-#: views/config.php:98
+#: views/config.php:95
 msgid "All systems functional."
 msgstr "Minden rendszer működik."
 
-#: views/config.php:98
+#: views/config.php:95
 msgid "Enabled."
 msgstr "Engedélyezve."
 
-#: views/config.php:95
+#: views/config.php:92
 msgid "Akismet encountered a problem with a previous SSL request and disabled it temporarily. It will begin using SSL for requests again shortly."
 msgstr "Akismetnek nem sikerült biztonságos kapcsolatot nyitnia, ezért átmenetileg kikapcsolta ezt a funkciót. Rövidesen ez a funkció visszaállításra kerül."
 
-#: views/config.php:95
+#: views/config.php:92
 msgid "Temporarily disabled."
 msgstr "Időlegesen kikapcsolva."
 
-#: views/config.php:89
+#: views/config.php:86
 msgid "Your Web server cannot make SSL requests; contact your Web host and ask them to add support for SSL requests."
 msgstr "A web kiszolgáló nem képes SSL kapcsolat létrehozására, lépjünk kapcsolatba a tárhelyszolgáltatónkkal, és kérjük meg, hogy engedélyezzék a kimenő SSL kapcsolatokat."
 
-#: views/config.php:86 views/config.php:89
+#: views/config.php:86
 msgid "Disabled."
 msgstr "Kikapcsolva."
 
@@ -336,7 +384,7 @@ msgstr "Kikapcsolva."
 msgid "SSL Status"
 msgstr "SSL állapot"
 
-#: views/config.php:144
+#: views/config.php:141
 msgid "Spam in the <a href=\"%1$s\">spam folder</a> older than 1 day is deleted automatically."
 msgid_plural "Spam in the <a href=\"%1$s\">spam folder</a> older than %2$d days is deleted automatically."
 msgstr[0] "A spam a<a href=\"%1$s\">spam tárolóban</a> 1 napnál idősebb, és automatikusan törlésre került."
@@ -354,23 +402,23 @@ msgstr "A tárhely-szolgáltatónál nincs bekapcsolva a PHP <code>gethostbyname
 msgid "Some comments have not yet been checked for spam by Akismet. They have been temporarily held for moderation and will automatically be rechecked later."
 msgstr "Néhány hozzászólást még nem ellenőrzött az Akismet, amelyek továbbra is moderációra fognak várakozni, és majd a későbbiekben újra, automatikusan vizsgálatra kerülnek."
 
-#: class.akismet-admin.php:820
+#: class.akismet-admin.php:818
 msgid "Please check your <a href=\"%s\">Akismet configuration</a> and contact your web host if problems persist."
 msgstr "Ellenőrizzük az <a href=\"%s\">Akismet beállításai</a>t, és amennyiben a probléma továbbra is fennáll, lépjünk kapcsolatba a tárhely-szolgáltatónkkal."
 
-#: views/start.php:75
+#: views/start.php:77
 msgid "Get your API key"
 msgstr "API kulcs kérése"
 
-#: views/start.php:73
+#: views/start.php:75
 msgid "Activate Akismet"
 msgstr "Akismet bekapcsolása"
 
-#: views/start.php:39
+#: views/start.php:41
 msgid "Reactivate Akismet"
 msgstr "Akismet újra aktiválása"
 
-#: views/start.php:41
+#: views/start.php:43
 msgid "Your subscription for %s is cancelled."
 msgstr ""
 
@@ -378,43 +426,43 @@ msgstr ""
 msgid "There is a problem with your API key."
 msgstr "Probléma van az API kulccsal."
 
-#: views/config.php:207
+#: views/config.php:205
 msgid "Active"
 msgstr "Bekapcsolás"
 
-#: views/config.php:205
+#: views/config.php:203
 msgid "No Subscription Found"
 msgstr "Nem található feliratkozás"
 
-#: views/config.php:203
+#: views/config.php:201
 msgid "Missing"
 msgstr "Hiányzik"
 
-#: views/config.php:201
+#: views/config.php:199
 msgid "Suspended"
 msgstr "Felfüggesztett"
 
-#: views/config.php:199
+#: views/config.php:197
 msgid "Cancelled"
 msgstr "Elutasítva"
 
-#: views/config.php:136
+#: views/config.php:133
 msgid "Always put spam in the Spam folder for review."
 msgstr "A spamek mindig kerüljenek a Spam mappába átnézésre."
 
-#: views/config.php:135
+#: views/config.php:132
 msgid "Silently discard the worst and most pervasive spam so I never see it."
 msgstr "Csendesen eltünteti a legrosszabb spam-eket, így soha sem találkozunk velük."
 
-#: class.akismet-admin.php:223
+#: class.akismet-admin.php:225
 msgid "Choose to either discard the worst spam automatically or to always put all spam in spam folder."
 msgstr "Válasszuk bármelyiket a legrosszabb spam-ek automatikus törléséhez, vagy a spam tárolóba helyezéséhez."
 
-#: class.akismet-admin.php:223 views/config.php:131
+#: class.akismet-admin.php:225 views/config.php:128
 msgid "Strictness"
 msgstr "Szigor"
 
-#: class.akismet-admin.php:222 views/config.php:108
+#: class.akismet-admin.php:224 views/config.php:105
 msgid "Comments"
 msgstr "Hozzászólások"
 
@@ -434,23 +482,23 @@ msgstr "http://automattic.com/wordpress-plugins/"
 msgid "Automattic"
 msgstr "Automattic"
 
-#: views/config.php:134
+#: views/config.php:131
 msgid "Akismet anti-spam strictness"
 msgstr "Akismet anti-spam szigorúság"
 
-#: views/start.php:48
+#: views/start.php:50
 msgid "Contact Akismet support"
 msgstr "Akismet támogatás"
 
-#: views/start.php:47
+#: views/start.php:49
 msgid "No worries! Get in touch and we&#8217;ll sort this out."
 msgstr "Semmi izgalom! A WordPress Magyarország Fórumán biztos lesz segítség."
 
-#: views/start.php:46
+#: views/start.php:48
 msgid "Your subscription for %s is suspended."
 msgstr ""
 
-#: views/start.php:45
+#: views/start.php:47
 msgid "Connected via Jetpack"
 msgstr "Csatlakozva Jetpack-en keresztül"
 
@@ -471,12 +519,8 @@ msgid "Please visit your <a href=\"%s\" target=\"_blank\">Akismet account page</
 msgstr "Látogassuk meg az <a href=\"%s\" target=\"_blank\">Akismet fiókunkat</a> a tagság újraaktiválásához."
 
 #: views/notice.php:50
-msgid "Your firewall may be blocking Akismet. Please contact your host and refer to <a href=\"%s\" target=\"_blank\">our guide about firewalls</a>."
-msgstr "A helyi tűzfal korlátozhatja a szolgáltatást. Lépjünk kapcsolatba a tárhelyszolgáltatóval és hivatkozzunk <a href=\"%s\" target=\"_blank\">erre az útmutatóra a tűzfalakról</a>."
-
-#: views/notice.php:49
-msgid "Akismet can&#8217;t connect to your site."
-msgstr "Az Akismet nem tud a honlapunkhoz kapcsolódni."
+msgid "Your firewall may be blocking Akismet from connecting to its API. Please contact your host and refer to <a href=\"%s\" target=\"_blank\">our guide about firewalls</a>."
+msgstr ""
 
 #: views/notice.php:44
 msgid "Network functions are disabled."
@@ -496,31 +540,31 @@ msgstr "Akismet Hibakód: %s"
 msgid "Akismet has detected a problem."
 msgstr "Az Akismet szolgáltatás hibát észlelt."
 
-#: views/config.php:224
+#: views/config.php:222
 msgid "Change"
 msgstr "Módosítás"
 
-#: views/config.php:224
+#: views/config.php:222
 msgid "Upgrade"
 msgstr "Frissítés"
 
-#: views/config.php:213
+#: views/config.php:211
 msgid "Next Billing Date"
 msgstr "Következő fizetési határidő"
 
-#: views/config.php:168
+#: views/config.php:165
 msgid "Save Changes"
 msgstr "Módosítások mentése"
 
-#: views/config.php:162
+#: views/config.php:159
 msgid "Disconnect this account"
 msgstr "Fiók leválasztása"
 
-#: views/config.php:138
+#: views/config.php:135
 msgid "Note:"
 msgstr "Megjegyzés:"
 
-#: views/config.php:112
+#: views/config.php:109
 msgid "Show approved comments"
 msgstr "Az engedélyezett hozzászólások mutatása"
 
@@ -542,23 +586,23 @@ msgstr[1] ""
 msgid "Past six months"
 msgstr "Az elmúlt hat hónapban"
 
-#: class.akismet.php:1174
+#: class.akismet.php:1176
 msgid "Please <a href=\"%1$s\">upgrade WordPress</a> to a current version, or <a href=\"%2$s\">downgrade to version 2.4 of the Akismet plugin</a>."
 msgstr "<a href=\"%1$s\">Frissítsük a WordPress.t</a> az aktuális verzióra, vagy <a href=\"%2$s\">használjuk az Akismet bővítmény 2.4-es verzióját</a>."
 
-#: class.akismet.php:1174
+#: class.akismet.php:1176
 msgid "Akismet %s requires WordPress %s or higher."
 msgstr "Az Akismet %s használatához WordPress %s, vagy frissebb verzió szükséges."
 
-#: class.akismet-admin.php:588
+#: class.akismet-admin.php:590
 msgid "Akismet cleared this comment during an automatic retry."
 msgstr "A hozzászólást az Akismet tisztította meg egy automatikus ismétlés közben."
 
-#: class.akismet-admin.php:585
+#: class.akismet-admin.php:587
 msgid "Akismet caught this comment as spam during an automatic retry."
 msgstr "Az Akismet ezt a hozzászólást spam-ként érzékelte egy automatikus válaszban."
 
-#: class.akismet-admin.php:605
+#: class.akismet-admin.php:607
 msgid "Comment status was changed to %s"
 msgstr "Hozzászólás állapota erre változott: %s"
 
@@ -584,220 +628,216 @@ msgstr "Jelenítsük meg az Akismet által spam-nek jelölt hozzászólások sz�
 msgid "Akismet Widget"
 msgstr "Akismet widget"
 
-#: class.akismet-admin.php:922
+#: class.akismet-admin.php:925
 msgid "Cleaning up spam takes time."
 msgstr "A spam eltakarítása időbe kerül."
 
-#: class.akismet-admin.php:619
+#: class.akismet-admin.php:621
 msgid "%s ago"
 msgstr "%s telt el a bejegyzés óta"
 
-#: class.akismet-admin.php:525
+#: class.akismet-admin.php:527
 msgid "%s approved"
 msgid_plural "%s approved"
 msgstr[0] "%s elfogadva"
 msgstr[1] "%s elfogadva"
 
-#: class.akismet-admin.php:502
+#: class.akismet-admin.php:504
 msgid "History"
 msgstr "Előzmények"
 
-#: class.akismet-admin.php:502 class.akismet-admin.php:510
+#: class.akismet-admin.php:504 class.akismet-admin.php:512
 msgid "View comment history"
 msgstr "Hozzászólás történetének megtekintése"
 
-#: class.akismet-admin.php:490
+#: class.akismet-admin.php:492
 msgid "Un-spammed by %s"
 msgstr "Spam-jelölés %s által megszüntetve"
 
-#: class.akismet-admin.php:488
+#: class.akismet-admin.php:490
 msgid "Flagged as spam by %s"
 msgstr "Spamnak jelölte: %s"
 
-#: class.akismet-admin.php:484
+#: class.akismet-admin.php:486
 msgid "Cleared by Akismet"
 msgstr "Akismet által felügyelt"
 
-#: class.akismet-admin.php:482
+#: class.akismet-admin.php:484
 msgid "Flagged as spam by Akismet"
 msgstr "Akismet által spam-nek jelölve"
 
-#: class.akismet-admin.php:478
+#: class.akismet-admin.php:480
 msgid "Awaiting spam check"
 msgstr "Spam ellenőrzésre vár"
 
-#: class.akismet-admin.php:370
+#: class.akismet-admin.php:377
 msgid "Check for Spam"
 msgstr "Spam-ellenőrzés"
 
-#: class.akismet-admin.php:341
+#: class.akismet-admin.php:348
 msgid "There&#8217;s nothing in your <a href='%s'>spam queue</a> at the moment."
 msgstr "Jelenleg üres a <a href='%s'>kéretlen üzenetek moderációs sora</a>."
 
-#: class.akismet-admin.php:335
+#: class.akismet-admin.php:342
 msgid "There&#8217;s <a href=\"%2$s\">%1$s comment</a> in your spam queue right now."
 msgid_plural "There are <a href=\"%2$s\">%1$s comments</a> in your spam queue right now."
 msgstr[0] "Jelenleg <a href=\"%2$s\">%1$s hozzászólás</a> vár elbírálásra."
 msgstr[1] "Jelenleg <a href=\"%2$s\">%1$s hozzászólás</a> vár elbírálásra."
 
-#: class.akismet-admin.php:329
+#: class.akismet-admin.php:336
 msgid "<a href=\"%s\">Akismet</a> blocks spam from getting to your blog. "
 msgstr "<a href=\"%s\">Akismet</a> útját állja a kéretlen üzeneteknek"
 
-#: class.akismet-admin.php:323
+#: class.akismet-admin.php:330
 msgid "<a href=\"%1$s\">Akismet</a> has protected your site from %2$s spam comment already. "
 msgid_plural "<a href=\"%1$s\">Akismet</a> has protected your site from %2$s spam comments already. "
 msgstr[0] "Az <a href=\"%1$s\">Akismet</a> már %2$s spam-től óvta meg a honlapot."
 msgstr[1] "Az <a href=\"%1$s\">Akismet</a> már %2$s spam-től óvta meg a honlapot."
 
-#: class.akismet-admin.php:313
+#: class.akismet-admin.php:320
 msgid "<a href=\"%1$s\">Akismet</a> has protected your site from <a href=\"%2$s\">%3$s spam comment</a>."
 msgid_plural "<a href=\"%1$s\">Akismet</a> has protected your site from <a href=\"%2$s\">%3$s spam comments</a>."
 msgstr[0] "Az <a href=\"%1$s\">Akismet</a> <a href=\"%2$s\">%3$s spam hozzászólás</a>tól védte meg a honlapot."
 msgstr[1] "Az <a href=\"%1$s\">Akismet</a> <a href=\"%2$s\">%3$s spam hozzászólás</a>tól védte meg a honlapot."
 
-#: class.akismet-admin.php:311
+#: class.akismet-admin.php:318
 msgctxt "comments"
 msgid "Spam"
 msgstr "Spam"
 
-#: class.akismet-admin.php:250
+#: class.akismet-admin.php:254
 msgid "Cheatin&#8217; uh?"
 msgstr "Csalunk-csalunk?"
 
-#: class.akismet-admin.php:244
+#: class.akismet-admin.php:248
 msgid "Akismet Support"
 msgstr "Akismet segítség"
 
-#: class.akismet-admin.php:243
+#: class.akismet-admin.php:247
 msgid "Akismet FAQ"
 msgstr "Akismet FAQ"
 
-#: class.akismet-admin.php:242
+#: class.akismet-admin.php:246
 msgid "For more information:"
 msgstr "További információk:"
 
-#: class.akismet-admin.php:234
+#: class.akismet-admin.php:237
 msgid "The subscription status - active, cancelled or suspended"
 msgstr "A fiók állapota - aktív, lemondott vagy felfüggesztett"
 
-#: class.akismet-admin.php:234 views/config.php:194
+#: class.akismet-admin.php:237 views/config.php:192
 msgid "Status"
 msgstr "Állapot"
 
-#: class.akismet-admin.php:233
+#: class.akismet-admin.php:236
 msgid "The Akismet subscription plan"
 msgstr "Akismet tagság"
 
-#: class.akismet-admin.php:233 views/config.php:187
+#: class.akismet-admin.php:236 views/config.php:185
 msgid "Subscription Type"
 msgstr "Tagság típusa"
 
-#: class.akismet-admin.php:230 views/config.php:179
+#: class.akismet-admin.php:233 views/config.php:177
 msgid "Account"
 msgstr "Fiók"
 
-#: class.akismet-admin.php:222
+#: class.akismet-admin.php:224
 msgid "Show the number of approved comments beside each comment author in the comments list page."
 msgstr "Az elfogadott hozzászólások számának megjelenítése minden hozzászólás szerzője mellett a hozzászólások listájában"
 
-#: views/config.php:125
+#: views/config.php:122
 msgid "Show the number of approved comments beside each comment author"
 msgstr "Az elfogadott hozzászólások számának megjelenítése minden hozzászólás szerzője mellett"
 
-#: class.akismet-admin.php:221
+#: class.akismet-admin.php:223
 msgid "Enter/remove an API key."
 msgstr "API kulcs megadás/eltávolítása"
 
-#: class.akismet-admin.php:221 views/config.php:70
+#: class.akismet-admin.php:223 views/config.php:70
 msgid "API Key"
 msgstr "API kulcs"
 
-#: class.akismet-admin.php:88 class.akismet-admin.php:218
-#: class.akismet-admin.php:631 views/config.php:60
+#: class.akismet-admin.php:88 class.akismet-admin.php:220
+#: class.akismet-admin.php:633 views/config.php:60
 msgid "Settings"
 msgstr "Beállítások"
 
-#: class.akismet-admin.php:211
-msgid "On this page, you are able to enter/remove an API key, view account information and view spam stats."
-msgstr "Ezen az oldalon, lehetséges megadni vagy eltávolítani az API kulcsot, megtekinteni a fiók információkat és a statisztikákat."
-
-#: class.akismet-admin.php:209 class.akismet-admin.php:220
-#: class.akismet-admin.php:232
+#: class.akismet-admin.php:211 class.akismet-admin.php:222
+#: class.akismet-admin.php:235
 msgid "Akismet Configuration"
 msgstr "Akismet beállítás"
 
-#: class.akismet-admin.php:198
+#: class.akismet-admin.php:200
 msgid "On this page, you are able to view stats on spam filtered on your site."
 msgstr "Ezen az oldalon érhetőek el az oldal spamszűrési statisztikái."
 
-#: class.akismet-admin.php:196
+#: class.akismet-admin.php:198
 msgid "Akismet Stats"
 msgstr "Akismet statisztikák"
 
-#: class.akismet-admin.php:184
+#: class.akismet-admin.php:186
 msgid "Click the Use this Key button."
 msgstr "Kattintsunk a \"Használjuk ezt a kulcsot\" gombra"
 
-#: class.akismet-admin.php:183
+#: class.akismet-admin.php:185
 msgid "Copy and paste the API key into the text field."
 msgstr "API kulcs másolása a szövegmezőbe."
 
-#: class.akismet-admin.php:181
+#: class.akismet-admin.php:183
 msgid "If you already have an API key"
 msgstr "Ha már rendelkezünk API kulcssal"
 
-#: class.akismet-admin.php:178
+#: class.akismet-admin.php:180
 msgid "Enter an API Key"
 msgstr "API kulcs megadása"
 
-#: class.akismet-admin.php:171
+#: class.akismet-admin.php:173
 msgid "Sign up for an account on %s to get an API Key."
 msgstr "Ingyenes felhasználói fiók regisztrálása az %s címen, az API kulcs igénybevételéhez."
 
-#: class.akismet-admin.php:170
+#: class.akismet-admin.php:172
 msgid "You need to enter an API key to activate the Akismet service on your site."
 msgstr "Egy API kulcs szükséges az Akismet szolgáltatás elindításához."
 
-#: class.akismet-admin.php:167
+#: class.akismet-admin.php:169
 msgid "New to Akismet"
 msgstr "Még új az Akismet?"
 
-#: class.akismet-admin.php:160
+#: class.akismet-admin.php:162
 msgid "On this page, you are able to set up the Akismet plugin."
 msgstr "Ezen az oldalon tudjuk beállítani az Akismet bővítményt."
 
-#: class.akismet-admin.php:158 class.akismet-admin.php:169
-#: class.akismet-admin.php:180
+#: class.akismet-admin.php:160 class.akismet-admin.php:171
+#: class.akismet-admin.php:182
 msgid "Akismet Setup"
 msgstr "Akismet beállítás"
 
-#: class.akismet-admin.php:156 class.akismet-admin.php:194
-#: class.akismet-admin.php:207
+#: class.akismet-admin.php:158 class.akismet-admin.php:196
+#: class.akismet-admin.php:209
 msgid "Overview"
 msgstr "Áttekinntés"
 
-#: class.akismet-admin.php:129
+#: class.akismet-admin.php:131
 msgid "Re-adding..."
 msgstr "Újra hozzáadás..."
 
-#: class.akismet-admin.php:128
+#: class.akismet-admin.php:130
 msgid "(undo)"
 msgstr "(visszavonás)"
 
-#: class.akismet-admin.php:127
+#: class.akismet-admin.php:129
 msgid "URL removed"
 msgstr "URL eltávolítva"
 
-#: class.akismet-admin.php:126
+#: class.akismet-admin.php:128
 msgid "Removing..."
 msgstr "Eltávolítás..."
 
-#: class.akismet-admin.php:125
+#: class.akismet-admin.php:127
 msgid "Remove this URL"
 msgstr "URL eltávolítása"
 
-#: class.akismet-admin.php:95 class.akismet-admin.php:97
+#: class.akismet-admin.php:95 class.akismet-admin.php:98
 msgid "Akismet"
 msgstr "Akismet"
 

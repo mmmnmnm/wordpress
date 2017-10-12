@@ -2,8 +2,17 @@
  * Script for Rebalance
  */
 ( function( $ ) {
+
+	// Determine if our site is RTL (Right-To-Left)
+	var ltr = true;
+
+	if ( 1 == Rebalance.is_rtl ) {
+		ltr = false;
+	}
+
 	// Code inside here fires when the DOM is loaded.
 	$( document ).ready( function() {
+
 		/**
 		 * Set variable
 		 */
@@ -27,6 +36,7 @@
 	});
 
 	$( window ).on( 'load', function() {
+
 		/**
 		 * Set variables
 		 */
@@ -52,7 +62,8 @@
 					percentPosition: true,
 					itemSelector: '.card',
 					transitionDuration: 0,
-					isFitWidth: false
+					isFitWidth: false,
+					isOriginLeft: ltr
 				});
 			});
 			// Fade blocks in after images are ready (prevents jumping and re-rendering)

@@ -40,6 +40,26 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Changelog ==
 
+= 25 August 2017 =
+* Update version number; include correct URL and credit reference in the footer.
+
+= 24 August 2017 =
+* Don't filter the More link text; this allows it to fall back to the consistent read more text, "Continue reading", and allows for users to customize the Read More text as they
+* Center images and captions rather than offsetting centered image captions and images to the left. This was particularly odd behavior when the image size was smaller than the full width of the content column.
+* Ensure floated columns display correctly for RTL languages.
+
+= 23 August 2017 =
+* Specify the registered sidebar ID rather than the sidebar's CSS ID in the infinite scroll setup footer_widgets parameter. This detects whether widgets are present and disables infinite scroll automatically so any content in the widgets is accessible.
+
+= 22 August 2017 =
+* Remove erroneous arrow on Older Posts button in RTL mode.
+
+= 3 August 2017 =
+* Rename widget area to reduce confusion
+
+= 3 July 2017 =
+* Fixed an issue whee it was not possible to turn on infinite scroll
+
 = 29 June 2017 =
 * Multiple changes:
 

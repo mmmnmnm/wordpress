@@ -44,7 +44,7 @@ function rebalance_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	// See: https://jetpack.com/support/infinite-scroll/
 	add_theme_support( 'infinite-scroll', array(
-		'footer_widgets' => true,
+		'footer_widgets' => array( 'sidebar-1' ),
 		'wrapper'        => false,
 		'container'      => 'infinite-wrap',
 		'render'         => 'rebalance_infinite_scroll_render',

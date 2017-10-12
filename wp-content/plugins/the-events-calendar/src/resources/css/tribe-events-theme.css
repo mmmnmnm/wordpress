@@ -339,7 +339,8 @@ h2.tribe-events-page-title,
 #tribe-events-content .tribe-events-calendar td {
 	border: 1px solid #d2d2d2;
 	border-top: 0;
-	transition: all .2s cubic-bezier(.550, .085, .680, .530);
+	-webkit-transition: all .2s cubic-bezier(.550, .085, .680, .530);
+	        transition: all .2s cubic-bezier(.550, .085, .680, .530);
 }
 
 #tribe-events-content .tribe-events-calendar td:hover {
@@ -468,6 +469,11 @@ h2.tribe-events-page-title,
 
 .tribe-events-map.tribe-bar-is-disabled #tribe-events-content-wrapper {
 	max-width: none;
+}
+
+.tribe-events-tooltip.tribe-events-tooltip-flipdown::before {
+	border-bottom-color: #fff;
+	top: -20px;/* Normally it's -21px, but -20px works better in Tribe Events theme because of tooltip box-shadow. */
 }
 
 /**

@@ -103,7 +103,7 @@ function date_i18n( $dateformatstring, $unixtimestamp = false, $gmt = false ) {
 	if ( ( !empty( $wp_locale->month ) ) && ( !empty( $wp_locale->weekday ) ) ) {
 		$datemonth = $wp_locale->get_month( date( 'm', $i ) );
 	        //mmmnmnm, mmn: next line for upper case first letter in hungarian months
-		$datemonth = myucfirst($datemonth);
+		$datemonth = myucfirst($datemonth);		
 		$datemonth_abbrev = $wp_locale->get_month_abbrev( $datemonth );
 		$dateweekday = $wp_locale->get_weekday( date( 'w', $i ) );
 		$dateweekday_abbrev = $wp_locale->get_weekday_abbrev( $dateweekday );
@@ -151,12 +151,12 @@ function date_i18n( $dateformatstring, $unixtimestamp = false, $gmt = false ) {
 	$j = apply_filters( 'date_i18n', $j, $req_format, $i, $gmt );
 	return $j;
 }
-
 /*mmn: helper for correctly upper casing first letter of hungarian months, e.g., április (http://stackoverflow.com/questions/25729900/ucfirst-doesnt-work-on-non-english-characters)*/ 
 function myucfirst($str) {
     $fc = mb_strtoupper(mb_substr($str, 0, 1));
     return $fc.mb_substr($str, 1);
 }
+
 /**
  * Determines if the date should be declined.
  *

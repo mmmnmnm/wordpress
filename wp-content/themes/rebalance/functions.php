@@ -118,7 +118,7 @@ add_action( 'after_setup_theme', 'rebalance_content_width', 0 );
  */
 function rebalance_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'rebalance' ),
+		'name'          => esc_html__( 'Footer', 'rebalance' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -194,6 +194,9 @@ function rebalance_scripts() {
 	wp_enqueue_script( 'rebalance-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151112', true );
 
 	wp_enqueue_script( 'rebalance-theme-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery', 'columnlist', 'masonry' ), '20151130', true );
+	wp_localize_script( 'rebalance-theme-scripts', 'Rebalance', array(
+		'is_rtl' => ( 'rtl' == get_option( 'text_direction' ) ) ? 1 : 0,
+	) );
 
 	wp_enqueue_script( 'rebalance-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151112', true );
 
@@ -243,7 +246,3 @@ require get_template_directory() . '/inc/jetpack.php';
 
 
 
-/**
- * Load plugin enhancement file to display admin notices.
- */
-require get_template_directory() . '/inc/plugin-enhancements.php';

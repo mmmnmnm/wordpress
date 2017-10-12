@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 4.8.x - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-06-09 11:52:50+0000\n"
+"PO-Revision-Date: 2017-07-28 12:00:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,39 +26,39 @@ msgctxt "start of week"
 msgid "1"
 msgstr "1"
 
-#: wp-admin/about.php:196
+#: wp-admin/about.php:218
 msgid "New capabilities have been introduced to 4.8 with an eye towards removing calls to <code>is_super_admin()</code>. Additionally, new hooks and tweaks to more granularly control site and user counts per network have been added."
 msgstr "Új jogosultságok kerültek bevezetésre a 4.8-as verzióban, mert az <code>is_super_admin()</code> funkció jövőbeni eltávolítása lebeg a szemünk előtt. További új hurkok és javítások kerültek a rendszerbe, hogy még simább legyen az oldalak és a felhasználók kezelése."
 
-#: wp-admin/about.php:151
+#: wp-admin/about.php:173
 msgid "Being part of the community can help you improve your WordPress skills and network with people you wouldn&#8217;t otherwise meet. Now you can easily find your local events just by logging in to your dashboard and looking at the new Events and News dashboard widget."
 msgstr "Azáltal, hogy aktív részévé válunk a közösségnek fejleszthetjük a WordPress tudásunkat és megismerkedhetünk olyan emberekkel, akikkel egyébként nem találkoznánk. Mostantól könnyedén találhatunk helyi eseményeket, közvetlenül a vezérlőpultról a Események és Hírek widgetben."
 
-#: wp-admin/about.php:149
+#: wp-admin/about.php:171
 msgid "This is quickly becoming one of our favorite features. While you are in the dashboard (because you&#8217;re running updates and writing posts, right?) all upcoming WordCamps and WordPress Meetups &mdash; local to you &mdash; will be displayed."
 msgstr "Elég gyorsan a kedvenc új funkciónkká vált. Amíg a vezérlőpultban vagyunk (mert ugye frissítünk és bejegyzéseket írunk, igaz?) valamennyi közelgő és közeli WordPress WordCampről és Meetupról megjelenítésre kerül."
 
-#: wp-admin/about.php:147
+#: wp-admin/about.php:169
 msgid "Did you know that WordPress has a thriving offline community with groups meeting regularly in more than 400 cities around the world? WordPress now draws your attention to the events that help you continue improving your WordPress skills, meet friends, and, of course, publish!"
 msgstr "Gondoltuk volna, hogy a világon több, mint 400 városban találkoznak rendszeresen WordPress közösségek? A WordPress mostantól nagyobb figyelmet fordít arra, hogy felhívja a figyelmünket olyan eseményekre, amelyek segíthetnek a WordPress tudásunk fejlesztésében, találkozni emberekkel és persze publikálni!"
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:148
 msgid "Have you ever tried updating a link, or the text around a link, and found you can&#8217;t seem to edit it correctly? When you edit the text after the link, your new text also ends up linked. Or you edit the text in the link, but your text ends up outside of it. This can be frustrating! With link boundaries, a great new feature, the process is streamlined and your links will work well. You’ll be happier. We promise."
 msgstr "Próbáltunk valaha frissíteni egy hivatkozást, vagy éppen a szöveget körülötte, amíg végül rájöttünk, hogy nem lehet úgy megcsinálni, ahogy szeretnénk? Amikor egy hivatkozás utáni szöveget szerkesztünk, az is hivatkozássá vált. Vagy szerkesztettük a hivatkozás szövegét és kikerült belőle. Ez iszonyatosan idegesítő! A hivatkozás határok egy nagyszerű új funkció, ami egyszerűsíti a hivatkozás létrehozás folyamatát, és boldogabbá tesz Becsszóra! ;)"
 
-#: wp-admin/about.php:117
+#: wp-admin/about.php:139
 msgid "This feature deserves a parade down the center of town! Rich-text editing capabilities are now native for Text widgets. Add a widget anywhere and format away. Create lists, add emphasis, and quickly and easily insert links. Have fun with your newfound formatting powers, and watch what you can accomplish in a short amount of time."
 msgstr "Ez az újítás megérne egy parádés belvárosi felvonulást! Szövegszerkesztési lehetőségeket kibővítettük a beépített szöveges widgetekre is. Adjunk hozzá egy widgetet bárhová és formázzuk, ahogy szeretnénk. Hozzunk létre listákat, emeljünk ki szöveget, és gyorsan szúrjunk be hivatkozásokat. Jó szórakozást kívánunk az újdonsült formázási hatalmaddal, figyeld meg hogy milyen hamar milyen sok változást tud hozni!"
 
-#: wp-admin/about.php:109
+#: wp-admin/about.php:131
 msgid "A welcome video is a great way to humanize the branding of your website. You can now add any video from the Media Library to a sidebar on your site with the new Video widget. Use this to showcase a welcome video to introduce visitors to your site or promote your latest and greatest content."
 msgstr "A köszöntő videó egy remek módja annak, hogy emberközelibbé tegyük az oldalunkat. Mostantól az új videó widget segítségével a Médiatár bármelyik videóját hozzáadhatjuk az oldalsávunkhoz! Ezt a remek új funkciót felhasználhatjuk arra, hogy bemutassuk a látogatóinknak az oldalunkat, vagy hogy a legújabb és legnagyszerűbb tartalmunkra felhívjuk a figyelmüket."
 
-#: wp-admin/about.php:105
+#: wp-admin/about.php:127
 msgid "Adding an image to a widget is now a simple task that is achievable for any WordPress user without needing to know code. Simply insert your image right within the widget settings. Try adding something like a headshot or a photo of your latest weekend adventure &mdash; and see it appear automatically."
 msgstr "Egy kép widget hozzáadása mostantól egy programozás nélkül elvégezhető feladat bármely WordPress felhasználó számára. Egyszerűen csak illeszük be a képet a widget beállításai között. Próbáljuk meg hozzáadni a legutóbbi arcképünket, vagy a hétvégi kirándulás képeit &mdash; és figyeljük, ahogy az oldalon megjelenik!"
 
-#: wp-admin/about.php:50
+#: wp-admin/about.php:72
 msgid "Though some updates seem minor, they&#8217;ve been built by hundreds of contributors with <em>you</em> in mind. Get ready for new features you&#8217;ll welcome like an old friend: link improvements, <em>three</em> new media widgets covering images, audio, and video, an updated text widget that supports visual editing, and an upgraded news section in your dashboard which brings in nearby and upcoming WordPress events."
 msgstr "Lehetséges, hogy némely változások aprónak tűnnek, mégis sokszáz fejlesztő dolgozott rajtuk úgy, hogy közben <em>Mi</em> jártunk a fejükben! Az újítások régi barátokként várják, hogy köszöntsük őket: hivatkozás kezelés fejlesztések, <em>három</em> új média widget képekhez, hangfájlokhoz és videókhoz, az új szerkesztővel ellátott szöveges widget, és a vezérlőpulton a frissített hírek rész, ami megmutatja a közeli és közelgő WordPress eseményeket!"
 
@@ -66,59 +66,59 @@ msgstr "Lehetséges, hogy némely változások aprónak tűnnek, mégis sokszáz
 msgid "Thank you for updating to the latest version! WordPress %s adds more ways for you to express yourself and represent your brand."
 msgstr "Köszönjük, hogy a legújabb verzióra frissítést! A WordPress %s új utakat nyit az önkifejezésben és a márkánk bemutatásában."
 
-#: wp-admin/about.php:204
+#: wp-admin/about.php:226
 msgid "The introduction of a new base media widget REST API schema to 4.8 opens up possibilities for even more media widgets (like galleries or playlists) in the future. The three new media widgets are powered by a shared base class that covers most of the interactions with the media modal. That class also makes it easier to create new media widgets and paves the way for more to come."
 msgstr "A 4.8-ban bevezetésre kerülő új REST API media végpont sémával lehetőség nyílik további média widgetek ( galériák, lejátszási listák) létrehozására a jövőben. A három új média widgetet egy közös osztály táplálja, amely lefed minden párbeszéd ablakot és interakciót . Ez a közös osztály egyszerűsíti új média widgetek létrehozását és kijelöli az utat az elkövetkezendőknek."
 
-#: wp-admin/about.php:203
+#: wp-admin/about.php:225
 msgid "Media Widgets API"
 msgstr "Média Widgetek API"
 
-#: wp-admin/about.php:208
+#: wp-admin/about.php:230
 msgid "Rejoice! New responsive breakpoints have been added to the customizer sidebar to make it wider on high-resolution screens. Customizer controls should use percentage-based widths instead of pixels."
 msgstr "Ünneplésre fel! Az új reszponzív csúcspontok kerültek kialakításra a Testreszabó oldalsávjában, hogy még szélesebb legyen, nagy felbontású kijelzőkön. A Testreszabó vezérlői most már százalékokkal is működnek, a pixelpontos méretek helyett."
 
-#: wp-admin/about.php:207
+#: wp-admin/about.php:229
 msgid "Customizer Width Variable"
 msgstr "Testreszabó szélesség változása"
 
-#: wp-admin/about.php:200
+#: wp-admin/about.php:222
 msgid "With the addition of TinyMCE to the text widget in 4.8 comes a new JavaScript API for instantiating the editor after page load. This can be used to add an editor instance to any text area, and customize it with buttons and functions. Great for plugin authors!"
 msgstr "Azáltal, hogy a TinyMCE elérhetővé válik a szöveges widgetekhez a 4.8-as verzóban, az új Java Script API példányosítja a szerkesztőt az oldaltöltés után. Ez arra használható, hogy bármilyen szövegmezőhöz felhasználható lesz, és tovább lehet bővíteni saját gombokkal és funkciókkal. A bővítmény fejlesztők örülni fognak!"
 
-#: wp-admin/about.php:199
+#: wp-admin/about.php:221
 msgid "Text-Editor JavaScript API"
 msgstr "A szövegszerkesztő JavaScript API"
 
-#: wp-admin/about.php:195
+#: wp-admin/about.php:217
 msgid "Multisite Updates"
 msgstr "Multisite frissítések"
 
-#: wp-admin/about.php:192
+#: wp-admin/about.php:214
 msgid "As fewer and fewer browsers support Silverlight, file formats which require the presence of the Silverlight plugin are being removed from core support. Files will still display as a download link, but will no longer be embedded automatically."
 msgstr "Ahogy egyre kevesebb és kevesebb böngésző támogatja a Silverlightot, ezért az általa használt fájl formátumok támogatása megszűnik az alaprendszerben. A fájlok továbbra is elérhetőek lesznek letöltésre, de nem lesznek automatikusan beágyazva."
 
-#: wp-admin/about.php:191
+#: wp-admin/about.php:213
 msgid "Removal of Core Support for WMV and WMA Files"
 msgstr "Eltávolításra került a WMV és WMA fájlok támogatása az alaprendszerből"
 
-#: wp-admin/about.php:188
+#: wp-admin/about.php:210
 msgid "New CSS rules mean extraneous content (like &ldquo;Add New&rdquo; links) no longer need to be included in admin-area headings. These panel headings improve the experience for people using assistive technologies."
 msgstr "Az új CSS szabályok segítségével most már nem kell minden admin fejlécbe beileszteni idegen elemket (például az &ldquo;Új hozzáadása&rdquo; hivatkozásokat). Az így megújult panel fejlécek a felolvasó szoftvert használóknak nyújtanak könnyebbséget."
 
-#: wp-admin/about.php:187
+#: wp-admin/about.php:209
 msgid "More Accessible Admin Panel Headings"
 msgstr "Még elérhetőbb Admin Panel fejrészek"
 
-#: wp-admin/about.php:56
+#: wp-admin/about.php:78
 msgid "Exciting Widget Updates"
 msgstr "Izgalmas Widget frissítések"
 
-#: wp-admin/about.php:49
+#: wp-admin/about.php:71
 msgid "WordPress 4.8 adds some great new features. Gear up for a more intuitive WordPress!"
 msgstr "A WordPress 4.8 remek újításokkal érkezik. Szerelkezzünk fel az új, még intuitívabb WordPress-szel!"
 
-#: wp-admin/about.php:48
+#: wp-admin/about.php:70
 msgid "An Update with You in Mind"
 msgstr "Egy frissítés aminek Mi vagyunk a középpontjában"
 
@@ -127,19 +127,19 @@ msgstr "Egy frissítés aminek Mi vagyunk a középpontjában"
 msgid "There aren&#8217;t any events scheduled near you at the moment. Would you like to <a href=\"%s\">organize one</a>?"
 msgstr "Jelenleg nincs esemény a közelben. Szeretnénk <a href=\"%s\">szervezni egyet</a>?"
 
-#: wp-admin/about.php:145
+#: wp-admin/about.php:167
 msgid "Nearby WordPress Events"
 msgstr "Közeli WordPress események"
 
-#: wp-admin/about.php:116
+#: wp-admin/about.php:138
 msgid "Rich Text Widget"
-msgstr ""
+msgstr "Rich Text Widget"
 
-#: wp-admin/about.php:113
+#: wp-admin/about.php:135
 msgid "Are you a podcaster, musician, or avid blogger? Adding a widget with your audio file has never been easier. Upload your audio file to the Media Library, go to the widget settings, select your file, and you&#8217;re ready for listeners. This would be a easy way to add a more personal welcome message, too!"
 msgstr "Podcasterek, zenészek, vagy audió bloggerek vagyunk? Az új hangfájlok hozzáadása sosem volt még ilyen könnyű, mint most. Töltsünk fel egy új hangfájlt a Méditárba, menjünk a widget beállításokhoz, válasszuk ki a fájlt, a hallgatóink számára. Ez egy remek módja annak, hogy még személyesebb köszöntést tegyünk az oldalunkra."
 
-#: wp-admin/about.php:125
+#: wp-admin/about.php:147
 msgid "Link Boundaries"
 msgstr "Link határok"
 
@@ -218,13 +218,17 @@ msgid "Assign a parent term to create a hierarchy. The term Jazz, for example, w
 msgstr "A hierarchia létrehozásához rendeljünk hozzá egy szülő kifejezést. A jazz kifejezés például lehet a szülője a bebopnak és a big band-nek."
 
 #. translators: %s: smiling face with smiling eyes emoji
-#: wp-admin/about.php:180
+#: wp-admin/about.php:202
 msgid "Even More Developer Happiness %s"
 msgstr "Még több fejlesztői finomság %s"
 
 #: wp-admin/users.php:167 wp-admin/users.php:207
 msgid "Sorry, you are not allowed to delete users."
 msgstr "Elnézést, nincs megfelelő jogosultság a felhasználó eltávolításához."
+
+#: wp-admin/user-new.php:23 wp-admin/user-new.php:117
+msgid "Sorry, you are not allowed to create users."
+msgstr "Elnézést, nincs megfelelő jogosultság a felhasználók létrehozására."
 
 #: wp-admin/customize.php:163
 msgid "The Customizer allows you to preview changes to your site before publishing them. You can navigate to different pages on your site within the preview. Edit shortcuts are shown for some editable elements."
@@ -466,9 +470,9 @@ msgstr "A telepített bővítmények keresése a nevük, leírásuk, vagy a szer
 msgid "Custom Logo"
 msgstr "Saját logó"
 
-#: wp-admin/user-new.php:23 wp-admin/user-new.php:117
-msgid "Sorry, you are not allowed to create users."
-msgstr "Elnézést, nincs megfelelő jogosultság új felhasználó létrehozására."
+#: wp-admin/users.php:317 wp-admin/users.php:348
+msgid "Sorry, you are not allowed to remove users."
+msgstr "Elnézést, nincs megfelelő jogosultság a felhasználók eltávolítására."
 
 #: wp-admin/user-new.php:16 wp-admin/user-new.php:56
 msgid "Sorry, you are not allowed to add users to this network."
@@ -661,10 +665,6 @@ msgstr "Kicserélhetjük az aktuális szerkesztői tartalmat a legutóbb mentett
 #: wp-admin/includes/template.php:1523
 msgid "Close media attachment panel"
 msgstr "Média hozzáadása felület bezárása."
-
-#: wp-admin/users.php:317 wp-admin/users.php:348
-msgid "Sorry, you are not allowed to remove users."
-msgstr "Elnézést, nincs megfelelő jogosultság a felhasználók eltávolításához."
 
 #: wp-admin/includes/ms.php:1096
 msgid "Info"
@@ -1198,16 +1198,16 @@ msgstr "Lomtár"
 msgid "The ssh2 PHP extension is available, however, we require the PHP5 function %s"
 msgstr "A PHP ssh2 kiegészítő rendelkezésre áll, azonban a PHP5 %s funkció kötelező."
 
-#: wp-admin/includes/class-wp-comments-list-table.php:588
+#: wp-admin/includes/class-wp-comments-list-table.php:593
 msgid "Quick edit this comment inline"
 msgstr "Szerkesszük ezt a hozzászólás itt helyben"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:584
+#: wp-admin/includes/class-wp-comments-list-table.php:589
 #: wp-admin/includes/dashboard.php:634
 msgid "Edit this comment"
 msgstr "Ennek a hozzászólásnak a szerkesztése"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:570
+#: wp-admin/includes/class-wp-comments-list-table.php:575
 msgid "Restore this comment from the spam"
 msgstr "Hozzászólás visszaállítása a Szemétből"
 
@@ -1276,7 +1276,7 @@ msgid "Welcome to %s. This is your first post. Edit or delete it, then start blo
 msgstr "Üdvözlet a(z) %s honlapon. Ez az első saját WordPress-bejegyzés. Módosítható, vagy törölhető, aztán megkezdhető a honlap tartalommal történő feltöltése!"
 
 #. translators: %s: WordPress version number
-#: wp-admin/about.php:242
+#: wp-admin/about.php:264
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>%s verzió</strong> egy biztonsági hibát javított."
 
@@ -1293,15 +1293,15 @@ msgstr "Az adatlap-képet a <a href=\"%s\">Gravatar</a> oldalán lehet módosít
 msgid "Profile Picture"
 msgstr "Adatlap-kép"
 
-#: wp-admin/about.php:239
+#: wp-admin/about.php:261
 msgid "Maintenance and Security Releases"
 msgstr "Hibajavító- és biztonsági frissítések"
 
-#: wp-admin/about.php:236
+#: wp-admin/about.php:258
 msgid "Security Releases"
 msgstr "Biztonsági frissítések"
 
-#: wp-admin/about.php:233
+#: wp-admin/about.php:255
 msgid "Maintenance Releases"
 msgstr "Hibajavító frissítések"
 
@@ -1717,7 +1717,7 @@ msgstr "Nincs függőben lévő hozzászólás"
 msgid "Failed to initialize a SFTP subsystem session with the SSH2 Server %s"
 msgstr "Nem sikerült inicializálni az SFTP alrendszer munkamenetét %s SSH2 kiszolgálóval"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:405
+#: wp-admin/includes/class-wp-comments-list-table.php:410
 msgctxt "column name"
 msgid "Submitted On"
 msgstr "Hozzászólás dátuma"
@@ -1873,7 +1873,7 @@ msgstr "A használatban lévő sablon nem támogatja a saját fejrész-kép felt
 
 #. translators: %s: comment link
 #: wp-admin/comment.php:187
-#: wp-admin/includes/class-wp-comments-list-table.php:648
+#: wp-admin/includes/class-wp-comments-list-table.php:653
 msgid "In reply to %s."
 msgstr "Válasz %s hozzászólására."
 
@@ -1968,7 +1968,7 @@ msgstr "Jelszó megerősítés"
 msgid "While you are editing your %1$s file, take a moment to make sure you have all 8 keys and that they are unique. You can generate these using the <a href=\"%2$s\">WordPress.org secret key service</a>."
 msgstr "Ameddig a %1$s fájlt szerkesztjük, vessünk egy pillantást arra, hogy mind a 8 egyedi kulcs meglegyen. A <a href=\"%2$s\">WordPress.org biztonsági kulcs szolgáltatás</a> könnyedén létrehozhatjuk ezeket a biztonsági kulcsokat."
 
-#: wp-admin/includes/class-wp-comments-list-table.php:616
+#: wp-admin/includes/class-wp-comments-list-table.php:621
 #: wp-admin/includes/class-wp-list-table.php:523
 #: wp-admin/includes/class-wp-list-table.php:1324
 #: wp-admin/includes/update.php:687
@@ -2756,7 +2756,7 @@ msgstr "Y-m-d  H:i"
 
 #. translators: column name or table row header
 #: wp-admin/comment.php:169
-#: wp-admin/includes/class-wp-comments-list-table.php:402
+#: wp-admin/includes/class-wp-comments-list-table.php:407
 msgid "In Response To"
 msgstr "Válasz"
 
@@ -2877,7 +2877,7 @@ msgstr "%s kijelentkeztetve."
 msgid "You are now logged out everywhere else."
 msgstr "Most minden helyről kijelentkeztünk."
 
-#: wp-admin/includes/class-wp-comments-list-table.php:327
+#: wp-admin/includes/class-wp-comments-list-table.php:332
 msgid "Filter by comment type"
 msgstr "Hozzászólás típus szerinti szűrés"
 
@@ -3159,7 +3159,7 @@ msgstr "Lehetséges az eredeti képet arányosan méretezni. A legjobb eredmény
 msgid "To crop the image, click on it and drag to make your selection."
 msgstr "Képkivágáshoz kattintsunk a képre, majd húzzuk a kívánságunk szerinti méretre"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:329
+#: wp-admin/includes/class-wp-comments-list-table.php:334
 msgid "All comment types"
 msgstr "Minden hozzászólás típus"
 
@@ -4702,7 +4702,7 @@ msgstr "A címkéket egyesével is kategóriákká lehet átalakítani a <a href
 msgid "Select %s"
 msgstr "%s kiválasztása"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:627
+#: wp-admin/includes/class-wp-comments-list-table.php:632
 msgid "Select comment"
 msgstr "Hozzászólás kiválasztása"
 
@@ -4924,7 +4924,7 @@ msgid "%s ago"
 msgstr "%s telt el"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:300
-#: wp-admin/includes/class-wp-comments-list-table.php:574
+#: wp-admin/includes/class-wp-comments-list-table.php:579
 #: wp-admin/includes/class-wp-media-list-table.php:144
 #: wp-admin/includes/class-wp-media-list-table.php:715
 #: wp-admin/includes/class-wp-posts-list-table.php:397
@@ -5393,7 +5393,7 @@ msgid "Contributing Developers"
 msgstr "És akik még ehhez a kiadáshoz hozzájárultak"
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:247
+#: wp-admin/about.php:52 wp-admin/about.php:269
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> %2$s hibát javít."
@@ -5401,20 +5401,20 @@ msgstr[1] "<strong>%1$s verzió</strong> %2$s hibát javít."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:255
+#: wp-admin/about.php:277
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> biztonsági réseket, és %2$s hibát javított."
 msgstr[1] "<strong>%1$s verzió</strong> biztonsági réseket, és %2$s hibát javított."
 
 #. translators: %s: Codex URL
-#: wp-admin/about.php:259
+#: wp-admin/about.php:63 wp-admin/about.php:281
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "További információk: <a href=\"%s\">Verzió információk</a>."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:251
+#: wp-admin/about.php:273
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>%1$s verzió</strong> egy biztonsági rést, és %2$s hibát javított."
@@ -5425,15 +5425,15 @@ msgid "Welcome to your WordPress Dashboard! This is the screen you will see when
 msgstr "Üdvözlet a WordPress vezérlőpultjánál! Ez a képernyő akkor látható, ha a honlapunkra bejelentkeztünk, és a WordPress honlapunk szolgáltatásait  kívánjuk beállítani, kezelni. A súgó minden helyen előhívható a felső sávon található \"Súgó\" fülre történő kattintással."
 
 #. translators: %s: WordPress version number
-#: wp-admin/about.php:244
+#: wp-admin/about.php:266
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "A <strong>%s verzió</strong> néhány biztonsági hibát javít."
 
-#: wp-admin/about.php:232
+#: wp-admin/about.php:47 wp-admin/about.php:254
 msgid "Maintenance Release"
 msgstr "Hibajavító frissítés"
 
-#: wp-admin/about.php:235
+#: wp-admin/about.php:257
 msgid "Security Release"
 msgstr "Biztonsági frissítés"
 
@@ -5441,7 +5441,7 @@ msgstr "Biztonsági frissítés"
 msgid "What&#8217;s New"
 msgstr "Újdonságok"
 
-#: wp-admin/about.php:238
+#: wp-admin/about.php:260
 msgid "Maintenance and Security Release"
 msgstr "Karbantartó és biztonsági frissítés"
 
@@ -5453,7 +5453,7 @@ msgstr "Ezen a képernyőn lehetőségünk van az oldal alapértelmezett hivatko
 msgid "Welcome to WordPress %1$s. <a href=\"%2$s\">Learn more</a>."
 msgstr "Üdvözlet a WordPress %1$s verziójától! <a href=\"%2$s\" target=\"_blank\">További tudnivalók</a>."
 
-#: wp-admin/about.php:218
+#: wp-admin/about.php:240
 msgid "Return to Updates"
 msgstr "Vissza a frissítésekhez"
 
@@ -5733,11 +5733,11 @@ msgstr "Úgy tűnik, hogy a  wp-admin/includes/template.php fájl közvetlenül 
 msgid "Welcome to WordPress %s"
 msgstr "Itt van a WordPress %s!"
 
-#: wp-admin/about.php:218
+#: wp-admin/about.php:240
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Vezérlőpulthoz &rarr; Frissítések"
 
-#: wp-admin/about.php:221
+#: wp-admin/about.php:243
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Vezérlőpulthoz &rarr; Kezdőlap"
 
@@ -6450,6 +6450,14 @@ msgid ""
 "\n"
 "As a new WordPress user, you should go to <a href=\"%s\">your dashboard</a> to delete this page and create new pages for your content. Have fun!"
 msgstr ""
+"Ez egy mintaoldal, egy WordPress-alapú honlap egy oldalának létrehozásához. Az oldal különbözik a bejegyzéstől, mert az oldal állandóan látszik a honlap menüjében, a navigáció során (a legtöbb sablonban). Az emberek többsége használja a Névjegy oldalt, amely arra szolgál, hogy a lehetséges látogatói számára elmondjanak magukról, vállalkozásukról, a honlapról néhány jellemző mondatot. Egyik lehetséges megoldás erre pl.:\n"
+"\n"
+"<blockquote>Helló Emberek!Ezt a fordítást a WordPress Magyarország Fordítói csapata végezte. Sok száz munkaórát fektettünk abba, hogy ezt a remek tartalomkezelő rendszert anyanyelvünkön, magyarul használhassa mindenki.</blockquote>\n"
+"\n"
+".... vagy egy másik példa:\n"
+"<blockquote>A<strong> WordPress Magyarország</strong> tulajdonképpen a kezdetektől létezik anélkül, hogy kihirdette volna létét. <strong>A WordPress Magyarország egy Közösség!</strong> - a nyílt forráskódú, zseniális WordPress tartalomkezelő rendszer alkalmazására, megismerésére, tanulására szövetkeztünk.</blockquote>\n"
+"\n"
+"Új WordPress-felhasználóként a <a href=\"%s\">Vezérlőpult</a>ba lépve ez az oldal törölhető, módosítható, és új oldalak hozhatóak létre saját tartalommal. Jó szórakozást kíván a WordPress Nemzeközi Közössége!"
 
 #: wp-admin/user-edit.php:380
 msgid "Super admin privileges cannot be removed because this user has the network admin email."
@@ -7104,12 +7112,12 @@ msgstr "Fejrész kép körbevágása"
 msgid "Default Images"
 msgstr "Alapértelmezett képek"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:578
+#: wp-admin/includes/class-wp-comments-list-table.php:583
 #: wp-admin/includes/dashboard.php:639
 msgid "Delete this comment permanently"
 msgstr "A hozzászólás végleges törlése"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:574
+#: wp-admin/includes/class-wp-comments-list-table.php:579
 msgid "Restore this comment from the Trash"
 msgstr "Bejegyzés visszaállítása a Lomtárból"
 
@@ -7220,7 +7228,7 @@ msgid "You have version %1$s installed. Update to %2$s."
 msgstr "Jelenleg a(z) %1$s verzió van telepítve. Frissítés a(z) %2$s verzióra!"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:302
-#: wp-admin/includes/class-wp-comments-list-table.php:570
+#: wp-admin/includes/class-wp-comments-list-table.php:575
 msgctxt "comment"
 msgid "Not Spam"
 msgstr "Nem spam"
@@ -7595,7 +7603,7 @@ msgstr "Összes"
 msgid "Please enter a valid menu name."
 msgstr "Érvényes menünevet kell megadni."
 
-#: wp-admin/about.php:221
+#: wp-admin/about.php:243
 msgid "Go to Dashboard"
 msgstr "Vissza a Vezérlőpulthoz"
 
@@ -9108,7 +9116,7 @@ msgstr "Látható"
 msgid "Relationship"
 msgstr "Kapcsolat"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:398
+#: wp-admin/includes/class-wp-comments-list-table.php:403
 #: wp-admin/includes/class-wp-post-comments-list-table.php:28
 msgctxt "column name"
 msgid "Comment"
@@ -9132,7 +9140,7 @@ msgctxt "column name"
 msgid "Title"
 msgstr "Címsor"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:588
+#: wp-admin/includes/class-wp-comments-list-table.php:593
 #: wp-admin/includes/class-wp-posts-list-table.php:1253
 #: wp-admin/includes/class-wp-terms-list-table.php:449
 msgid "Quick&nbsp;Edit"
@@ -10060,36 +10068,36 @@ msgstr "[Függőben]"
 msgid "From %1$s on %2$s %3$s"
 msgstr "%1$s hozzászólása ehhez: %2$s%3$s"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:580
+#: wp-admin/includes/class-wp-comments-list-table.php:585
 #: wp-admin/includes/dashboard.php:641
 msgid "Move this comment to the Trash"
 msgstr "A hozzászólás lomtárba helyezése"
 
 #. translators: mark as spam link
-#: wp-admin/includes/class-wp-comments-list-table.php:568
+#: wp-admin/includes/class-wp-comments-list-table.php:573
 #: wp-admin/includes/dashboard.php:636
 msgctxt "verb"
 msgid "Spam"
 msgstr "Spam"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:568
+#: wp-admin/includes/class-wp-comments-list-table.php:573
 #: wp-admin/includes/dashboard.php:636
 msgid "Mark this comment as spam"
 msgstr "Hozzászólás spamnak minősítése"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:590
+#: wp-admin/includes/class-wp-comments-list-table.php:595
 #: wp-admin/includes/dashboard.php:635
 msgid "Reply to this comment"
 msgstr "Válasz ehhez a hozzászóláshoz"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:558
-#: wp-admin/includes/class-wp-comments-list-table.php:564
+#: wp-admin/includes/class-wp-comments-list-table.php:563
+#: wp-admin/includes/class-wp-comments-list-table.php:569
 #: wp-admin/includes/dashboard.php:633
 msgid "Unapprove this comment"
 msgstr "Hozzászólás moderálása"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:560
-#: wp-admin/includes/class-wp-comments-list-table.php:563
+#: wp-admin/includes/class-wp-comments-list-table.php:565
+#: wp-admin/includes/class-wp-comments-list-table.php:568
 #: wp-admin/includes/dashboard.php:632
 msgid "Approve this comment"
 msgstr "Hozzászólás jóváhagyása"
@@ -10643,24 +10651,24 @@ msgstr "Egyedi mező frissítve."
 msgid "No comments found."
 msgstr "Nem találtunk hozzászólást!"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:359
+#: wp-admin/includes/class-wp-comments-list-table.php:364
 #: wp-admin/includes/class-wp-media-list-table.php:181
 #: wp-admin/includes/class-wp-posts-list-table.php:493
 msgid "Empty Trash"
 msgstr "Lomtár ürítése"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:359
+#: wp-admin/includes/class-wp-comments-list-table.php:364
 msgid "Empty Spam"
 msgstr "Spam-tároló ürítése"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:354
+#: wp-admin/includes/class-wp-comments-list-table.php:359
 #: wp-admin/includes/class-wp-links-list-table.php:115
 #: wp-admin/includes/class-wp-media-list-table.php:177
 #: wp-admin/includes/class-wp-posts-list-table.php:488
 msgid "Filter"
 msgstr "Szűrés"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:340
+#: wp-admin/includes/class-wp-comments-list-table.php:345
 #: wp-admin/includes/class-wp-posts-list-table.php:1612
 msgid "Pings"
 msgstr "Visszajelzések"
@@ -10673,15 +10681,15 @@ msgid "Move to Trash"
 msgstr "Lomtárba helyezés"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:295
-#: wp-admin/includes/class-wp-comments-list-table.php:560
-#: wp-admin/includes/class-wp-comments-list-table.php:563
+#: wp-admin/includes/class-wp-comments-list-table.php:565
+#: wp-admin/includes/class-wp-comments-list-table.php:568
 #: wp-admin/includes/dashboard.php:632
 msgid "Approve"
 msgstr "Elfogadás"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:293
-#: wp-admin/includes/class-wp-comments-list-table.php:558
-#: wp-admin/includes/class-wp-comments-list-table.php:564
+#: wp-admin/includes/class-wp-comments-list-table.php:563
+#: wp-admin/includes/class-wp-comments-list-table.php:569
 #: wp-admin/includes/dashboard.php:633
 msgid "Unapprove"
 msgstr "Elutasítás"

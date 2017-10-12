@@ -52,15 +52,7 @@ function rebalance_excerpt_more() {
 		return ' &hellip; <a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'More', 'rebalance' ) . '</a>';
 	}
 }
-add_filter('excerpt_more', 'rebalance_excerpt_more');
-
-/**
- * Filter more link
- */
-function rebalance_read_more_link() {
-	return '<a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'More', 'rebalance' ) . '</a>';
-}
-add_filter( 'the_content_more_link', 'rebalance_read_more_link' );
+add_filter( 'excerpt_more', 'rebalance_excerpt_more' );
 
 /**
  * Add conditional classes to posts

@@ -484,7 +484,7 @@ Date.prototype.format = function( mask, utc ) {
 	 */
 	$.fn.tribe_spin = function() {
 		var $loadingImg = $( '.tribe-events-ajax-loading:first' ).clone().addClass( 'tribe-events-active-spinner' );
-		$loadingImg.prependTo( '#tribe-events-content' );
+		$loadingImg.prependTo( document.getElementById( 'tribe-events-content' ) );
 		$( this ).addClass( 'tribe-events-loading' ).css( 'opacity', .25 )
 	};
 
@@ -602,9 +602,9 @@ Date.prototype.format = function( mask, utc ) {
 		 * @example var base_url = tribe_ev.fn.get_base_url();
 		 */
 		get_base_url          : function() {
-			var base_url = '',
-				$event_header = $( '#tribe-events-header' ),
-				$canonical = $( 'link[rel="canonical"]' );
+			var base_url      = '';
+			var $event_header = $( document.getElementById( 'tribe-events-header' ) );
+			var $canonical    = $( 'link[rel="canonical"]' );
 
 			if ( $canonical.length ) {
 				// use the canonical URL if it is available (it should be)
@@ -624,8 +624,8 @@ Date.prototype.format = function( mask, utc ) {
 		 * @desc tribe_ev.fn.update_base_url can be used on any events view to update base_url for that view
 		 */
 		update_base_url: function( url ) {
-			var $event_header = $( '#tribe-events-header' ),
-				$canonical = $( 'link[rel="canonical"]' );
+			var $event_header = $( document.getElementById( 'tribe-events-header' ) );
+			var $canonical    = $( 'link[rel="canonical"]' );
 
 			if ( $canonical.length ) {
 				// use the canonical URL if it is available (it should be)
@@ -643,7 +643,7 @@ Date.prototype.format = function( mask, utc ) {
 		 */
 		get_category          : function() {
 			if ( tribe_ev.fn.is_category() ) {
-				return $( '#tribe-events' ).data( 'category' );
+				return $( document.getElementById( 'tribe-events' ) ).data( 'category' );
 			}
 			else {
 				return '';
@@ -657,8 +657,8 @@ Date.prototype.format = function( mask, utc ) {
 		 */
 		get_day               : function() {
 			var dp_day = '';
-			if ( $( '#tribe-bar-date' ).length ) {
-				dp_day = $( '#tribe-bar-date-day' ).val();
+			if ( $( document.getElementById( 'tribe-bar-date' ) ).length ) {
+				dp_day = $( document.getElementById( 'tribe-bar-date-day' ) ).val();
 			}
 			// @ifdef DEBUG
 			dbug && debug.info( 'TEC Debug: tribe_ev.fn.get_day returned this date: "' + dp_day + '".' );
@@ -728,7 +728,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * @example if (tribe_ev.fn.is_category()){ true } else { false }
 		 */
 		is_category           : function() {
-			var $tribe_events = $( '#tribe-events' );
+			var $tribe_events = $( document.getElementById( 'tribe-events' ) );
 			return ($tribe_events.length && $tribe_events.tribe_has_attr( 'data-category' ) && $tribe_events.data( 'category' ) !== '') ? true : false;
 		},
 
@@ -738,7 +738,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * @return {boolean}
 		 */
 		is_featured: function() {
-			return $( '#tribe-events' ).data( 'featured' ) == '1';
+			return $( document.getElementById( 'tribe-events' ) ).data( 'featured' ) == '1';
 		},
 
 		/**
@@ -870,7 +870,7 @@ Date.prototype.format = function( mask, utc ) {
 		 */
 		set_form              : function( params ) {
 			var $body = $( 'body' ),
-				$tribe_bar = $( '#tribe-bar-form' );
+				$tribe_bar = $( document.getElementById( 'tribe-bar-form' ) );
 
 			$body.addClass( 'tribe-reset-on' );
 
@@ -962,21 +962,21 @@ Date.prototype.format = function( mask, utc ) {
 		 *        tribe_ev.fn.tooltips();
 		 */
 		tooltips                 : function() {
-			var $container = $( '#tribe-events' ),
-				$body = $( 'body' ),
-				is_shortcode = $container.hasClass( 'tribe-events-shortcode' ),
-				is_month_view = $container.hasClass( 'view-month' ) || $body.hasClass( 'events-gridview' ),
-				is_week_view = $container.hasClass( 'view-week' ) || $body.hasClass( 'tribe-events-week' ),
-				is_photo_view = $container.hasClass( 'view-photo' ) || $body.hasClass( 'tribe-events-photo' ),
-				is_day_view = $container.hasClass( 'view-day' ) || $body.hasClass( 'tribe-events-day' ),
-				is_list_view = $container.hasClass( 'view-list' ) || $body.hasClass( 'events-list' ),
-				is_map_view = $container.hasClass( 'view-map' ) || $body.hasClass( 'tribe-events-map' ),
-				is_single = $body.hasClass( 'single-tribe_events' );
+			var $container    = $( document.getElementById( 'tribe-events' ) );
+			var $body         = $( 'body' );
+			var is_shortcode  = $container.hasClass( 'tribe-events-shortcode' );
+			var is_month_view = $container.hasClass( 'view-month' ) || $body.hasClass( 'events-gridview' );
+			var is_week_view  = $container.hasClass( 'view-week' ) || $body.hasClass( 'tribe-events-week' );
+			var is_photo_view = $container.hasClass( 'view-photo' ) || $body.hasClass( 'tribe-events-photo' );
+			var is_day_view   = $container.hasClass( 'view-day' ) || $body.hasClass( 'tribe-events-day' );
+			var is_list_view  = $container.hasClass( 'view-list' ) || $body.hasClass( 'events-list' );
+			var is_map_view   = $container.hasClass( 'view-map' ) || $body.hasClass( 'tribe-events-map' );
+			var is_single     = $body.hasClass( 'single-tribe_events' );
 
 			$container.on( 'mouseenter', 'div[id*="tribe-events-event-"], div.event-is-recurring', function() {
-				var bottomPad = 0,
-					$this = $( this ),
-					$tip;
+				var bottomPad = 0;
+				var $this     = $( this );
+				var $tip;
 
 				if ( is_month_view ) { // Cal View Tooltips
 					bottomPad = $this.find( 'a' ).outerHeight() + 18;
@@ -1011,6 +1011,16 @@ Date.prototype.format = function( mask, utc ) {
 							$tip = $this.find( '.tribe-events-tooltip' );
 						}
 
+						// Look for the distance between top of tooltip and top of visible viewport.
+						var dist_to_top = $this.offset().top - ( $( window ).scrollTop() + 50 ); // The +50 is some padding for a more aesthetically-pleasing view. 
+						var tip_height  = $tip.outerHeight();
+
+						// If true, tooltip is near top of viewport, so tweak some values to keep the tooltip fully in-view.
+						if ( dist_to_top < tip_height ) {
+							bottomPad = -tip_height;
+							$tip.addClass( 'tribe-events-tooltip-flipdown' );
+						}
+
 						$tip.css( 'bottom', bottomPad ).show();
 					} else {
 						$this.find( '.tribe-events-tooltip' ).css( 'bottom', bottomPad ).show();
@@ -1018,7 +1028,13 @@ Date.prototype.format = function( mask, utc ) {
 				}
 
 			} ).on( 'mouseleave', 'div[id*="tribe-events-event-"], div[id*="tribe-events-daynum-"]:has(a), div.event-is-recurring', function() {
-				$( this ).find( '.tribe-events-tooltip' ).stop( true, false ).fadeOut( 200 );
+
+				var $tip = $( this ).find( '.tribe-events-tooltip' );
+
+				$tip.stop( true, false ).fadeOut( 200, function() {
+					$tip.removeClass( 'tribe-events-tooltip-flipdown' );
+				} );
+
 			} );
 		},
 		/**
@@ -1123,7 +1139,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * }
 		 */
 		live_ajax     : function() {
-			var $tribe_events = $( '#tribe-events' );
+			var $tribe_events = $( document.getElementById( 'tribe-events' ) );
 			return ($tribe_events.length && $tribe_events.tribe_has_attr( 'data-live_ajax' ) && $tribe_events.data( 'live_ajax' ) == '1') ? true : false;
 		},
 		/**
@@ -1219,7 +1235,20 @@ Date.prototype.format = function( mask, utc ) {
 				'mm.dd.yyyy',
 				'dd.mm.yyyy'
 			],
-			'month': ['yyyy-mm', 'm/yyyy', 'mm/yyyy', 'm/yyyy', 'mm/yyyy', 'm-yyyy', 'mm-yyyy', 'm-yyyy', 'mm-yyyy']
+			'month': [
+				'yyyy-mm',
+				'm/yyyy',
+				'mm/yyyy',
+				'm/yyyy',
+				'mm/yyyy',
+				'm-yyyy',
+				'mm-yyyy',
+				'm-yyyy',
+				'mm-yyyy',
+				'yyyy.mm',
+				'mm.yyyy',
+				'mm.yyyy'
+			]
 		},
 		datepicker_opts     : {},
 		default_permalinks  : (!config.permalink_settings.length),
@@ -1293,16 +1322,16 @@ Date.prototype.format = function( mask, utc ) {
 
 		tf.update_viewport_variables();
 
-		var $body = $( 'body' ),
-			$tribe_events = $( '#tribe-events' ),
-			$tribe_content = $( '#tribe-events-content' ),
-			$tribe_events_header = $( '#tribe-events-header' ),
-			resize_timer;
-
+		var $body                = $( 'body' );
+		var $tribe_events        = $( document.getElementById( 'tribe-events' ) );
+		var $tribe_content       = $( document.getElementById( 'tribe-events-content' ) );
+		var $tribe_events_header = $( document.getElementById( 'tribe-events-header' ) );
+		var resize_timer;
 
 		$tribe_events.removeClass( 'tribe-no-js' );
-		ts.category = tf.get_category();
-		td.base_url = tf.get_base_url();
+		
+		ts.category   = tf.get_category();
+		td.base_url   = tf.get_base_url();
 		ts.page_title = document.title;
 
 		var tribe_display = tf.get_url_param( 'tribe_event_display' );
@@ -1344,7 +1373,7 @@ Date.prototype.format = function( mask, utc ) {
 				return;
 			}
 
-			var $header = $( '#tribe-events-header' );
+			var $header = $( document.getElementById( 'tribe-events-header' ) );
 			var $canonical = $( 'link[rel="canonical"]' );
 			var url = null;
 

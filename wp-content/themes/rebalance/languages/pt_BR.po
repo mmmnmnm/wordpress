@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress.com - Themes - Rebalance package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-03-23 08:29:17+0000\n"
+"PO-Revision-Date: 2017-08-04 04:15:32+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,10 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: pt_BR\n"
 "Project-Id-Version: WordPress.com - Themes - Rebalance\n"
+
+#: functions.php:121
+msgid "Footer"
+msgstr "Rodapé"
 
 #: inc/wpcom-colors.php:374
 msgid "White, Mauve & Navy"
@@ -72,7 +76,7 @@ msgstr "Navegação do portfólio"
 msgid "Newer projects"
 msgstr "Novos Projetos"
 
-#: archive-jetpack-portfolio.php:42 inc/jetpack.php:222
+#: archive-jetpack-portfolio.php:42 inc/jetpack.php:226
 #: taxonomy-jetpack-portfolio-tag.php:42 taxonomy-jetpack-portfolio-type.php:42
 msgid "Older projects"
 msgstr "Projetos Antigos"
@@ -167,11 +171,11 @@ msgstr "exemplo: jane doe"
 msgid "More"
 msgstr "Mais"
 
-#: image.php:70
+#: image.php:71
 msgid "Next Image"
 msgstr "Próxima imagem"
 
-#: image.php:62
+#: image.php:63
 msgid "Previous Image"
 msgstr "Imagem Anterior"
 
@@ -230,10 +234,6 @@ msgstr "em "
 msgctxt "Rubik font: on or off"
 msgid "on"
 msgstr "em"
-
-#: functions.php:121
-msgid "Sidebar"
-msgstr "Lateral"
 
 #: functions.php:66
 msgid "Social Menu"

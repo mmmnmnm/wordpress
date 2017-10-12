@@ -2,7 +2,7 @@
 Theme Name: Rebalance
 Theme URI: https://wordpress.com/themes/rebalance/
 Description: Rebalance is a new spin on the classic Imbalance 2 portfolio theme. It is a simple, modern theme for photographers, artists, and graphic designers looking to showcase their work.
-Version: 1.1.4
+Version: 1.1.7
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 License: GNU General Public License v2 or later
@@ -2594,6 +2594,10 @@ object {
 	text-align: center;
 }
 
+.post .wp-caption.aligncenter {
+	margin: 0 auto 1.5em;
+}
+
 /* Large Screen Styles */
 @media screen and (min-width: 881px) {
 
@@ -2606,6 +2610,15 @@ object {
 		top: 0;
 		right: calc(100% + 40px);
 		width: 50%;
+	}
+
+	.post .wp-caption.aligncenter .wp-caption-text {
+		margin: 5px 0;
+		position: relative;
+		text-align: center;
+		top: 0;
+		right: inherit;
+		width: 100%;
 	}
 
 }
