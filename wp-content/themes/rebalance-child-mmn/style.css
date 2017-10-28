@@ -56,16 +56,19 @@
 .menu-podcast a:hover{
   color: black !important;
 }*/
-.english-content a{
+.fade-out-text a{
   color:#d1b8c0 !important;
 }
-.english-content a:hover{
+.fade-out-text a:hover{
   color:red !important;
+  text-decoration:none
 }
 /*mmn: any English content text on a mixed language page should be this color*/
-.english-content{
+.fade-out-text{
+  font-style: normal;
   color:#d1b8c0 !important;
 }
+
 
 /*mmn added*/
 @font-face {
@@ -99,16 +102,6 @@
 	width: 200px;
   /* mmmn: right margin removed not to confuse middle align */
 
-}
-
-.donate{
-  font-style: normal;
-  margin:10px;
-  color:#d1b8c0 !important;
-}
-
-.donate a{
-  text-decoration:none
 }
 
 /*mmn: scale down featured image*/
