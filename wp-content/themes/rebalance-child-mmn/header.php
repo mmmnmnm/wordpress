@@ -58,15 +58,7 @@
 
 			<?php $description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
-				<!--<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?><br>-->
-<div class="site-description">
-					<!-- <p class="donate">[DONÁLJ / DONATE: 16200223-10061219 <a href="http://www.mmmnmnm.com/donate/">&#9432;</a>]</p>-->
-					<p class="fade-out-text"><a href="http://www.mmmnmnm.com/2017/10/19/felhivas-kritika-video-call-for-review-video/">FELHÍVÁS szöveg kép / CALL FOR text visuals</a></p>
-					<a href="http://www.mmmnmnm.com/2017/10/19/felhivas-kritika-video-call-for-review-video/">
-						<img src="http://www.mmmnmnm.com/wp-content/uploads/kompletta_border_blur.png" alt="Kompletta">
-					</a>
-</div>
-				<!--</p>-->
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 
 			<?php if ( has_nav_menu( 'header' ) ) : ?>
