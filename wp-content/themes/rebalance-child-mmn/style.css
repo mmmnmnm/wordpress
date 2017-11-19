@@ -110,3 +110,65 @@
     width: auto;
     max-height: 500px;
 }
+
+/*MMN: donatition digits style */
+
+.flip-numbers {
+	padding: 3rem;
+	text-align: center;
+}
+
+.flip-digit-static {
+	position: relative;
+	font-size: 1.5rem;
+	font-weight: bold;
+  background: #444444;
+	color: white;
+	line-height: 1;
+	padding: 0 0.5rem;
+	border-radius: 0.8rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1;
+}
+
+
+.flip-digit {
+	position: relative;
+	font-size: 2rem;
+	font-weight: bold;
+  background: #444444;
+	color: white;
+	line-height: 1;
+	padding: 0 0.5rem;
+	border-radius: 0.8rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  line-height: 1;
+}
+
+.flip-digit:before {
+		content: '';
+		display: block;
+		background: black;
+		opacity: 0.20;
+		height: 1px;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 0;
+    box-sizing: border-box;
+	}
+
+.flip-digit:after {
+		content: '';
+		display: block;
+		background: black;
+		opacity: 0.10;
+		height: 50%;
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		border-bottom-left-radius: 0.8rem;
+		border-bottom-right-radius: 0.8rem;
+    box-sizing: border-box;
+	}
