@@ -125,7 +125,8 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		}
 
 		if ( $organizer_id && $link = tribe_get_organizer_website_link() ) {
-			$details[] = '<span class="link"> <a href="' . esc_attr( $link ) . '">' . $link . '</a> </span>';
+			// $link is a full HTML string (<a>) whose components are already escaped, so we don't need create an anchor tag or escape again here
+			$details[] = '<span class="link">' . $link . '</span>';
 		}
 
 		$html = join( '<span class="tribe-events-divider">|</span>', $details );
@@ -226,7 +227,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		if ( $echo != false ) _deprecated_argument( __FUNCTION__, '4.0' );
 
 		$org_id = tribe_get_organizer_id( $postId );
-		if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
+		if ( class_exists( 'Tribe__Events__Pro__Main' ) && get_post_status( $org_id ) == 'publish' ) {
 			$url = esc_url_raw( get_permalink( $org_id ) );
 			if ( $full_link ) {
 				$name = tribe_get_organizer( $org_id );

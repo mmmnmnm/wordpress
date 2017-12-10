@@ -96,6 +96,19 @@ if (!$license_key_only) {
                     <td>                        
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <?php esc_html_e('Show capabilities in', 'user-role-editor'); ?>&nbsp;
+                        <select name="caps_columns_quant" id="caps_columns_quant"> 
+                            <option value="1" <?php selected(1, $caps_columns_quant);?> >1</option>
+                            <option value="2" <?php selected(2, $caps_columns_quant);?> >2</option>
+                            <option value="3" <?php selected(3, $caps_columns_quant);?> >3</option>
+                        </select>    
+                        <?php esc_html_e('columns', 'user-role-editor'); ?>
+                    </td>
+                    <td>                        
+                    </td>
+                </tr>
                 
 <?php
 }
@@ -234,7 +247,8 @@ if (!$multisite) {
     jQuery(function() {
         jQuery('#ure_tabs').tabs();
 <?php
-    if ($ure_tab_idx>0) {
+    $ure_tab_idx = (int) $ure_tab_idx;
+    if ($ure_tab_idx>0 && $ure_tab_idx<=count($tabs_index)) {
 ?>
         jQuery("#ure_tabs").tabs("option", "active", <?php echo $ure_tab_idx; ?>);    
 <?php

@@ -1,108 +1,3 @@
-var tribe_timepickers = tribe_timepickers || {};
-
-( function ( $, obj ) {
-	'use strict';
-
-	obj.selector = {
-		container  : '.tribe-datetime-block',
-		timepicker : '.tribe-timepicker',
-		all_day    : '#allDayCheckbox',
-		timezone   : '.tribe-field-timezone',
-		input      : 'select, input'
-	};
-
-	obj.timepicker = {
-		opts: {
-			forceRoundTime: false,
-			step: 30,
-		}
-	};
-
-	obj.timezone = {
-		link: _.template( '<a href="#" class="tribe-change-timezone"><%= label %> <%= timezone %></a>' )
-	}
-
-	obj.$ = {};
-
-	obj.container = function( k, container ) {
-		var $container  = $( container );
-		var $all_day    = $container.find( obj.selector.all_day );
-		var $timepicker = $container.find( obj.selector.timepicker );
-		var $timezone   = $container.find( obj.selector.timezone ).not( obj.selector.input );
-		var $input      = $container.find( obj.selector.timezone ).filter( obj.selector.input );
-
-		// Create the Link
-		var $timezone_link = $( obj.timezone.link( { label: $input.data( 'timezoneLabel' ), timezone: $input.data( 'timezoneValue' ) } ) );
-
-		// Toggle Timepickers on All Day change
-		$all_day.on( 'change', function() {
-			if ( true === $all_day.prop( 'checked' ) ) {
-				$timepicker.hide();
-			} else {
-				$timepicker.show();
-			}
-		} ).trigger( 'change' );
-
-		obj.setup_timepickers( $timepicker );
-
-		// Attach a Click action the Timezone Link
-		$timezone_link.on( 'click', function( e ) {
-			$timezone = $container.find( obj.selector.timezone ).filter( '.select2-container' );
-			e.preventDefault();
-
-			$timezone_link.hide();
-			$timezone.show();
-		} );
-
-		// Append the Link to the Timezone
-		$timezone.after( $timezone_link );
-	};
-
-	obj.init = function() {
-		obj.$.containers = $( obj.selector.container );
-		obj.$.containers.each( obj.container );
-	};
-
-	/**
-	 * Initializes timepickers
-	 */
-	obj.setup_timepickers = function( $timepickers ) {
-		// Setup all Timepickers
-		$timepickers.each( function() {
-			var $item = $( this );
-			var opts  = $.extend( {}, obj.timepicker.opts );
-
-			if ( $item.data( 'format' ) ) {
-				opts.timeFormat = $item.data( 'format' );
-			}
-
-			// By default the step is 15
-			if ( $item.data( 'step' ) ) {
-				opts.step = $item.data( 'step' );
-			}
-
-			// Passing anything but 0 or 'false' will make it round to the nearest step
-			var round = $item.data( 'round' );
-			if (
-				round &&
-				0 != round &&
-				'false' !== round
-			) {
-				opts.forceRoundTime = true;
-			}
-
-			if ( 'undefined' !== typeof $.fn.tribeTimepicker ) {
-				$item.tribeTimepicker( opts ).trigger( 'change' );
-			} else {
-				// @deprecated 4.6.1
-				$item.timepicker( opts ).trigger( 'change' );
-			}
-		} );
-	};
-
-	$( document ).ready( obj.init );
-} ( jQuery, tribe_timepickers ) );
-
 /*
  * Date Format 1.2.3
  * (c) 2007-2009 Steven Levithan <stevenlevithan.com>
@@ -474,14 +369,19 @@ jQuery( document ).ready( function( $ ) {
 	};
 
 	var toggle_linked_post_fields = function( event ) {
-		var $select   = $( this ),
-			$group    = $select.closest( 'tbody' ),
-			$edit     = $group.find( '.edit-linked-post-link a' ),
-			edit_link = $edit.attr( 'data-admin-url' ),
-			choice    = 'undefined' === typeof event.added ? {} : event.added;
+		var $select    = $( this );
+		var selectData = $select.select2( 'data' );
+		var $group     = $select.closest( 'tbody' );
+		var $edit      = $group.find( '.edit-linked-post-link a' );
+		var choice     = 'undefined' === typeof event.added ? {} : event.added;
+		var editLink   = '';
+
+		if ( null !== selectData && 'string' === typeof selectData.edit ) {
+			editLink = selectData.edit;
+		}
 
 		// Maybe Hide Edit link
-		if ( _.isEmpty( choice ) ) {
+		if ( _.isEmpty( editLink ) ) {
 			$edit.hide();
 		}
 
@@ -500,8 +400,8 @@ jQuery( document ).ready( function( $ ) {
 			$group.find( '.linked-post' ).hide().find( 'input' ).val( '' );
 
 			// Modify and Show edit link
-			if ( ! _.isEmpty( choice ) ) {
-				$edit.attr( 'href', edit_link + choice.id ).show();
+			if ( ! _.isEmpty( editLink ) ) {
+				$edit.attr( 'href', editLink ).show();
 			}
 		}
 	};
@@ -516,7 +416,7 @@ jQuery( document ).ready( function( $ ) {
 
 		if ( $date_format.length && $date_format.attr( 'data-datepicker_format' ).length >= 1 ) {
 			datepicker_format = $date_format.attr( 'data-datepicker_format' );
-			date_format = datepicker_formats.main[ datepicker_format ];
+			date_format       = datepicker_formats.main[ datepicker_format ];
 		}
 
 		function date_diff_in_days( a, b ) {
@@ -533,8 +433,9 @@ jQuery( document ).ready( function( $ ) {
 			startofweek = $event_pickers.data( 'startofweek' );
 		}
 
-		var $start_date = $( document.getElementById( 'EventStartDate' ) );
-		var $end_date   = $( document.getElementById( 'EventEndDate' ) );
+		var $start_date       = $( document.getElementById( 'EventStartDate' ) );
+		var $end_date         = $( document.getElementById( 'EventEndDate' ) );
+		var $event_details    = $( document.getElementById( 'tribe_events_event_details' ) );
 
 		tribe_datepicker_opts = {
 			dateFormat      : date_format,
@@ -546,25 +447,46 @@ jQuery( document ).ready( function( $ ) {
 			showButtonPanel : false,
 			beforeShow      : function( element, object ) {
 				object.input.datepicker( 'option', 'numberOfMonths', get_datepicker_num_months() );
-				object.input.data( 'prevDate', object.input.datepicker( "getDate" ) );
+				object.input.data( 'prevDate', object.input.datepicker( 'getDate' ) );
+
+				// Capture the datepicker div here; it's dynamically generated so best to grab here instead of elsewhere.
+				$dpDiv = $( object.dpDiv );
+
+				// "Namespace" our CSS a bit so that our custom jquery-ui-datepicker styles don't interfere with other plugins'/themes'.
+				$dpDiv.addClass( 'tribe-ui-datepicker' );
+
+				$event_details.trigger( 'tribe.ui-datepicker-div-beforeshow', [ object ] );
+
+				$dpDiv.attrchange({
+					trackValues : true,
+					callback    : function( attr ) {
+						// This is a non-ideal, but very reliable way to look for the closing of the ui-datepicker box,
+						// since onClose method is often occluded by other plugins, including Events Calender PRO.
+						if (
+							attr.newValue.indexOf( 'display: none' ) >= 0 ||
+							attr.newValue.indexOf( 'display:none' ) >= 0
+						) {
+							$dpDiv.removeClass( 'tribe-ui-datepicker' );
+							$event_details.trigger( 'tribe.ui-datepicker-div-closed', [ object ] );
+						}
+					}
+				});
 			},
-			onSelect: function( selected_date ) {
-				var instance = $( this ).data( "datepicker" );
-				var date = $.datepicker.parseDate( instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selected_date, instance.settings );
+			onSelect: function( selected_date, object ) {
+
+				var instance = $( this ).data( 'datepicker' );
+				var date     = $.datepicker.parseDate( instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selected_date, instance.settings );
 
 				// If the start date was adjusted, then let's modify the minimum acceptable end date
 				if ( this.id === 'EventStartDate' ) {
 					var start_date = $( document.getElementById( 'EventStartDate' ) ).data( 'prevDate' );
-					var date_diff = null == start_date ? 0 : date_diff_in_days( start_date, $end_date.datepicker( 'getDate' ) );
-					var end_date = new Date( date.setDate( date.getDate() + date_diff ) );
+					var date_diff  = null == start_date ? 0 : date_diff_in_days( start_date, $end_date.datepicker( 'getDate' ) );
+					var end_date   = new Date( date.setDate( date.getDate() + date_diff ) );
 
 					$end_date
-						.datepicker( 'option', 'minDate', end_date )
-						.datepicker( 'setDate', end_date );
-				}
-				// If the end date was adjusted, then let's modify the maximum acceptable start date
-				else if ( this.id === 'EventEndDate' ) {
-					$start_date.datepicker( 'option', 'maxDate', date );
+						.datepicker( 'option', 'minDate', $start_date.datepicker( 'getDate' ) )
+						.datepicker( 'setDate', end_date )
+						.datepicker_format;
 				}
 
 				// fire the change and blur handlers on the field
@@ -602,7 +524,7 @@ jQuery( document ).ready( function( $ ) {
 			$( document.getElementById( '30StartDays' ) ),
 			$( document.getElementById( '31StartDays' ) )
 		];
-		
+
 		var tribeEndDays = [
 			$( document.getElementById( '28EndDays' ) ),
 			$( document.getElementById( '29EndDays' ) ),
@@ -668,11 +590,11 @@ jQuery( document ).ready( function( $ ) {
 	//show state/province input based on first option in countries list, or based on user input of country
 	$( 'body' ).on( 'change', '#EventCountry', function () {
 		var $country        = $( this );
-			$container      = $country.parents( 'div.eventForm' ).eq( 0 ),
-			$state_dropdown = $container.find( '#s2id_StateProvinceSelect' ),
-			$state_select   = $container.find( '#StateProvinceSelect' ),
-			$state_text     = $container.find( '#StateProvinceText' ),
-			country         = $( this ).val();
+		var $container      = $country.parents( 'div.eventForm' ).eq( 0 );
+		var $state_dropdown = $container.find( '#s2id_StateProvinceSelect' );
+		var $state_select   = $container.find( '#StateProvinceSelect' );
+		var $state_text     = $container.find( '#StateProvinceText' );
+		var country         = $( this ).val();
 
 		if ( country == 'US' || country == 'United States' ) {
 			$state_text.hide();
@@ -739,33 +661,47 @@ jQuery( document ).ready( function( $ ) {
 
 	if ( $tribe_views.length ) {
 
-		var $default_view_select = $( '.tribe-field-dropdown_select2 select[name="viewOption"]' ),
-			$view_inputs         = $tribe_views.find( 'input:checkbox' ),
-			$view_desc           = $( '#tribe-field-tribeEnableViews .tribe-field-wrap p.description' ),
-			view_options         = {};
+		var $default_view_select        = $( 'select[name="viewOption"]' );
+		var $default_mobile_view_select = $( 'select[name="mobile_default_view"]' );
+		var $view_inputs                = $tribe_views.find( 'input:checkbox' );
+		var $view_desc                  = $( '#tribe-field-tribeEnableViews .tribe-field-wrap p.description' );
+		var view_options                = {};
 
 		function create_view_array() {
 
 			$default_view_select
 				.find( 'option' )
 				.each( function() {
-
 					var $this = $( this );
-
 					view_options[$this.attr( 'value' )] = $this.text();
+				} );
 
+			$default_mobile_view_select
+				.find( 'option' )
+				.each( function() {
+					var $this = $( this );
+					view_options[$this.attr( 'value' )] = $this.text();
 				} );
 
 		}
 
-		function set_selected_views() {
+		function set_selected_views( $this ) {
 			// Store the default view chosen prior to this change
 			var prev_default_view = $default_view_select
 				.find( "option:selected" )
 				.first()
 				.val();
 
+			var prev_default_mobile_view = $default_mobile_view_select
+				.find( "option:selected" )
+				.first()
+				.val();
+
 			$default_view_select
+				.find( 'option' )
+				.remove();
+
+			$default_mobile_view_select
 				.find( 'option' )
 				.remove();
 
@@ -777,26 +713,37 @@ jQuery( document ).ready( function( $ ) {
 						var value = $this.val();
 						$default_view_select
 							.append( '<option value="' + value + '">' + view_options[value] + '</option>' );
+						$default_mobile_view_select
+							.append( '<option value="' + value + '">' + view_options[value] + '</option>' );
 					}
 				} );
 
 			// Test to see if the previous default view is still available...
 			var $prev_default_option = $default_view_select.find( "option[value='" + prev_default_view + "']" );
+			var $prev_default_mobile_option = $default_mobile_view_select.find( "option[value='" + prev_default_mobile_view + "']" );
 
 			// ...if it is, keep it as the default (else switch to the first available remaining option)
-			if ( 1 === $prev_default_option.length ) {
-				$prev_default_option
-					.attr( 'selected', 'selected' );
+			if ( $prev_default_option.val() == $this.val() ) {
+				$prev_default_option .attr( 'selected', 'selected' );
 			} else {
-				$default_view_select
-					.find( 'option' )
-					.first()
-					.attr( 'selected', 'selected' );
+				var $default_reset = $tribe_views.find( 'checkbox:checked' ).first().val();
+				$default_view_select.find( 'option' ).find( "option[value='" + $default_reset + "']" ).attr( 'selected', 'selected' );
+			}
+
+			if ( $prev_default_mobile_option.val() == $this.val() ) {
+				$prev_default_mobile_option .attr( 'selected', 'selected' );
+			} else {
+				var $default_reset = $tribe_views.find( 'checkbox:checked' ).first().val();
+				$default_mobile_view_select.find( 'option' ).find( "option[value='" + $default_reset + "']" ).attr( 'selected', 'selected' );
 			}
 
 			$default_view_select
 				.select2( 'destroy' )
-				.select2( {width: '250px'} );
+				.select2( { width: 'auto' } );
+
+			$default_mobile_view_select
+				.select2( 'destroy' )
+				.select2( { width: 'auto' } );
 		}
 
 		create_view_array();
@@ -814,7 +761,7 @@ jQuery( document ).ready( function( $ ) {
 					$view_desc.removeAttr( 'style' );
 				}
 
-				set_selected_views();
+				set_selected_views( $this );
 
 			} );
 	}

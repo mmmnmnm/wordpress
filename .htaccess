@@ -2,14 +2,37 @@
 Redirect /event http://www.mmmnmnm.com/events/
 # mmn: "new tracks" is a better name so let's keep it
 Redirect /tracks http://www.mmmnmnm.com/new-tracks/
+# misc redirect
+Redirect /call http://www.mmmnmnm.com/2017/10/19/felhivas-kritika-video-call-for-review-video/
+Redirect /2017/12/04/carl-brown-on-lahmacun-fm/ http://www.mmmnmnm.com/lahmacunfm/stream
+
 
 #Podcasts redirect
 Redirect  /2017/06/11/mmn-2-alley-catss/ http://www.mmmnmnm.com/podcasts/mmn-2-alley-catss/
 Redirect /2017/07/02/mmn-3-fogselyemfiu/ http://www.mmmnmnm.com/podcasts/mmn-3-fogselyemfiu/
+Redirect /2017/09/06/az-uj-mmn-podcast-dj-masse/ http://www.mmmnmnm.com/podcasts/mmn7-dj-masse/
+Redirect /2017/10/01/uj-mmn-podcast-mystic-voip/ http://www.mmmnmnm.com/podcasts/mmn-8-mystic-voip/
+Redirect /2017/10/16/mmn-9-saint-leidal-the-2nd/ http://www.mmmnmnm.com/podcasts/mmn-9-saint-leidal-the-2nd/
+Redirect /2017/11/29/uj-podcast-akiram-en/ http://www.mmmnmnm.com/podcasts/mmn-10-akiram-en/
 
 #New tracks redirect
 Redirect  /2017/06/12/track-premier-norwell-celestial-bodies-imre-kiss-remix http://www.mmmnmnm.com/new-tracks/june
 Redirect /2017/06/17/hallgass-egy-ket-ms-june-t http://www.mmmnmnm.com/new-tracks/june
+Redirect /2017/09/12/kristof-kelemen-catch-the-cica/ http://www.mmmnmnm.com/new-tracks/september/
+Redirect /2017/09/14/new-tracks-gyal-fatale/ http://www.mmmnmnm.com/new-tracks/september/
+Redirect /2017/09/20/david-harleydson-fast-acid/ http://www.mmmnmnm.com/new-tracks/september/
+Redirect /2017/10/05/ruffien-bite-the-lip-that-talks/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/08/uj-bala-poppies-are-mans-best-friend/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/14/betonkust-eilandnet-at-her-funeral/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/18/david-harleydson-slendys-lullaby/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/24/kristof-kelemen-melancholic-story/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/29/juhasz-tamas-a-visitor-have-we-its-not-my-fault/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/30/icr-reconstellation/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/10/31/palmhuset-nemerov/ http://www.mmmnmnm.com/new-tracks/october/
+Redirect /2017/11/15/dj-dr-660-talk-2-me-consent/ http://www.mmmnmnm.com/new-tracks/november/
+Redirect /2017/11/24/j-zbel-nik-molina/ http://www.mmmnmnm.com/new-tracks/november/
+Redirect /2017/12/04/1-1110-ambivalent/ http://www.mmmnmnm.com/new-tracks/december/
+Redirect /2017/12/08/gryllus-abris-post_-3/ http://www.mmmnmnm.com/new-tracks/december/
 
 
 # BEGIN WordPress
