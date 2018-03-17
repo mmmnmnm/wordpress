@@ -84,6 +84,11 @@
   font-family: 'Socicon';
 }
 
+.social-menu a[href*="bandcamp.com"]:before {
+	content: '\e00b';
+  font-family: 'Socicon';
+}
+
 .rss-feed a:after {
 	content: '\e071';
   font-family: 'Socicon';
