@@ -58,8 +58,18 @@
 
 			<?php $description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?>
+					<br>
+					<br>
+					<a class="donate_style" href="https://www.mmmnmnm.com/donate/">DONATE</a>
+					<a class="donate_style" href="https://www.mmmnmnm.com/lahmacunfm/stream/">RADIO</a>
+					<a class="donate_style" href="https://www.mixcloud.com/mmmnmnm/mmn-12-ooo/">LISTEN</a>
+					<br>
+					<br>
+				</p>
 			<?php endif; ?>
+
+
 
 			<?php if ( has_nav_menu( 'header' ) ) : ?>
 			<nav id="site-navigation" class="main-navigation" role="navigation">

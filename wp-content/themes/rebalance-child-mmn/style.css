@@ -177,3 +177,30 @@
 		border-bottom-right-radius: 0.8rem;
     box-sizing: border-box;
 	}
+
+
+/*new mmn style*/
+  a.donate_style{
+      background-color: white;
+      padding: .2rem .7rem;
+      border-radius: 1.5rem;
+      line-height: 1;
+      transition: .4s ease;
+      text-decoration: none;
+      font-style: normal;
+      border-style: solid;
+      border-color: black;
+      border-width: thin;
+  }
+
+  a.donate_style:hover{
+    background-color: black;
+    color:white;
+  }
+
+/*mmn style override*/
+.site-description {
+      font-family: "Rubik", "Helvetica Neue", sans-serif;
+      font-style: normal;
+      line-height: 150%; 
+}
