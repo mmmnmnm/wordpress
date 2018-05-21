@@ -1,7 +1,7 @@
 <?php /* Template Name: Page no meta with SC*/ ?>
 
 <!-- Soundcloud dependencies for player -->
- <script src="http://d3js.org/d3.v3.min.js"></script>
+ <script src="https://d3js.org/d3.v3.min.js"></script>
  <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
  <script type="text/javascript" src=<?php echo esc_url( home_url( '/' ) ) . '/scripts/audioplayer.js';?>></script>
 
