@@ -1,2 +1,7 @@
 .DS_Store
-wp-content/uploads
+wp-includes
+wp-content
+!wp-content/themes
+wp-admin
+*.php
+
