@@ -40,6 +40,21 @@ Rebalance is a simple, modern theme for photographers, artists, and graphic desi
 
 == Changelog ==
 
+= 3 March 2018 =
+* Use wp_kses_post rather than wp_filter_post_kses.
+
+= 23 February 2018 =
+* Simplify Headstart annotations.
+
+= 20 February 2018 =
+* Fix a conflict with JetPack lazy loading and imagesLoaded feature in Masonry
+
+= 12 February 2018 =
+* Fix issue with Instagram widget showing very small images.
+
+= 9 November 2017 =
+* Add space between columns in gallery.
+
 = 25 August 2017 =
 * Update version number; include correct URL and credit reference in the footer.
 

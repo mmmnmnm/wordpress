@@ -201,7 +201,7 @@ function rebalance_portfolio_content( $before = '', $after = '' ) {
 	if ( is_tax() && get_the_archive_description() ) {
 		echo $before . get_the_archive_description() . $after;
 	} else if ( isset( $jetpack_portfolio_content ) && '' != $jetpack_portfolio_content ) {
-		$content = convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $jetpack_portfolio_content ) ) ) ) ) );
+		$content = convert_chars( convert_smilies( wptexturize( wp_kses_post( $jetpack_portfolio_content ) ) ) );
 		echo $before . $content . $after;
 	}
 }
@@ -260,4 +260,21 @@ function rebalance_has_post_thumbnail( $post = null ) {
 	} else {
 		return has_post_thumbnail( $post );
 	}
+}
+
+/**
+ * Disable Lazy Loading on non-singular views
+ *
+ * @filter lazyload_is_enabled
+ * @return bool
+ */
+add_action( 'wp', 'rebalance_remove_lazy_load_hooks' );
+function rebalance_remove_lazy_load_hooks() {
+    if ( is_singular() || ! class_exists( 'Jetpack_Lazy_Images' ) ) {
+        return;
+    }
+
+    $instance = Jetpack_Lazy_Images::instance();
+    add_action( 'wp_head', array( $instance, 'remove_filters' ), 10000 );
+    remove_action( 'wp_enqueue_scripts', array( $instance, 'enqueue_assets' ) );
 }

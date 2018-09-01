@@ -2,13 +2,25 @@
 Theme Name: Rebalance
 Theme URI: https://wordpress.com/themes/rebalance/
 Description: Rebalance is a new spin on the classic Imbalance 2 portfolio theme. It is a simple, modern theme for photographers, artists, and graphic designers looking to showcase their work.
-Version: 1.1.7
+Version: 1.1.8
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: rebalance
 Tags: custom-background, custom-colors, custom-menu, featured-images, grid-layout, one-column, portfolio, theme-options, threaded-comments, three-columns, translation-ready, two-columns
+
+Rebalance WordPress Theme, Copyright 2017 Automattic, Inc.
+Rebalance is distributed under the terms of the GNU GPL.
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Rebalance is based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------*/
@@ -2628,12 +2640,13 @@ object {
 /*--------------------------------------------------------------*/
 
 .gallery {
-	margin-bottom: 1.5em;
+	margin: 0 -2% 1.5em;
 }
 
 .gallery-item {
 	display: inline-block;
 	margin: 0 0 1.5em;
+	padding: 0 1%;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;

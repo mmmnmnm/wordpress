@@ -59,15 +59,15 @@ msgstr "http://wordpress.com/themes/"
 msgid "Automattic"
 msgstr "Automattic"
 
-#. Template Name of the plugin/theme
-#: wp-content/themes/pub/rebalance/portfolio-page.php
-msgid "Portfolio Page"
-msgstr "Pàgina de Portfolio"
-
 #. Description of the plugin/theme
 #: wp-content/themes/pub/rebalance/style.css
 msgid "Rebalance is a new spin on the classic Imbalance 2 portfolio theme. It is a simple, modern theme for photographers, artists, and graphic designers looking to showcase their work."
 msgstr "Rebalance és una nova iteració del clàssic tema Imbalance 2. És un tema modern i simple per a fotògrafs, artistes i dissenyadors gràfics que volen ensenyar la seva feina."
+
+#. Template Name of the plugin/theme
+#: wp-content/themes/pub/rebalance/portfolio-page.php
+msgid "Portfolio Page"
+msgstr "Pàgina de Portfolio"
 
 #. translators: %s: Name of current post.
 #: template-parts/content.php:26
