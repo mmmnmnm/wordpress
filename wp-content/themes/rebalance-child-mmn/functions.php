@@ -256,7 +256,7 @@ function mobile_breakpoint() {
 /*mmn: try to get WP not to kill pic quality */
 add_filter('jpeg_quality', function($arg){return 100;},20);
 
-/*MMN: change default times of event: https://theeventscalendar.com/support/forums/topic/start-and-end-times/*/ 
+/*MMN: change default times of event: https://theeventscalendar.com/support/forums/topic/start-and-end-times/*/
 add_action( 'tribe_events_meta_box_timepicker_default', 'new_default_time', 10, 2 );
 function new_default_time( $default, $type) {
 	$default = false;
@@ -269,6 +269,60 @@ function new_default_time( $default, $type) {
 	return $time;
 }
 
+//MMN: this was a workaround to move the likes from http to https urls
+/*function refer_to_unsecure_FB_likes_og( $tags ) {
+        global $post;
+
+        $url = $tags['og:url'];
+        $url = preg_replace("/^https:/i", "http:", $url);
+        $tags['og:url'] = $url;
+        return $tags;
+}
+add_filter( 'jetpack_open_graph_tags', 'refer_to_unsecure_FB_likes_og' );
+*/
+
+//mmn: save facebook likes after http -> https change, see: https://cognitiveseo.com/blog/13431/recover-facebook-shares-https/
+remove_action( 'wp_head',             'rel_canonical'                          );
+add_action( 'wp_head',             'rel_canonical_mmn'                          );
+
+function rel_canonical_mmn() {
+	if ( ! is_singular() ) {
+		return;
+	}
+
+	$id = get_queried_object_id();
+
+	if ( 0 === $id ) {
+		return;
+	}
+
+	$url = wp_get_canonical_url( $id );
+
+	if ( ! empty( $url ) ) {
+    if ((get_the_date('Y-m-d') <= '2018-05-10') && preg_match('/facebookexternalhit/i',$_SERVER['HTTP_USER_AGENT'])){
+      echo '<link rel="canonical" href="' . str_replace("https","http",esc_url( $url )) . '" />' . "\n";
+    }
+    else {
+      echo '<link rel="canonical" href="' . esc_url( $url ) . '" />' . "\n";
+      }
+	}
+
+}
+
+add_filter( 'jetpack_open_graph_tags', function( $tags ){
+  if (is_singular() && (get_the_date('Y-m-d') <= '2018-05-10') && preg_match('/facebookexternalhit/i',$_SERVER['HTTP_USER_AGENT'])){
+    unset(  $tags['og:url' ] );
+    $id = get_queried_object_id();
+
+  	if ( 0 === $id ) {
+  		return;
+  	}
+
+  	$url = wp_get_canonical_url( $id );
+    $tags['og:url'] = str_replace("https","http",esc_url( $url )); //since no https on www2 page, make up some visible change
+  }
+	return $tags;
+});
 
 
 ?>
