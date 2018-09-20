@@ -324,5 +324,22 @@ add_filter( 'jetpack_open_graph_tags', function( $tags ){
 	return $tags;
 });
 
+//delete card attribute added by events calendar
+//rationale: rebalance theme formats this class in a strange way, which causes the events calendar display look unpretty 
+add_filter( 'post_class', 'delete_card_class', 11, 1);
+function delete_card_class( $wp_classes) {
 
+    if (get_post_type($post->ID)=='tribe_events'){
+      # List tag to delete
+      $class_delete = array('card');
+
+      # Verify if exist the class of WP in $class_delete
+      foreach ($wp_classes as $class_css_key => $class_css) {
+          if (in_array($class_css, $class_delete)) {
+              unset($wp_classes[$class_css_key]);
+          }
+      }
+    }
+    return $wp_classes;
+}
 ?>

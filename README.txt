@@ -11,13 +11,10 @@ Wp Facebook Share Like Button
 2. Changes that need to be re-added after theme (rebalance) update
 - /wp-content/themes/rebalance/js/navigation.js (line 14): column number changed from 3 to 4 -> effect: "English content" menu shows under main manu
 
-3. Changes that need to be re-added after calendar (the events calendar) update:
-- /wp-content/plugins/the-events-calendar/src/Tribe/Main.php (line 67): has_archive attribute to false -> effect: events in calendar's month view are aligned horizontally
-
-4. Changes that need to be re-added after Wordpress update:
+3. Changes that need to be re-added after Wordpress update:
 -	/wp-includes/functions.php (line 106) and corresponding definition of myucfirst() function -> effect: first letter of months uppercased
 
-5. Changes that need to re-added after Wp Facebook Share Like Button plugin change:
+4. Changes that need to re-added after Wp Facebook Share Like Button plugin change:
 - wp-content/plugins/wp-fb-share-like-button/wp-fb-share-like-button.php (line 185): delete writing og:url tag:
 //echo '<meta property="og:url" content="' . get_permalink() . '" />' . "\n";
 
