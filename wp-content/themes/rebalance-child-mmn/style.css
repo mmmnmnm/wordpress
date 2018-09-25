@@ -204,3 +204,92 @@
       font-style: normal;
       line-height: 150%; 
 }
+
+
+
+/* Gas - add, mixcloud player */
+
+
+.mixcloud-footer-widget-body-wrapper.playing .site-heading {
+    border-top: none;
+}    
+
+a, .mixcloud-footer-widget-container .closegomb {
+	cursor: pointer;
+}  
+
+.mixcloud-footer-widget-container {
+	top: 0;
+	bottom: auto;
+	background: #25292c;
+	height: 0 !important;
+}
+
+
+.mixcloud-footer-widget-container iframe {
+	margin: 0 auto;
+    max-width: 1140px;
+    width: 90%;
+    display: block;
+    height: 0 !important;
+}
+
+.mixcloud-footer-widget-container.closed iframe, .mixcloud-footer-widget-container.closed {
+    height: 0 !important;
+}
+
+.mixcloud-footer-widget-container.opened iframe, .mixcloud-footer-widget-container.opened {
+    height: 60px !important;
+}
+
+.mixcloud-footer-widget-body-wrapper {
+	padding-top: 0;
+	bottom: 0 !important;
+}
+
+.mixcloud-footer-widget-body-wrapper.opened {
+	padding-top: 60px;
+}
+
+.mixcloud-footer-widget-container .closegomb {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: #e2e2e2;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 11px;
+    background: #25292c;
+    border-radius: 0 0 0 10px;
+    font-size: 1.3em;
+    z-index: 1000;
+}
+
+.mixcloud-footer-widget-container.opened .closegomb {
+    font-size: 1em;
+}
+
+
+.mixcloud-footer-widget-body-wrapper, .mixcloud-footer-widget-container .closegomb {
+	-o-transition:1s;
+	-ms-transition:1s;
+	-moz-transition:1s;
+	-webkit-transition:1s;
+	transition:1s;
+}
+
+
+.mixcloud-footer-widget-container .closegomb:hover {
+    color: white;
+}
+
+
+
+
+@media screen and (max-width: 881px) {
+
+.mixcloud-footer-widget-container .closegomb {    padding: 2px 8px;   font-size: 1.2em; }
+.mixcloud-footer-widget-container.opened {    height: 65px !important; }
+    
+}
