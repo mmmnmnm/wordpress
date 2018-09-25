@@ -29,5 +29,15 @@
 
 <?php wp_footer(); ?>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js">
+</script>
+
+<script src="//widget.mixcloud.com/media/js/footerWidgetApi.js" async>
+{"feed": "/mmmnmnm/" }
+</script>
+
+<script async defer src="<?php echo get_stylesheet_directory_uri(); ?>/custom-scripts.js">
+</script>
+
 </body>
 </html>
