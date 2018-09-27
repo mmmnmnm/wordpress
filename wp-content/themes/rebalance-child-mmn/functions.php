@@ -329,7 +329,7 @@ add_filter( 'jetpack_open_graph_tags', function( $tags ){
 add_filter( 'post_class', 'delete_card_class', 11, 1);
 function delete_card_class( $wp_classes) {
 
-    if (get_post_type($post->ID)=='tribe_events'){
+    if (tribe_is_event_query() && get_post_type($post->ID)=='tribe_events'){ //first condition check if it's the calendar (to rule our wrong formatting e.g. on search results page)
       # List tag to delete
       $class_delete = array('card');
 
