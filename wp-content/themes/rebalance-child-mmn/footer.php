@@ -14,11 +14,11 @@
 				<div class="site-info">
 					<div class="rss-feed">
 						<!-- mmn: RSS link-->
-						<a href="http://www.mmmnmnm.com/rss"></a>
+						<a href="https://www.mmmnmnm.com/rss"></a>
 					</div>
 					<br>
 					<!-- See parent template for original footer code, which was mentioning WordPress and the Rebalance theme -->
-					<a href="http://www.mmmnmnm.com/impressum">Impresszum &amp; Kontakt</a>
+					<a href="https://www.mmmnmnm.com/impressum">Impresszum &amp; Kontakt</a>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 
