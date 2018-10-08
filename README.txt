@@ -18,6 +18,12 @@ Wp Facebook Share Like Button
 - wp-content/plugins/wp-fb-share-like-button/wp-fb-share-like-button.php (line 185): delete writing og:url tag:
 //echo '<meta property="og:url" content="' . get_permalink() . '" />' . "\n";
 
+This is how to contribute via GitHub: 
+1. Log into GitHub using your GitHub account
+2. Fork this project: https://github.com/mmmnmnm/wp_mmn
+3. Push code change into your forked project
+4. Create pull request on the master branch of https://github.com/mmmnmnm/wp_mmn 
+
 Other notes:
 - (Sept 1st, 2018) Changes done to restore Facebook like after HTTP -> HTTPS change (https://cognitiveseo.com/blog/13431/recover-facebook-shares-https/):
   1. (Child theme's functions.php) Change canonical for old posts (custom header action)
@@ -28,6 +34,5 @@ Other notes:
 - Font does not render on some machines: SOLVED https://stackoverflow.com/questions/45715928/solved-rubik-font-not-rendering-anymore
 - Default event times are altered to start11pm and to end 5am: custom tribe_events_meta_box_timepicker_default filter
 
-TODOs:
-- Display multiple category page title when multiple categories are displayed, e.g., mmmnmnm.com/category/review,interview
-  - Hint: /themes/archive.php -> page title
+
+
