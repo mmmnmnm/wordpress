@@ -5,13 +5,13 @@ Wp Facebook Share Like Button
 
 ﻿Theme inherits from rebalance theme. All changes in anywhere are commented by "mmmnmnm" and "mmn".
 
-1. Changes that should not be affected by updates
+1. (NOTE – NOTHING TO DO) Changes that should NOT be affected by updates
  - Can be found under /wp-content/themes/rebalance-child-mmn
 
 2. Changes that need to be re-added after theme (rebalance) update
 - /wp-content/themes/rebalance/js/navigation.js (line 14): column number changed from 3 to 4 -> effect: "English content" menu shows under main manu
 
-3. Changes that need to be re-added after Wordpress update:
+3. (OPTIONAL) Changes that need to be re-added after Wordpress update:
 -	/wp-includes/functions.php (line 106) and corresponding definition of myucfirst() function -> effect: first letter of months uppercased
 
 4. Changes that need to re-added after Wp Facebook Share Like Button plugin change:
