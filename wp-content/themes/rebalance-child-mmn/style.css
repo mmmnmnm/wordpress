@@ -293,3 +293,8 @@ a, .mixcloud-footer-widget-container .closegomb {
 .mixcloud-footer-widget-container.opened {    height: 65px !important; }
     
 }
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+}
