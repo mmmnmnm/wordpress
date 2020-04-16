@@ -193,7 +193,21 @@
       border-width: thin;
   }
 
-  a.donate_style:hover{
+  a.donate_style_highlight{
+    background-color: #6feb58;
+    padding: .2rem .7rem;
+    border-radius: 1.5rem;
+    line-height: 1;
+    transition: .4s ease;
+    text-decoration: none;
+    font-style: normal;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+}
+
+
+  a.donate_style:hover, a.donate_style_highlight:hover{
     background-color: black;
     color:white;
   }
