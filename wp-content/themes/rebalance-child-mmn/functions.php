@@ -1,13 +1,13 @@
 <?php
 function rebalance_child_mmn_styles() {
 
-    $parent_style = 'rebalance-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+	$parent_style = 'rebalance-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+	$style_ver = filemtime( get_stylesheet_directory() . '/style.css' );
 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'rebalance-child-mmn-style',
         get_stylesheet_directory_uri() . '/style.css',
-        array( $parent_style ),
-        wp_get_theme()->get('Version')
+		'', $style_ver
     );
 }
 add_action( 'wp_enqueue_scripts', 'rebalance_child_mmn_styles' );
