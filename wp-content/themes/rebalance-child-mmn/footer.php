@@ -32,6 +32,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js">
 </script>
 
+<script src="//widget.mixcloud.com/media/js/widgetApi.js" type="text/javascript"></script>
+
 <script src="//widget.mixcloud.com/media/js/footerWidgetApi.js" async>
 {"feed": "/mmmnmnm/" }
 </script>
