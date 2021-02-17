@@ -2,4 +2,4 @@
 .env
 *.sql
 wp-content/uploads
-
+nginx-conf/nginx.conf
