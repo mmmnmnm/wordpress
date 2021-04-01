@@ -180,7 +180,7 @@
 
 
 /*new mmn style*/
-  a.donate_style{
+  a.donate_style, a.radio_style{
       background-color: white;
       padding: .2rem .7rem;
       border-radius: 1.5rem;
@@ -193,10 +193,21 @@
       border-width: thin;
   }
 
-  a.donate_style:hover{
+  a.donate_style {
+    background-color: rgb(10, 247, 255);
+}
+
+
+  a.donate_style:hover, a.radio_style:hover{
+    background-color: black;
+    color:rgb(10, 247, 255);
+  }
+
+  a.radio_style:hover{
     background-color: black;
     color:white;
   }
+
 
 /*mmn style override*/
 .site-description {
