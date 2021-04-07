@@ -194,13 +194,13 @@
   }
 
   a.donate_style {
-    background-color: rgb(10, 247, 255);
+    background-color: rgb(84, 173, 224);
 }
 
 
   a.donate_style:hover, a.radio_style:hover{
     background-color: black;
-    color:rgb(10, 247, 255);
+    color:rgb(84, 173, 224);
   }
 
   a.radio_style:hover{
