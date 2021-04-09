@@ -31,6 +31,7 @@ services:
       - ./wp-content/themes/rebalance-child-mmn:/var/www/html/wp-content/themes/rebalance-child-mmn 
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
       - ./fonts:/var/www/html/fonts
+      - ./moneymakestheworldgoround:/var/www/html/moneymakestheworldgoround
       - ./php.ini:/usr/local/etc/php/php.ini
     networks:
       - app-network
@@ -50,6 +51,7 @@ services:
       - ./wp-content/themes/rebalance-child-mmn:/var/www/html/wp-content/themes/rebalance-child-mmn 
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
       - ./fonts:/var/www/html/fonts
+      - ./moneymakestheworldgoround:/var/www/html/moneymakestheworldgoround
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
