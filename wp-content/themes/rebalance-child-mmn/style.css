@@ -298,3 +298,7 @@ figcaption {
   text-align: center;
   font-style: italic;
 }
+
+details summary {
+  display:revert;
+}
