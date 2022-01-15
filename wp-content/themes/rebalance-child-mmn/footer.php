@@ -18,7 +18,8 @@
 					</div>
 					<br>
 					<!-- See parent template for original footer code, which was mentioning WordPress and the Rebalance theme -->
-					<a href="https://www.mmmnmnm.com/impressum">Impresszum &amp; Kontakt</a>
+					<a href="https://www.mmmnmnm.com/impressum">Impresszum &amp; Kontakt</a> <br>
+					<a href="https://www.mmmnmnm.com/cookies">Sütik/Cookies</a> <br>
 				</div><!-- .site-info -->
 			</footer><!-- #colophon -->
 
