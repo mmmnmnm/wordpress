@@ -68,4 +68,8 @@ server {
                 expires max;
                 log_not_found off;
         }
+
+        location = /submit-new-event/ {
+                return 301 https://mmmnmnm.com/events/community/submit;
+        }
 }
