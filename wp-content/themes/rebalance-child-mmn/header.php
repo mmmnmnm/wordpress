@@ -12,7 +12,6 @@
 ?><!DOCTYPE html>
 <html class="no-js" <?php language_attributes(); ?>>
 <head>
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="f6dca091-4aca-481f-9b6d-9091b79927c0" data-blockingmode="auto" type="text/javascript"></script>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
