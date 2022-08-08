@@ -1,8 +1,29 @@
 server {
+    listen 80;
+    listen [::]:80;
+
+    server_name mmmnmnm.com;
+ 
+    rewrite ^/(.*)$ http://mmn-mag.hu/$1 permanent;
+}
+
+server {
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
+        server_name mmmnmnm.com www.mmmnmnm.com;
+
+        ssl_certificate /etc/letsencrypt/live/mmmnmnm.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/mmmnmnm.com/privkey.pem;
+
+        rewrite ^/(.*)$ https://mmn-mag.hu/$1 permanent;
+
+}
+
+server {
         listen 80;
         listen [::]:80;
 
-        server_name mmmnmnm.com www.mmmnmnm.com;
+        server_name mmn-mag.hu www.mmn-mag.hu;
 
         location ~ /.well-known/acme-challenge {
                 allow all;
@@ -17,7 +38,7 @@ server {
 server {
         listen 443 ssl http2;
         listen [::]:443 ssl http2;
-        server_name mmmnmnm.com www.mmmnmnm.com;
+        server_name mmn-mag.hu www.mmn-mag.hu;
 
         index index.php index.html index.htm;
 
@@ -27,8 +48,8 @@ server {
 
         server_tokens off;
 
-        ssl_certificate /etc/letsencrypt/live/mmmnmnm.com/fullchain.pem;
-        ssl_certificate_key /etc/letsencrypt/live/mmmnmnm.com/privkey.pem;
+        ssl_certificate /etc/letsencrypt/live/mmn-mag.hu/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/mmn-mag.hu/privkey.pem;
 
         include /etc/nginx/conf.d/options-ssl-nginx.conf;
 
@@ -70,6 +91,6 @@ server {
         }
 
         location = /submit-new-event/ {
-                return 301 https://mmmnmnm.com/events/community/submit;
+                return 301 https://mmn-mag.hu/events/community/submit;
         }
 }
