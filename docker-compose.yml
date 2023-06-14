@@ -53,6 +53,7 @@ services:
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
       - ./fonts:/var/www/html/fonts
       - ./moneymakestheworldgoround:/var/www/html/moneymakestheworldgoround
+      - ./manifesto:/var/www/html/manifesto
       - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
