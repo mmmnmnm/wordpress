@@ -32,6 +32,7 @@ services:
       - ./wp-content/uploads:/var/www/html/wp-content/uploads
       - ./fonts:/var/www/html/fonts
       - ./moneymakestheworldgoround:/var/www/html/moneymakestheworldgoround
+      - ./manifesto:/var/www/html/manifesto
       - ./php.ini:/usr/local/etc/php/php.ini
     networks:
       - app-network
