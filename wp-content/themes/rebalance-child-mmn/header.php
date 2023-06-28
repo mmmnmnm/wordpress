@@ -19,10 +19,11 @@
 <?php wp_head(); ?>
 </head>
 
+<?php set_header_background(); ?>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rebalance' ); ?></a>
-
+	
 	<header id="masthead" class="site-header" role="banner">
 		<div class="col-width header-wrap">
 			<?php $header_image = get_header_image();
@@ -34,11 +35,7 @@
 			<div class="site-heading">
 				<div class="site-branding">
 					<?php rebalance_site_logo(); ?>
-					<?php if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php endif; ?>
+					<?php custom_site_title(); ?>
 				</div><!-- .site-branding -->
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
 				<nav class="social-navigation" role="navigation">

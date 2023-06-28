@@ -246,6 +246,81 @@ function suppress_feature_image(){
   }
 }
 
+/*mmn: merites blog conditional formatting*/
+function add_custom_font() {
+	//mmn: add custom font for merites
+    $font_url = get_stylesheet_directory_uri() . '/merites/WindsorConDExtBol.otf';
+    $font_family = 'WindsorConDExtBol';
+
+    $font_formats = array(
+        'otf' => 'opentype',
+    );
+
+    $font_style = '@font-face {
+        font-family: "' . $font_family . '";
+        src: url("' . esc_url($font_url) . '") format("' . implode(', ', $font_formats) . '");
+        font-weight: normal;
+        font-style: normal;
+    }';
+
+    wp_add_inline_style('rebalance-style', $font_style);
+}
+add_action('wp_enqueue_scripts', 'add_custom_font');
+
+function is_merites() {
+	//mmn: helper function for deciding on rendering the normal site or merites subblog
+	//returns true if standing on an article written by the user 'merites'
+	//or if standing on the author page (/author/merites)
+	$merites_path = get_stylesheet_directory_uri() . '/merites';
+	$author_id = get_post_field('post_author', get_the_ID());
+	if (is_author('merites') || ( is_single() && $author_id == 69 )) {
+		return true;
+	} else
+		return false;
+}
+
+function set_header_background() {
+	//mmn: setting different header and background image for 'merites' articles
+	if (is_merites()) {
+		echo '<style>
+		header#masthead { background-image: url("' . get_stylesheet_directory_uri() . '/merites/header.png"); 
+						  background-position: top, center;
+						  background-size: contain;
+						  background-repeat: no-repeat;}
+		
+		@media (min-width: 882px) {
+			header#masthead { background-position-y: -50px; }
+		}
+		@media (min-width: 961px) {
+			header#masthead { background-position-y: -80px; }
+		}
+		@media (min-width: 1367px) {
+			header#masthead { background-position-y: -110px; }
+		}
+		body { background-image: url("' . $merites_path . '/04.png"); }
+		</style>';
+	}
+  }
+
+function custom_site_title() {
+	//mmn: setting different header and background image for 'merites' articles	
+	if (is_merites()) {
+		$site_title = 'Merítés';
+		$site_title_class = 'merites-font';
+		$site_title_url = esc_url("https://www.instagram.com/merites.blog/");
+		$rel = "external";
+		$target = "_blank";
+	} else {
+		$site_title = get_bloginfo('name');
+		$site_title_class = '';
+		$site_title_url = esc_url(home_url('/'));
+		$rel = "home";
+		$target = "_self";
+	}
+
+	echo '<h1 class="site-title ' . $site_title_class . '"><a href="' . $site_title_url . '" rel="' . $rel . '" target="' . $target . '">' . $site_title . '</a></h1>';
+
+}
 
 /*add_action( 'tribe_events_mobile_breakpoint', 'mobile_breakpoint' );
 
@@ -342,4 +417,5 @@ function delete_card_class( $wp_classes) {
     }
     return $wp_classes;
 }
+
 ?>
