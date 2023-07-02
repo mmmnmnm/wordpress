@@ -319,7 +319,6 @@ function custom_site_title() {
 	}
 
 	echo '<h1 class="site-title ' . $site_title_class . '"><a href="' . $site_title_url . '" rel="' . $rel . '" target="' . $target . '">' . $site_title . '</a></h1>';
-
 }
 
 /*add_action( 'tribe_events_mobile_breakpoint', 'mobile_breakpoint' );
@@ -417,5 +416,4 @@ function delete_card_class( $wp_classes) {
     }
     return $wp_classes;
 }
-
 ?>
