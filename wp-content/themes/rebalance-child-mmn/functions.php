@@ -272,8 +272,8 @@ function is_merites() {
 	//returns true if standing on an article written by the user 'merites'
 	//or if standing on the author page (/author/merites)
 	$merites_path = get_stylesheet_directory_uri() . '/merites';
-	$author_id = get_post_field('post_author', get_the_ID());
-	if (is_author('merites') || ( is_single() && $author_id == 69 )) {
+	$author_username = get_the_author_meta('user_nicename', get_post_field('post_author', get_the_ID()));
+	if (is_author('merites') || ( is_single() && $author_username == 'merites' )) {
 		return true;
 	} else
 		return false;
@@ -297,7 +297,7 @@ function set_header_background() {
 		@media (min-width: 1367px) {
 			header#masthead { background-position-y: -110px; }
 		}
-		body { background-image: url("' . $merites_path . '/04.png"); }
+		body { background-image: url("' . get_stylesheet_directory_uri() . '/merites/04.png"); }
 		</style>';
 	}
   }
