@@ -331,6 +331,6 @@ details summary {
   }
 
   .has-site-logo .site-title, .wp-custom-logo .site-title {
-    vertical-align: text-bottom;
+    vertical-align: middle;
   }
 }
