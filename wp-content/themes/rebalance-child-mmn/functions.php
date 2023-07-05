@@ -288,13 +288,13 @@ function set_header_background() {
 						  background-size: contain;
 						  background-repeat: no-repeat;}
 		
-		@media (min-width: 882px) {
+		@media (min-width: 881px) {
 			header#masthead { background-position-y: -50px; }
 		}
 		@media (min-width: 961px) {
 			header#masthead { background-position-y: -80px; }
 		}
-		@media (min-width: 1367px) {
+		@media (min-width: 1281px) {
 			header#masthead { background-position-y: -110px; }
 		}
 		body { background-image: url("' . get_stylesheet_directory_uri() . '/merites/04.png"); }
