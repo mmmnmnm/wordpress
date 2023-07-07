@@ -329,8 +329,4 @@ details summary {
     flex: 1;
     text-align: right;
   }
-
-  .has-site-logo .site-title, .wp-custom-logo .site-title {
-    vertical-align: middle;
-  }
 }

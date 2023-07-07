@@ -249,7 +249,7 @@ function suppress_feature_image(){
 /*mmn: merites blog conditional formatting*/
 function add_custom_font() {
 	//mmn: add custom font for merites
-    $font_url = get_stylesheet_directory_uri() . '/merites/WindsorConDExtBol.otf';
+    $font_url = get_stylesheet_directory_uri() . '/merites/windsordextbolcon.ttf';
     $font_family = 'WindsorConDExtBol';
 
     $font_formats = array(
