@@ -298,10 +298,11 @@ a, .mixcloud-footer-widget-container .closegomb {
 
 
 
-@media screen and (max-width: 881px) {
+@media screen and (max-width: 880px) {
 
-.mixcloud-footer-widget-container .closegomb {    padding: 2px 8px;   font-size: 1.2em; }
-.mixcloud-footer-widget-container.opened {    height: 65px !important; }
+  .mixcloud-footer-widget-container .closegomb {    padding: 2px 8px;   font-size: 1.2em; }
+  .mixcloud-footer-widget-container.opened {    height: 65px !important; }
+  ul.nav-menu.nav-menu-3 { border-top: 3px solid #CCC; }
     
 }
 
@@ -312,4 +313,31 @@ figcaption {
 
 details summary {
   display:revert;
+}
+
+/* mmn: merites custom css */
+.merites-font {
+  font-family: 'WindsorConDExtBol', sans-serif;
+}
+
+/* mmn: css to have the elements of the 4th menu block inline rather than below each other (merites blog/english content) */
+@media screen and (min-width: 881px) {
+  ul.nav-menu.nav-menu-3 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  ul.nav-menu.nav-menu-3 li {
+    display: inline-block;
+  }
+
+  ul.nav-menu.nav-menu-3 li:nth-child(1) {
+    flex: 0 0 67%;
+  }
+
+  ul.nav-menu.nav-menu-3 li:nth-child(2) {
+    flex: 1;
+    text-align: right;
+  }
 }
