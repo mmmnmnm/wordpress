@@ -198,6 +198,25 @@
     color:white;
   }
 
+  a.ado_style{
+    background-color: rgb(84, 173, 244);
+    padding: .2rem .7rem;
+    border-radius: 1.5rem;
+    line-height: 1;
+    transition: .4s ease;
+    text-decoration: none;
+    font-style: normal;
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+  }
+
+  a.ado_style:hover{
+    background-color: black;
+    color:rgb(84, 173, 244);
+  }
+
+
 /*mmn style override*/
 .site-description {
       font-family: "Rubik", "Helvetica Neue", sans-serif;
