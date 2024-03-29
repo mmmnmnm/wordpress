@@ -63,7 +63,7 @@
 					<br>
 					<br>
 					<a class="emguide_membership_logo_large_screen" href="https://emgui.de" target="_blank">
-						<img src = "<?php echo get_stylesheet_directory_uri();?>/images/emguide_logo_member_text.png" alt="EM GUIDE" width="60%">
+						<img src = "<?php echo get_stylesheet_directory_uri();?>/images/emguide_logo_member_text.png" alt="EM GUIDE" width="50%">
 					</a>
 					<a class="emguide_membership_logo_small_screen" href="https://emgui.de" target="_blank">
 						<img src = "<?php echo get_stylesheet_directory_uri();?>/images/emguide_logo.png" alt="EM GUIDE" width="50%">
