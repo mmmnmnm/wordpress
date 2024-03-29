@@ -351,15 +351,16 @@ details summary {
 }
 
 /* Large screens (default): downscale logo more */
-
-img.emguide_membership_logo {
-  width: 50%;
+@media screen and (min-width: 881px) {
+  a.emguide_membership_logo_small_screen {
+    display: none;
+  }
 }
 
 /* Small screens: downscale logo less (otherwise too small) */
 
 @media screen and (max-width: 639px) {
-  img.emguide_membership_logo {
-    width: 80%;
-  }
+  a.emguide_membership_logo_large_screen {
+    display: none;
+  }  
 }
