@@ -349,3 +349,17 @@ details summary {
     text-align: right;
   }
 }
+
+/* Large screens (default): downscale logo more */
+
+img.emguide_membership_logo {
+  width: 50%;
+}
+
+/* Small screens: downscale logo less (otherwise too small) */
+
+@media screen and (max-width: 639px) {
+  img.emguide_membership_logo {
+    width: 80%;
+  }
+}

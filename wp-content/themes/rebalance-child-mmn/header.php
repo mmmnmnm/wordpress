@@ -62,7 +62,9 @@
 					<a class="donate_style" href="https://lahmacun.hu/shows/mmn-radio" target="_blank">RADIO</a>
 					<br>
 					<br>
-					<a href="https://emgui.de" target="_blank"><img src = "<?php echo get_stylesheet_directory_uri();?>/images/emguide_logo_member_text.png" alt="EM GUIDE" width="50%"></a>
+					<a href="https://emgui.de" target="_blank">
+						<img class="emguide_membership_logo" src = "<?php echo get_stylesheet_directory_uri();?>/images/emguide_logo_member_text.png" alt="EM GUIDE">
+					</a>
 				</p>
 			<?php endif; ?>
 
