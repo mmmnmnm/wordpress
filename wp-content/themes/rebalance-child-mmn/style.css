@@ -359,7 +359,7 @@ details summary {
 
 /* Small screens: downscale logo less (otherwise too small) */
 
-@media screen and (max-width: 639px) {
+@media screen and (max-width: 880px) {
   a.emguide_membership_logo_large_screen {
     display: none;
   }  
