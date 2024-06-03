@@ -58,7 +58,7 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?>
 					<br>
 					<br>
-					<a class="ado_style" href="/donate/">ADÓ 1%</a>
+					<a class="donate_style" href="/donate/">DONATE</a>
 					<a class="donate_style" href="https://lahmacun.hu/shows/mmn-radio" target="_blank">RADIO</a>
 					<br>
 					<br>
